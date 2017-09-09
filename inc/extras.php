@@ -18,7 +18,7 @@
  * @param  string $post_excerpt
  * @return string $post_excerpt
  */
- function all_excerpts_get_more_link( $post_excerpt ) {
+ function pai_excerpts_get_more_link( $post_excerpt ) {
 
    return $post_excerpt . ' ...<p><a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
    'pai' ) . '</a></p>';
@@ -42,3 +42,42 @@ function pai_jetpack_remove_share() {
     }
 }
 // add_action( 'loop_start', 'pai_jetpack_remove_share' );
+
+/**
+ * Modify Default Archive title
+ *
+ * @since 0.0.1
+ *
+ * @uses get_the_archive_title filter hook
+ * @link https://developer.wordpress.org/reference/hooks/get_the_archive_title/
+ *
+ * @param  string $title
+ * @return string $title
+ */
+function pai_get_the_archive_title( $title ) {
+  if( is_category() ) {
+    $title = single_cat_title( '', false );
+  } elseif ( is_post_type_archive() ) {
+    $title = post_type_archive_title( '', false );
+  }
+  return $title;
+}
+add_filter( 'get_the_archive_title', 'pai_get_the_archive_title' );
+
+/**
+ * Add Class to Menu Items
+ *
+ * @since 0.0.1
+ *
+ * @param array $classes
+ * @param obj $item
+ * @param array $args
+ * @param int $depth
+ *
+ * @return array $classes
+ */
+// function pai_menu_item_classes( $classes, $item, $args, $depth ) {
+//     $classes[] = 'nav-item';
+//     return $classes;
+// }
+// add_filter( 'nav_menu_css_class', 'menu_item_classes', 10, 4 );
