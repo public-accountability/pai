@@ -1,0 +1,40 @@
+#wrapper-sectionnav {
+  .bg-faded {
+    background-color: $bg-faded;
+  }
+}
+
+#section-menu {
+
+  ul {
+    @include no-bullets;
+  }
+
+  li {
+    display: none;
+
+    &.current-menu-item,
+    &.current_page_item,
+    &.current-menu-parent,
+    &.current-page-parent {
+      &.menu-item-has-children {
+        display: block;
+
+        & > a {
+          display: none;
+        }
+
+        .sub-menu {
+          display: flex;
+
+          li {
+            display: block;
+            padding: 1em 1em 1em 0;
+          }
+        }
+      }
+    }
+
+  }
+
+}
