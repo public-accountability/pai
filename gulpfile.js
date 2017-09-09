@@ -276,4 +276,4 @@ gulp.task('clean-dist-product', function () {
   return del(['dist-product/**/*',]);
 });
 
-gulp.task( 'default', [ 'watch-bs', 'scss-for-dev' ], function() {});
+gulp.task( 'default', [ 'watch-bs', 'scss-for-dev', 'scripts' ], function() {});

@@ -1,1 +1,12 @@
 #wrapper-footer-full {}
+
+#colophon {
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .widget {}
+
+}
