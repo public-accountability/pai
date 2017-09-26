@@ -38,8 +38,8 @@ function pai_widgets(){
     'name'          => __( 'Section Navigation', 'pai' ),
     'id'            => 'section-nav',
     'description'   => __( 'Section navigation, which appears under the main nav when subpages exist.', 'pai' ),
-    'before_widget' => '<aside id="%1$s" class="section-navigation %2$s">',
-    'after_widget'  => '</aside>',
+    'before_widget' => '<nav id="section-menu" class="section-navigation navbar-nav %2$s">',
+    'after_widget'  => '</nav>',
     'before_title'  => '<h3 class="widget-title screen-reader-text">',
     'after_title'   => '</h3>',
   ) );

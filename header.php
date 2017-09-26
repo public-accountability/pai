@@ -73,11 +73,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu',
 						'depth'						=> 1,
-						'walker'          => new PAI_WP_Bootstrap_Navwalker,
 					)
 				); ?>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'jetpack-social-menu' ) ); ?>
+				<?php if ( function_exists( 'jetpack_social_menu' ) ) jetpack_social_menu(); ?>
+
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>
@@ -93,16 +93,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="container">
 			<?php endif; ?>
 
-			<?php wp_nav_menu(
-				array(
-					'theme_location'  => 'primary',
-					'menu_class'      => 'navbar-nav',
-					'container_id'    => 'section-navigation',
-					'fallback_cb'     => '',
-					'menu_id'         => 'section-menu',
-					'depth'						=> 2
-				)
-			); ?>
+			<?php if( is_active_sidebar( 'section-nav' ) ) : ?>
+				<?php dynamic_sidebar( 'section-nav' ) ?>
+			<?php endif; ?>
 
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
