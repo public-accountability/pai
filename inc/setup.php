@@ -38,6 +38,18 @@ function pai_setup() {
 add_action( 'after_setup_theme', 'pai_setup', 20 );
 
 /**
+ * Set Image Sizes
+ *
+ * @since 0.1.0
+ */
+update_option( 'thumbnail_size_w', 550 );
+update_option( 'thumbnail_size_h', 550 );
+update_option( 'thumbnail_crop', 1 );
+update_option( 'medium_size_w', 600 );
+update_option( 'medium_size_h', 600 );
+update_option( 'large_size_w', 1200 );
+
+/**
  * Register Widget Areas
  *
  * @since 0.0.1
