@@ -21,7 +21,7 @@ $link_tag = sprintf( '<a href="%s" title="%s" rel="bookmark>%s</a>"',
 
 	<?php if( $image = get_sub_field( 'image' ) ) : ?>
 
-		<img src="<?php echo esc_url( $image['url'] ); ?>" alt="">
+		<img src="<?php echo esc_url( $image['sizes']['thumbnail'] ); ?>" alt="">
 
 	<?php endif; ?>
 
