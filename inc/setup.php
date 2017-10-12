@@ -20,6 +20,20 @@ function pai_setup() {
 
     load_theme_textdomain( 'pai', get_template_directory() . '/languages' );
     set_post_thumbnail_size( 350, 260, true );
+
+    /**
+     * Add Jetpack Featured Content Support
+     *
+     * @since 0.1.0
+     *
+     * @return void
+     */
+    add_theme_support( 'featured-content', array(
+        'filter'     => 'pai_get_featured_posts',
+        'max_posts'  => 5,
+        'post_types' => array( 'report' ),
+    ) );
+
 }
 add_action( 'after_setup_theme', 'pai_setup', 20 );
 
@@ -45,7 +59,7 @@ function pai_widgets(){
   ) );
 
   register_sidebar( array(
-    'name'          => __( 'Home 1', 'pai' ),
+    'name'          => __( 'Home Widget 1', 'pai' ),
     'id'            => 'home-1',
     'description'   => __( 'Home page widget area 1.', 'pai' ),
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -55,19 +69,9 @@ function pai_widgets(){
   ) );
 
   register_sidebar( array(
-    'name'          => __( 'Home 2', 'pai' ),
+    'name'          => __( 'Home Widget 2', 'pai' ),
     'id'            => 'home-2',
     'description'   => __( 'Home page widget area 2.', 'pai' ),
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</aside>',
-    'before_title'  => '<h3 class="widget-title">',
-    'after_title'   => '</h3>',
-  ) );
-
-  register_sidebar( array(
-    'name'          => __( 'Home 3', 'pai' ),
-    'id'            => 'home-3',
-    'description'   => __( 'Home page widget area 3.', 'pai' ),
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
     'before_title'  => '<h3 class="widget-title">',
