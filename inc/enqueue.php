@@ -47,8 +47,8 @@ function theme_enqueue_styles() {
   $the_theme = wp_get_theme();
 
   wp_enqueue_style( 'pai-google-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif:400,700', array(), null );
-  wp_enqueue_style( 'pai-styles', get_stylesheet_directory_uri() . '/css/style.min.css', array(), $the_theme->get( 'Version' ) );
-  wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false);
+  wp_enqueue_style( 'pai-styles', get_stylesheet_directory_uri() . '/css/style.min.css', array(), null );
+  wp_enqueue_script( 'popper-scripts', get_template_directory_uri() . '/js/popper.min.js', array(), false );
   wp_enqueue_script( 'pai-scripts', get_stylesheet_directory_uri() . '/js/app.min.js', array(), $the_theme->get( 'Version' ), true );
 
 }

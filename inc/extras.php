@@ -46,7 +46,7 @@ function pai_jetpack_remove_share() {
 /**
  * Modify Default Archive title
  *
- * @since 0.0.1
+ * @since 0.1.0
  *
  * @uses get_the_archive_title filter hook
  * @link https://developer.wordpress.org/reference/hooks/get_the_archive_title/
@@ -67,7 +67,7 @@ add_filter( 'get_the_archive_title', 'pai_get_the_archive_title' );
 /**
  * Add Class to Menu Items
  *
- * @since 0.0.1
+ * @since 0.1.0
  *
  * @param array $classes
  * @param obj $item

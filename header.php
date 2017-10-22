@@ -6,7 +6,7 @@
  *
  * @package understrap
  * @subpackage pai
- * @since 0.0.1
+ * @since 0.1.0
  */
 
 $container = get_theme_mod( 'understrap_container_type' );

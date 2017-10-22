@@ -6,13 +6,13 @@
  *
  * @package understrap
  * @subpackage pai
- * @since 0.0.1
+ * @since 0.1.0
  */
 
 /**
  * Basic Theme Set-up
  *
- * @since 0.0.1
+ * @since 0.1.0
  *
  * @return void
  */
@@ -53,7 +53,7 @@ add_image_size( 'slide', 1200, 600, true );
 /**
  * Register Widget Areas
  *
- * @since 0.0.1
+ * @since 0.1.0
  *
  * @uses register_sidebar()
  * @uses widgets_init action hook
@@ -108,7 +108,7 @@ add_action( 'widgets_init', 'pai_widgets' );
  * Add Filters to `meta_content`
  * Ensures that `meta_content` is return like `the_content`
  *
- * @since 0.0.1
+ * @since 0.1.0
  */
 add_filter( 'meta_content', 'wptexturize'        );
 add_filter( 'meta_content', 'convert_smilies'    );
