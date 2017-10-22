@@ -54,6 +54,23 @@ function pai_featured_post_meta() {
 }
 
 /**
+ * Displays Publish Date
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function pai_published_date() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+
+	echo '<span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.
+}
+
+/**
  * Display Custom Excerpt
  *
  * @uses all_excerpts_get_more_link()
