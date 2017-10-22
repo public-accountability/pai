@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20161013 at Tue May  8 13:07:04 2007
+ By ,,,
+Copyright (c) 1991 Adobe Systems Incorporated. All Rights Reserved.Berthold Akzidenz Grotesk is a registered trademark of H. Berthold AG.
+</metadata>
+<defs>
+<font id="AkzidenzGroteskBE-Regular" horiz-adv-x="271" >
+  <font-face 
+    font-family="Berthold Akzidenz Grotesk BE"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    bbox="-4 -229 1119 895"
+    underline-thickness="50"
+    underline-position="-200"
+    unicode-range="U+0020-0192"
+  />
+<missing-glyph 
+ />
+    <glyph glyph-name=".notdef" 
+ />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="333" 
+ />
+    <glyph glyph-name="space" unicode=" " 
+ />
+    <glyph glyph-name="dotlessi" unicode="&#x131;" horiz-adv-x="208" 
+d="M67 471h77v-471h-77v471z" />
+    <glyph glyph-name="Lslash" unicode="&#x141;" horiz-adv-x="521" 
+d="M162 323v-239h342v-84h-436v234l-63 -60v79l63 60v394h94v-307l153 141v-78z" />
+    <glyph glyph-name="lslash" unicode="&#x142;" horiz-adv-x="208" 
+d="M66 706h77v-238l54 49v-70l-54 -50v-397h-77v326l-55 -48v67l55 50v311z" />
+    <glyph glyph-name="OE" unicode="&#x152;" horiz-adv-x="1146" 
+d="M708 320v-238h411v-82h-501v81q-96 -99 -232 -99q-153 0 -244.5 107t-91.5 266q0 161 93 265t253 104q137 0 222 -92v74h490v-85h-400v-219h322v-82h-322zM617 355q0 82 -14 132q-24 81 -81.5 122.5t-130.5 41.5q-106 0 -174 -80.5t-68 -217.5q0 -134 68 -213.5
+t170 -79.5q80 0 138 46q92 74 92 249z" />
+    <glyph glyph-name="oe" unicode="&#x153;" horiz-adv-x="875" 
+d="M751 152l81 -11q-8 -25 -22.5 -48.5t-38.5 -49.5t-63 -41.5t-86 -15.5q-60 0 -107 26t-73 68q-61 -94 -174 -94q-96 0 -161 65t-65 184q0 122 67 186.5t163 64.5q105 0 170 -87q62 87 172 87q111 0 172 -85q49 -70 53 -187h-356q0 -71 40.5 -117.5t105.5 -46.5
+q30 0 53.5 11.5t37 30t20.5 32.5t11 28zM484 274h267q-8 70 -45.5 109t-88.5 39t-89 -39t-44 -109zM403 233q1 88 -37.5 137.5t-99.5 49.5q-63 0 -101 -51.5t-38 -135.5q0 -85 38.5 -132.5t99.5 -47.5q60 0 99 46t39 134z" />
+    <glyph glyph-name="Scaron" unicode="&#x160;" horiz-adv-x="667" 
+d="M382 314l-59 12q-41 8 -66.5 15t-65 23t-62.5 35.5t-40.5 52.5t-17.5 75q0 82 65 137q70 60 189 60t190 -52q73 -53 91 -166l-95 -6q-4 78 -57 117q-47 34 -126 34q-68 0 -114 -28.5t-46 -82.5q0 -22 9.5 -40t21 -28.5t34 -19.5t36 -12.5t38.5 -9.5l78 -20
+q88 -21 111 -31q122 -51 122 -176q0 -110 -90 -171q-74 -50 -192 -50q-22 0 -43.5 2t-58 9t-66.5 23.5t-60 41.5t-48.5 68.5t-22.5 98.5l101 13q3 -88 57 -136q54 -47 145 -47q78 0 127 37t49 104q0 29 -10.5 50.5t-31.5 34.5t-41.5 20t-50.5 13zM393 895h74l-100 -124h-66
+l-105 124h76l62 -76z" />
+    <glyph glyph-name="scaron" unicode="&#x161;" horiz-adv-x="479" 
+d="M265 199l-45 9q-27 6 -40 9.5t-37 12t-37 17.5t-27.5 22.5t-21 32.5t-6.5 43q0 64 50 102t132 38q75 0 133 -38t69 -116l-86 -11q-1 18 -2.5 28t-9 23.5t-22.5 24.5q-36 28 -91 28q-43 0 -68 -21t-25 -48q0 -21 17 -36t37.5 -22t58.5 -16l45 -11q24 -6 38.5 -10t40 -15
+t40 -24t26.5 -36t12 -51q0 -62 -52.5 -105.5t-145.5 -43.5t-146 38q-60 44 -70 128l90 14q-3 -59 35 -92q31 -27 95 -27q53 0 82 20t29 58q0 37 -23 51t-75 24zM295 673h71l-96 -151h-67l-102 151h74l61 -96z" />
+    <glyph glyph-name="Ydieresis" unicode="&#x178;" horiz-adv-x="625" 
+d="M611 706l-254 -383v-323h-95v323l-249 383h112l185 -299l189 299h112zM171 883h87v-102h-87v102zM367 883h87v-102h-87v102z" />
+    <glyph glyph-name="Zcaron" unicode="&#x17d;" horiz-adv-x="604" 
+d="M53 706h508v-88l-434 -533h444v-85h-553v92l436 527h-401v87zM362 895h74l-100 -124h-66l-105 124h76l62 -76z" />
+    <glyph glyph-name="zcaron" unicode="&#x17e;" horiz-adv-x="417" 
+d="M38 471h345v-64l-273 -341h279v-66h-376v66l271 336h-246v69zM274 673h71l-96 -151h-67l-102 151h74l61 -96z" />
+    <glyph glyph-name="florin" unicode="&#x192;" horiz-adv-x="437" 
+d="M334 575l-25 -104h85l-15 -62h-84l-125 -523q-6 -24 -12 -39.5t-18.5 -35t-33.5 -30t-50 -10.5q-27 0 -60 12l15 58q16 -7 31 -7q18 0 30 9q15 10 30 75l115 491h-72l15 62h72l34 132q9 31 15 46t18.5 33t32 25t49.5 7q25 0 56 -10l-14 -60q-17 5 -36 5q-23 0 -32 -14.5
+t-21 -59.5z" />
+  </font>
+</defs></svg>
