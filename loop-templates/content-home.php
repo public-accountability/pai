@@ -3,6 +3,7 @@
  * Partial template for content in page.php
  *
  * @package understrap
+ * @subpackage pai
  */
 
 ?>
@@ -10,7 +11,7 @@
 
 	<header class="entry-header">
 
-		
+
 
 	</header><!-- .entry-header -->
 
@@ -22,7 +23,7 @@
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'pai' ),
 			'after'  => '</div>',
 		) );
 		?>

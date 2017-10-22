@@ -10,12 +10,12 @@
 
 <article <?php post_class( 'hero-content jumbotron' ); ?> id="home-hero">
 
-	<?php if( $heading = get_sub_field( 'heading' ) ) : ?>
+	<?php if( $heading = get_sub_field( 'heading', false, false ) ) : ?>
 
 		<header class="entry-header">
 
-			<?php echo sprintf( '<h1 class="entry-title display-3">%s</h1>',
-				esc_html( $heading )
+			<?php echo sprintf( '<h1 class="entry-title">%s</h1>',
+				apply_filters( 'the_title', $heading )
 		  ); ?>
 
 		</header><!-- .entry-header -->
@@ -24,10 +24,10 @@
 
 	<div class="entry-content">
 
-		<?php if( $text = get_sub_field( 'text' ) ) : ?>
+		<?php if( $text = get_sub_field( 'text', false, false ) ) : ?>
 
-			<?php echo sprintf( '<p class="lead">%s</p>',
-				esc_html( $text )
+			<?php printf( '<h2>%s</h2>',
+				esc_attr( $text )
 		  ); ?>
 
 		<?php endif; ?>

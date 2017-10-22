@@ -48,6 +48,7 @@ update_option( 'thumbnail_crop', 1 );
 update_option( 'medium_size_w', 600 );
 update_option( 'medium_size_h', 600 );
 update_option( 'large_size_w', 1200 );
+add_image_size( 'slide', 1200, 600, true );
 
 /**
  * Register Widget Areas

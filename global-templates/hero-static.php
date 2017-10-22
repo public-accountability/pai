@@ -3,6 +3,7 @@
  * Hero setup.
  *
  * @package understrap
+ * @subpackage pai
  */
 
 ?>
