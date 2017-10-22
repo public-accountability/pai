@@ -7,3 +7,24 @@ figure {
 }
 
 .featured-image {}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  opacity: .8;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 48px;
+  width: 26px;
+
+}
+
+.carousel-control-prev-icon {
+  background-image: url('../images/left-arrow.svg');
+}
+
+.carousel-control-next-icon {
+  background-image: url('../images/right-arrow.svg');
+}

@@ -1,9 +1,80 @@
-html {
-  @include media-breakpoint-up(sm) {}
-  @include media-breakpoint-up(md) {}
-  @include media-breakpoint-up(lg) {}
+body {
+  @include media-breakpoint-up(sm) {
+    font-size: 14px;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+  @include media-breakpoint-up(lg) {
+    /*font-size: 18px;*/
+  }
 }
 
 .screen-reader-text {
   @include visually-hidden;
+}
+
+.entry-terms {
+  &:after {
+    content: ' | ';
+  }
+}
+
+.btn {
+  padding: ($spacer * 1.375) ($spacer * 2.125);
+  background: $white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-width: 2px;
+}
+
+.btn-primary {
+  @extend .btn-outline-primary;
+  color: $body-color;
+  border-color: $body-color;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: $body-color;
+    color: $white;
+    border-color: $body-color;
+  }
+}
+
+.btn-secondary {
+  @extend .btn-outline-secondary;
+}
+
+.btn-success {
+  @extend .btn-outline-success;
+}
+
+.btn-info {
+  @extend .btn-outline-info;
+}
+
+.btn-warning {
+  @extend .btn-outline-warning;
+}
+
+.btn-danger {
+  @extend .btn-outline-danger;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  a {
+    color: $body-color;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: lighten($body-color,10%);
+    }
+  }
 }
