@@ -17,11 +17,17 @@
   }
 }
 
+.widget_subpages_current_page,
+.current-menu-ancestor,
+.current-menu-item  {
+  font-weight: bold;
+}
+
 #wrapper-sectionnav {}
 
 #main-menu {
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: .825rem;
   width: 100%;
   justify-content: space-between;
 
@@ -40,6 +46,9 @@
 
 #section-menu {
 
+  text-transform: uppercase;
+  font-size: .825rem;
+
   ul {
     @include no-bullets;
     display: flex;
@@ -51,10 +60,6 @@
 
     a {
       color: $body-color;
-    }
-
-    &.widget_subpages_current_page {
-      font-weight: bold;
     }
 
   }
