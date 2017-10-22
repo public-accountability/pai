@@ -14,7 +14,7 @@ Uses the Enqueue method the load and sort the CSS file the right way instead of 
 - IMPORTANT: If you download it from GitHub make sure you rename the "understrap-master.zip" file just to "understrap.zip" or you might have problems using this child themes !!
 
 2. Just upload the understrap-child folder to your wp-content/themes directory
-3. Go into your WP admin backend 
+3. Go into your WP admin backend
 4. Go to "Appearance -> Themes"
 5. Activate the UnderStrap Child theme
 
