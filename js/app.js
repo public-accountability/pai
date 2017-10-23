@@ -3862,3 +3862,25 @@ var Popover = function ($) {
 		}, false );
 	}
 })();
+
+/**
+ * Search UI Functions
+ */
+ (function($) {
+
+   var searchButton = jQuery('a[href="#search"]');
+   var searchForm = jQuery('#search');
+
+   searchButton.on('click', function(event) {
+       event.preventDefault();
+       searchForm.addClass('open');
+       jQuery('#search > form > input[type="search"]').focus();
+   });
+
+   jQuery('#search, #search button.close').on('click keyup', function(event) {
+       if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+           jQuery(this).removeClass('open');
+       }
+   });
+
+ })( jQuery );

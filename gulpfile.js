@@ -158,7 +158,7 @@ gulp.task('scripts', function() {
 
         basePaths.dev + 'js/skip-link-focus-fix.js',
 
-        basePaths.dev + 'js/search.js'
+        basePaths.dev + 'js/custom-search.js'
     ];
   gulp.src(scripts)
     .pipe(concat('app.min.js'))
