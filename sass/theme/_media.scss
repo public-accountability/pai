@@ -8,6 +8,10 @@ figure {
 
 .featured-image {}
 
+.carousel-item {
+  backface-visibility: visible;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   width: 10%;
@@ -18,7 +22,6 @@ figure {
 .carousel-control-next-icon {
   height: 48px;
   width: 26px;
-
 }
 
 .carousel-control-prev-icon {

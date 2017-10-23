@@ -10,6 +10,16 @@ body {
   }
 }
 
+$spacer: .8rem;
+
+@include media-breakpoint-up(sm) {
+  $spacer: .9rem;
+}
+
+@include media-breakpoint-up(md) {
+  $spacer: 1rem;
+}
+
 .screen-reader-text {
   @include visually-hidden;
 }

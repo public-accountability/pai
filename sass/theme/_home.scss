@@ -26,6 +26,11 @@
   margin-left: auto;
   margin-right: auto;
 
+  article {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+
   h2 {
     font-size: 1rem;
     font-family: $font-family-base;
@@ -45,8 +50,8 @@
         content:"";
         margin: 0 auto;
         position: absolute;
-        top: 50%; left: 0; right: 0; bottom: 0;
-        width: 95%;
+        top: 36%; left: 0; right: 0; bottom: 0;
+        width: 100%;
         z-index: -1;
     }
 
@@ -88,13 +93,36 @@
 
 /* Static Hero */
 #wrapper-statichero {
-  /*margin-bottom: 150px;*/
-  margin-bottom: ($spacer * 4.375);
+
+  margin-bottom: ($spacer * 8);
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: ($spacer * 11.25);
+  }
 }
 
 /* Slider */
 #featured-research {
-  margin-bottom: 100px;
+  margin-bottom: ($spacer * 6.5);
+
+  @include media-breakpoint-up(md) {
+    .carousel-inner {
+      margin-top: -80px;
+
+      &> article {
+        margin-top: 80px;
+
+        img {
+          object-fit: cover;
+          max-height: 600px;
+        }
+      }
+    }
+    .entry-header {
+      margin-top: -80px;
+    }
+
+  }
 
   .entry-header {
     width: 35%;
@@ -102,8 +130,6 @@
     position: absolute;
     top: 0;
     left: ($spacer * 3.125);
-
-    margin-top: 0;
   }
 
   .featured-category {
@@ -116,6 +142,16 @@
 #our-work {
   width: 100%;
 
+  /* Modified to accommodate larger font size */
+  .section-header {
+
+    &:before {
+        top: 50%;
+    }
+
+    span {}
+  }
+
   h2 {
     font-size: 2.625rem;
     font-family: $headings-font-family;
@@ -124,10 +160,6 @@
   }
 
   article {
-
-    background-repeat: no-repeat;
-    background-size: contain;
-
     margin-bottom: ($spacer * 2);
 
     .entry-content {
@@ -142,14 +174,10 @@
 
   }
 
-  @include media-breakpoint-up(sm) {}
+  @extend .grid;
 
   @include media-breakpoint-up(md) {
-    display: flex;
-    justify-content: space-between;
-
     article {
-      width: 30%;
 
       .entry-content {
         width: 82%;
@@ -166,18 +194,13 @@
 #recent-news {
   width: 100%;
 
-  @include media-breakpoint-up(md) {
-    display: flex;
-    justify-content: space-between;
+  @extend .grid;
 
-    article {
-      width: 30%;
-      padding: $spacer $spacer ($spacer*2) $spacer;
-      background-color: $white;
+  article {
+    padding: $spacer $spacer ($spacer*2) $spacer;
+    background-color: $white;
 
-      .entry-header {}
-
-    }
+    .entry-header {}
 
   }
 
