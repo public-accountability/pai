@@ -2,6 +2,9 @@
 
   >* {
     width: 100%;
+  }
+
+  & > article {
     margin-bottom: $spacer;
   }
 

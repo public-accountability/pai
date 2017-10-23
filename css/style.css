@@ -9132,7 +9132,9 @@ a.skip-link {
  * Screen Reader Text
  */
 .grid > *, #our-work > *, #recent-news > * {
-  width: 100%;
+  width: 100%; }
+
+.grid > article, #our-work > article, #recent-news > article {
   margin-bottom: 1rem; }
 
 @media (min-width: 576px) {
