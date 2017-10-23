@@ -9,7 +9,6 @@
  * @since 0.1.0
  */
 
-
 /**
  * Override Parent Post Excerpt
  *
@@ -127,3 +126,47 @@ function pai_section_wp_nav_menu_objects( $sorted_menu_items, $args ) {
     return $sorted_menu_items;
   }
 }
+
+/**
+ * Add Search Menu Item
+ *
+ * @since 0.1.0
+ *
+ * @uses wp_nav_menu_items filter
+ * @param [type] $items [description]
+ * @param [type] $args  [description]
+ */
+function pai_add_search_menu( $items, $args ) {
+  if( 'primary' === $args->theme_location ) {
+    $items .= sprintf( '<li class="menu-item search-menu"><a id="search-link" href="%s" title="%s" rel="search"><span class="search-icon fa fa-search"></span><span class="screen-reader-text">%s</span></a></li>',
+      esc_attr( '#search' ),
+      esc_attr( __( 'Click to Search Site', 'pai' ) ),
+      esc_attr( __( 'Search', 'pai' ) )
+    );
+  }
+  return $items;
+}
+add_filter( 'wp_nav_menu_items', 'pai_add_search_menu', 10, 2 );
+
+/**
+ * Set up Custom Search
+ *
+ * @since 0.1.0
+ *
+ * @uses get_search_form filter
+ * @link https://developer.wordpress.org/reference/functions/get_search_form/
+ *
+ * @param string $form
+ * @return string $form modified HTML
+ */
+function pai_custom_search_form( $form ) {
+
+  ob_start();
+
+  include( get_stylesheet_directory() .'/global-templates/custom-search.php' );
+
+  $form = ob_get_clean();
+
+  return $form;
+}
+add_filter( 'get_search_form', 'pai_custom_search_form' );
