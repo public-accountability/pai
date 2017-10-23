@@ -114,3 +114,5 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php endif; ?>
 		</nav>
 	</div>
+
+	<?php get_search_form(); ?>
