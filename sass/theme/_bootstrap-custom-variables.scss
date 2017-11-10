@@ -9,11 +9,18 @@
 $black: #000;
 $white: #fff;
 $gray-600: #797979;
+$gray-800: #343434;
+$red: #ff001d;
 $primary: #214a6c;
 
 $body-bg: #f0f0f0;
 $bg-faded: #ccc;
 $body-color: $black;
+$body-color-inverted: $white;
+
+$link-color: $red;
+
+$navbar-dark-color: $white;
 
 $font-family-sans-serif: 'Berthold Akzidenz Grotesk BE', sans-serif;
 $headings-font-family: 'PT Serif', serif;
@@ -23,7 +30,6 @@ $btn-border-radius: 0;
 
 $jumbotron-bg: none;
 
-$navbar-dark-color: $white;
 
 $grid-breakpoints: (
   xs: 0,

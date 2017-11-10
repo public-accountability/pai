@@ -31,3 +31,16 @@ figure {
 .carousel-control-next-icon {
   background-image: url('../images/right-arrow.svg');
 }
+
+img.wp-post-image {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+home-section-item {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+/*-webkit-filter: grayscale(1);
+  filter: grayscale(1);*/
