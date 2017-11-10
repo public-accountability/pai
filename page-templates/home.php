@@ -34,6 +34,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php get_template_part( 'global-templates/section' ); ?>
 
+
+					<?php if( is_active_sidebar( 'page' ) ) : ?>
+
+						<section class="row page-section">
+
+							<header class="section-header col-12">
+								<h2 class="section-heading"><span><?php _e( 'What We Offer', 'pai' ); ?></span></h2>
+							</header>
+
+							<?php dynamic_sidebar( 'page' ) ?>
+
+						</section>
+
+					<?php endif; ?>
+
 				</main><!-- #main -->
 
 			</div><!-- #primary -->
@@ -43,41 +58,5 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div><!-- Container end -->
 
 </div><!-- Wrapper end -->
-
-<?php if ( is_active_sidebar( 'home-1' ) ) : ?>
-
-	<div class="wrapper" id="wrapper-home-1">
-
-		<div class="container">
-			<?php dynamic_sidebar( 'home-1' ); ?>
-		</div>
-
-	</div>
-
-<?php endif; ?>
-
-<?php if ( is_active_sidebar( 'home-2' ) ) : ?>
-
-	<div class="wrapper" id="wrapper-home-2">
-
-		<div class="container">
-			<?php dynamic_sidebar( 'home-2' ); ?>
-		</div>
-
-	</div>
-
-<?php endif; ?>
-
-<?php if ( is_active_sidebar( 'home-3' ) ) : ?>
-
-	<div class="wrapper" id="wrapper-home-3">
-
-		<div class="container">
-			<?php dynamic_sidebar( 'home-3' ); ?>
-		</div>
-
-	</div>
-
-<?php endif; ?>
 
 <?php get_footer(); ?>
