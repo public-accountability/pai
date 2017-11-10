@@ -1,1 +1,56 @@
 .widget-title {}
+
+#wrapper-footer-full,
+#wrapper-footer {
+  background-color: $gray-800;
+}
+
+#wrapper-footer-full {
+  padding-top: 8.75rem;
+  margin-top: -6.25rem;
+  color: $body-color-inverted;
+  font-size: 1rem;
+
+  .row {
+    justify-content: center;
+  }
+
+  .footer-widget {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      flex-basis: 50%;
+    }
+  }
+
+  .widget-title {
+    margin-bottom: 3.75rem;
+    font-family: $font-family-base;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  .entry-footer {
+    margin-top: 3.125rem;
+  }
+
+  .btn-danger {
+    background-color: $red;
+    color: $body-color-inverted;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $body-color-inverted;
+      color: $red;
+    }
+  }
+
+}
+
+#wrapper-footer {
+  text-transform: uppercase;
+  a {
+    color: $body-color-inverted;
+  }
+}

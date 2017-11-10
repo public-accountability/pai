@@ -168,6 +168,11 @@ gulp.task('scripts', function() {
   gulp.src(scripts)
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./js/'));
+
+    gulp.src('.js/custom.js')
+      .pipe(uglify())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest('./js/'));
 });
 
 // Deleting any file inside the /src folder

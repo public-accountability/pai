@@ -21,71 +21,6 @@
 }
 
 /* Sections */
-.home-section {
-
-  margin-left: auto;
-  margin-right: auto;
-
-  article {
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-  }
-
-  h2 {
-    font-size: 1rem;
-    font-family: $font-family-base;
-    text-transform: uppercase;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-top: ($spacer * 5);
-    margin-bottom: ($spacer * 5);
-
-    position: relative;
-    z-index: 1;
-
-    &:before {
-        border-top: 1px solid $gray-600;
-        content:"";
-        margin: 0 auto;
-        position: absolute;
-        top: 36%; left: 0; right: 0; bottom: 0;
-        width: 100%;
-        z-index: -1;
-    }
-
-    span {
-        background: $body-bg;
-        padding: 0 15px;
-    }
-  }
-
-  .entry-header,
-  .entry-content,
-  .entry-media,
-  .entry-footer {
-    background-color: $white;
-  }
-
-  .entry-title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  .entry-header {}
-  .entry-content {}
-  .entry-media {}
-
-  .entry-meta {
-    text-transform: uppercase;
-    font-size: 1rem;
-  }
-
-  .updated {
-    @include visually-hidden;
-  }
-}
 
 #wrapper-hero {
   width: 100%;
@@ -105,6 +40,16 @@
 #featured-research {
   margin-bottom: ($spacer * 6.5);
 
+  .entry-header {
+    padding: $spacer;
+  }
+
+  @include media-breakpoint-down(md) {
+    .entry-header {
+      @include clearfix;
+    }
+  }
+
   @include media-breakpoint-up(md) {
     .carousel-inner {
       margin-top: -80px;
@@ -120,16 +65,12 @@
     }
     .entry-header {
       margin-top: -80px;
+      width: 35%;
+      position: absolute;
+      top: 0;
+      left: ($spacer * 3.125);
     }
 
-  }
-
-  .entry-header {
-    width: 35%;
-    padding: $spacer;
-    position: absolute;
-    top: 0;
-    left: ($spacer * 3.125);
   }
 
   .featured-category {

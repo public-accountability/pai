@@ -72,23 +72,13 @@ function pai_widgets(){
   ) );
 
   register_sidebar( array(
-    'name'          => __( 'Home Widget 1', 'pai' ),
-    'id'            => 'home-1',
-    'description'   => __( 'Home page widget area 1.', 'pai' ),
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</aside>',
-    'before_title'  => '<h3 class="widget-title">',
-    'after_title'   => '</h3>',
-  ) );
-
-  register_sidebar( array(
-    'name'          => __( 'Home Widget 2', 'pai' ),
-    'id'            => 'home-2',
-    'description'   => __( 'Home page widget area 2.', 'pai' ),
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</aside>',
-    'before_title'  => '<h3 class="widget-title">',
-    'after_title'   => '</h3>',
+    'name'          => __( 'Page Widget', 'pai' ),
+    'id'            => 'page',
+    'description'   => __( 'Page widget area.', 'pai' ),
+    'before_widget' => '<article id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</article>',
+    'before_title'  => '<div class="entry-meta">',
+    'after_title'   => '</div>',
   ) );
 
   register_sidebar( array(

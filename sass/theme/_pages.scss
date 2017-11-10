@@ -1,1 +1,139 @@
-.page {}
+.page-template-default {
+  .site-main {
+    & > article {
+
+      .entry-header {
+        @include media-breakpoint-up(md) {
+          margin-bottom: 5rem;
+        }
+      }
+
+      .entry-title {
+        display: inline-block;
+        padding: 1.5rem;
+        background-color: $white;
+      }
+
+      .entry-content {
+        height: auto;
+
+        @include media-breakpoint-up(md) {
+          position: relative;
+        }
+
+        @include clearfix;
+      }
+
+      .entry-body {
+        background-color: $white;
+        font-family: $headings-font-family;
+        padding: 1.875rem;
+
+        @include media-breakpoint-up(md) {
+          position: absolute;
+          top: 0;
+          margin-top: -3.25rem;
+          margin-left: 5.75rem;
+          width: 65%;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+.home-section,
+.page-section {
+
+  margin-left: auto;
+  margin-right: auto;
+
+  article {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-family: $font-family-base;
+    text-transform: uppercase;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-top: ($spacer * 5);
+    margin-bottom: ($spacer * 5);
+
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        border-top: 1px solid $gray-600;
+        content:"";
+        margin: 0 auto;
+        position: absolute;
+        top: 36%; left: 0; right: 0; bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    span {
+        background: $body-bg;
+        padding: 0 15px;
+    }
+  }
+
+  .entry-header,
+  .entry-content,
+  .entry-media,
+  .entry-footer {
+    background-color: $white;
+  }
+
+  .entry-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .entry-header {}
+  .entry-content {}
+  .entry-media {}
+
+  .entry-meta {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  .updated {
+    @include visually-hidden;
+  }
+}
+
+
+.page-section {
+
+  @extend .grid;
+
+  article {
+    padding: $spacer $spacer ($spacer*2) $spacer;
+    background-color: $white;
+
+    .entry-header {}
+
+    .textwidget {
+      font-size: 2rem;
+      font-family: $headings-font-family;
+      color: $body-color;
+      p {
+        font-size: 2rem;
+        font-family: $headings-font-family;
+        font-weight: bold;
+      }
+
+      a {
+        color: $body-color;
+      }
+    }
+  }
+
+}
