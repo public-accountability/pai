@@ -8,9 +8,9 @@
   	var contentHeight = $( content.outerHeight(true) );
 
   	if( $(this).width() >= minWidth ) {
-  		wrapper.css( 'height', content.outerHeight(true) + 'px' );
+  		wrapper.css( 'min-height', content.outerHeight(true) + 'px' );
   	} else {
-  		wrapper.css( 'height', 'auto' );
+  		wrapper.css( 'min-height', 'auto' );
   	}
 
   	$(window).on('resize', function(event) {
@@ -18,9 +18,9 @@
   		var content = $( '.entry-content > .entry-body' );
 
   		if( $(this).width() > minWidth ) {
-  			wrapper.css( 'height', content.outerHeight(true) + 'px' );
+  			wrapper.css( 'min-height', content.outerHeight(true) + 'px' );
   		} else {
-  			wrapper.css( 'height', 'auto' );
+  			wrapper.css( 'min-height', 'auto' );
   		}
   	});
 

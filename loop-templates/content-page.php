@@ -19,8 +19,16 @@
 
 		<?php echo get_the_post_thumbnail( $post->ID, 'slide' ); ?>
 
+		<?php $extended = get_extended( $post->post_content ); ?>
+
 		<div class="entry-body">
-				<?php the_content(); ?>
+
+			<?php if( isset( $extended['extended'] ) && !empty( $extended['extended'] ) ) : ?>
+				<?php echo apply_filters( 'the_excerpt', $extended['main'] ); ?>
+			<?php else : ?>
+				<?php the_excerpt(); ?>
+			<?php endif; ?>
+
 		</div>
 
 		<?php
@@ -33,6 +41,16 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+
+		<div class="entry-main">
+
+			<?php if( isset( $extended['extended'] ) && !empty( $extended['extended'] ) ) : ?>
+				<?php echo apply_filters( 'the_content', $extended['extended'] ); ?>
+			<?php else : ?>
+				<?php the_content(); ?>
+			<?php endif; ?>
+
+		</div>
 
 		<?php edit_post_link( __( 'Edit', 'pai' ), '<span class="edit-link">', '</span>' ); ?>
 
