@@ -69,7 +69,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-family: "PT Serif", serif;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
@@ -3340,7 +3340,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-family: "PT Serif", serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -3422,7 +3422,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-family: "PT Serif", serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1.5;
@@ -7997,6 +7997,12 @@ a.skip-link {
   .grid > *, .page-section > *, #our-work > *, #recent-news > * {
     width: 31%; } }
 
+@media (min-width: 768px) {
+  .col-12,
+  .col-md-12 {
+    padding-right: 0;
+    padding-left: 0; } }
+
 @media (min-width: 576px) {
   body {
     font-size: 14px; } }
@@ -8058,13 +8064,26 @@ h4 a {
   font-family: "PT Serif", serif;
   font-size: 4rem; }
 
+.navbar-nav,
+.btn,
+.entry-meta,
+.section-heading span {
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
+
 .menu {
   margin: 0;
   padding: 0;
   list-style: none; }
 
+.nav .dropdown-toggle .caret {
+  display: none; }
+
 .navbar > .container {
   align-items: center; }
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    align-items: center; } }
 
 .navbar-light {
   background-color: #f0f0f0;
@@ -8079,12 +8098,18 @@ h4 a {
 
 #main-menu {
   text-transform: uppercase;
-  font-size: .825rem;
   width: 100%;
   justify-content: space-between; }
-  @media (min-width: 768px) {
-    #main-menu li {
-      padding-right: 1em; } }
+  #main-menu li {
+    font-size: .825rem; }
+    @media (min-width: 768px) {
+      #main-menu li {
+        padding-right: 1em; } }
+    #main-menu li a {
+      color: #000; }
+  #main-menu .dropdown:hover .dropdown-menu, #main-menu .dropdown:focus .dropdown-menu {
+    display: block;
+    btn-border-radius: 0; }
 
 #section-menu {
   text-transform: uppercase;
@@ -8103,11 +8128,16 @@ h4 a {
       color: #000; }
 
 .jetpack-social-navigation {
-  flex: 0 0 10%;
+  flex: 0 0 100%;
   font-size: 1.25rem; }
   @media (min-width: 768px) {
-    .jetpack-social-navigation ul {
-      margin-bottom: 0 !important; } }
+    .jetpack-social-navigation {
+      flex: 0 0 10%; } }
+  .jetpack-social-navigation ul {
+    display: flex; }
+    @media (min-width: 768px) {
+      .jetpack-social-navigation ul {
+        margin-bottom: 0 !important; } }
 
 .highlight a {
   background-color: #fff;
@@ -8116,7 +8146,7 @@ h4 a {
   padding: .5em 1em; }
   .highlight a:hover, .highlight a:focus, .highlight a:active, .highlight a.active {
     background-color: #000;
-    color: #fff;
+    color: #fff !important;
     border-color: #000;
     text-decoration: none; }
 
@@ -8126,7 +8156,7 @@ h4 a {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: #214a6c;
+  background-color: rgba(33, 74, 108, 0.98);
   z-index: 2;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -8212,7 +8242,8 @@ h4 a {
 .page-template-default .site-main > article .entry-title {
   display: inline-block;
   padding: 1.5rem;
-  background-color: #fff; }
+  background-color: #fff;
+  font-weight: bold; }
 
 .page-template-default .site-main > article .entry-content {
   height: auto; }
@@ -8237,6 +8268,16 @@ h4 a {
       width: 65%;
       font-size: 1.25rem; } }
 
+@media (min-width: 768px) {
+  .page-template-default .site-main > article .entry-main > * {
+    width: 66.666%;
+    padding-left: 100px; } }
+
+@media (min-width: 768px) {
+  .page-template-default .site-main > article .entry-main .section-heading {
+    width: 100%;
+    padding-left: 0; } }
+
 .home-section,
 .page-section {
   margin-left: auto;
@@ -8248,31 +8289,8 @@ h4 a {
   .home-section h2,
   .page-section h2 {
     font-size: 1rem;
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    font-family: "PT Serif", serif;
     text-transform: uppercase; }
-  .home-section .section-header,
-  .page-section .section-header {
-    text-align: center;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    position: relative;
-    z-index: 1; }
-    .home-section .section-header:before,
-    .page-section .section-header:before {
-      border-top: 1px solid #797979;
-      content: "";
-      margin: 0 auto;
-      position: absolute;
-      top: 36%;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      z-index: -1; }
-    .home-section .section-header span,
-    .page-section .section-header span {
-      background: #f0f0f0;
-      padding: 0 15px; }
   .home-section .entry-header,
   .home-section .entry-content,
   .home-section .entry-media,
@@ -8308,9 +8326,35 @@ h4 a {
     .page-section article .textwidget p {
       font-size: 2rem;
       font-family: "PT Serif", serif;
-      font-weight: bold; }
+      font-weight: bold;
+      line-height: 1.1; }
     .page-section article .textwidget a {
       color: #000; }
+
+.section-heading {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+  /*font-size: 1rem;*/
+  font-size: .9375rem;
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  text-transform: uppercase; }
+  .section-heading:before {
+    border-top: 1px solid #797979;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1; }
+  .section-heading span {
+    background: #f0f0f0;
+    padding: 0 1rem; }
 
 #wrapper-footer-full,
 #wrapper-footer {
@@ -8371,6 +8415,16 @@ iframe {
 
 /*-webkit-filter: grayscale(1);
   filter: grayscale(1);*/
+/*.custom-logo-link {
+  img {
+    width: 180px;
+    height: auto;
+  }
+}*/
+.navbar-brand {
+  width: 180px;
+  margin-right: 4rem; }
+
 @media (min-width: 768px) {
   #colophon {
     display: flex;
@@ -8429,10 +8483,9 @@ iframe {
     content: ' | '; }
 
 #our-work {
-  width: 100%;
-  /* Modified to accommodate larger font size */ }
-  #our-work .section-header:before {
-    top: 50%; }
+  width: 100%; }
+  #our-work .section-header span {
+    font-family: "PT Serif", serif; }
   #our-work h2 {
     font-size: 2.625rem;
     font-family: "PT Serif", serif;

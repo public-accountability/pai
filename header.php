@@ -72,7 +72,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						'menu_class'      => 'navbar-nav',
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu',
-						'depth'						=> 1,
+						'depth'						=> 2,
+						'walker'					=> new PAI_WP_Bootstrap_Navwalker
 					)
 				); ?>
 
@@ -92,22 +93,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<?php if ( 'container' == $container ) : ?>
 				<div class="container">
 			<?php endif; ?>
-
-			<?php if( is_active_sidebar( 'section-nav' ) ) : ?>
-				<?php// dynamic_sidebar( 'section-nav' ) ?>
-			<?php endif; ?>
-
-			<?php wp_nav_menu(
-				array(
-					'theme_location'  => 'primary',
-					'container_class' => 'sub-menu',
-					'container_id'    => 'section-navigation',
-					'menu_class'      => 'navbar-nav',
-					'fallback_cb'     => '',
-					'menu_id'         => 'section-menu',
-					'sub_menu' 				=> true,
-				)
-			); ?>
 
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->

@@ -83,12 +83,12 @@
 #our-work {
   width: 100%;
 
-  /* Modified to accommodate larger font size */
   .section-header {
 
-    &:before {
-        top: 50%;
+    span {
+      font-family: $font-family-base;
     }
+
   }
 
   h2 {
