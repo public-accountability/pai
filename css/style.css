@@ -8082,6 +8082,11 @@ h4 a {
   align-items: center; }
 
 @media (min-width: 768px) {
+  .navbar {
+    padding-top: 2.34375rem;
+    padding-bottom: 2.34375rem; } }
+
+@media (min-width: 768px) {
   .navbar-nav {
     align-items: center; } }
 

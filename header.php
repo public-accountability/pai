@@ -77,8 +77,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 
-				<?php if ( function_exists( 'jetpack_social_menu' ) ) jetpack_social_menu(); ?>
-
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>
