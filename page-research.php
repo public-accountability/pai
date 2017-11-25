@@ -46,7 +46,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				) );
 				?>
 
-				<section id="report-series" class="grid-list">
+				<section id="report-series">
 
 					<?php if( !empty( $terms ) ) : ?>
 
@@ -61,6 +61,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 								<?php endif; ?>
 							</head>
 						<?php endif; ?>
+
+						<div class="grid-list">
 
 						<?php foreach( $terms as $term ) : ?>
 
@@ -88,6 +90,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 						<?php endforeach; ?>
 
+						</div>
+
 					<?php endif; ?>
 
 				</section>
@@ -98,7 +102,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				<?php $report_query = new WP_Query( $report_args ); ?>
 
 				<?php if( $report_query->have_posts() ) : ?>
-					<section id="research-reports" class="list-view">
+
+					<section id="research-reports">
 
 						<?php if( $research_reports_heading = get_post_meta( $post->ID, 'research_reports_section_section_title', true ) ) : ?>
 							<head class="section-heading">
@@ -112,15 +117,21 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							</head>
 						<?php endif; ?>
 
+						<div class="post-filter">
+
+						</div>
+
+						<div class="list-view">
+
 						<?php while( $report_query->have_posts() ) : $report_query->the_post(); ?>
 
 							<?php get_template_part( 'loop-templates/content-section', 'report' ); ?>
 
 						<?php endwhile; ?>
-					</section>
 
-					<!-- The pagination component -->
-					<?php understrap_pagination(); ?>
+						</div>
+
+					</section>
 
 				<?php endif; ?>
 
