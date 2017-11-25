@@ -8241,31 +8241,38 @@ h4 a {
   font-size: 1.125rem; }
 
 @media (min-width: 768px) {
-  .page-template-default .site-main > article .entry-header {
+  .page-template-default .site-main > article .entry-header,
+  .page-template-page-research .site-main > article .entry-header {
     margin-bottom: 5rem; } }
 
-.page-template-default .site-main > article .entry-title {
+.page-template-default .site-main > article .entry-title,
+.page-template-page-research .site-main > article .entry-title {
   display: inline-block;
   padding: 1.5rem;
   background-color: #fff;
   font-weight: bold; }
 
-.page-template-default .site-main > article .entry-content {
+.page-template-default .site-main > article .entry-content,
+.page-template-page-research .site-main > article .entry-content {
   height: auto; }
   @media (min-width: 768px) {
-    .page-template-default .site-main > article .entry-content {
+    .page-template-default .site-main > article .entry-content,
+    .page-template-page-research .site-main > article .entry-content {
       position: relative; } }
-  .page-template-default .site-main > article .entry-content:after {
+  .page-template-default .site-main > article .entry-content:after,
+  .page-template-page-research .site-main > article .entry-content:after {
     content: "";
     display: table;
     clear: both; }
 
-.page-template-default .site-main > article .entry-body {
+.page-template-default .site-main > article .entry-body,
+.page-template-page-research .site-main > article .entry-body {
   background-color: #fff;
   font-family: "PT Serif", serif;
   padding: 1.875rem; }
   @media (min-width: 768px) {
-    .page-template-default .site-main > article .entry-body {
+    .page-template-default .site-main > article .entry-body,
+    .page-template-page-research .site-main > article .entry-body {
       position: absolute;
       top: 0;
       margin-top: -3.25rem;
@@ -8274,12 +8281,14 @@ h4 a {
       font-size: 1.25rem; } }
 
 @media (min-width: 768px) {
-  .page-template-default .site-main > article .entry-main > * {
+  .page-template-default .site-main > article .entry-main > *,
+  .page-template-page-research .site-main > article .entry-main > * {
     width: 66.666%;
     padding-left: 100px; } }
 
 @media (min-width: 768px) {
-  .page-template-default .site-main > article .entry-main .section-heading {
+  .page-template-default .site-main > article .entry-main .section-heading,
+  .page-template-page-research .site-main > article .entry-main .section-heading {
     width: 100%;
     padding-left: 0; } }
 
