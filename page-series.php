@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Series Page
+ * Template Name: Series Page Template
  *
  * Template for displaying a list of series
  *
@@ -39,6 +39,20 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					?>
 
 				<?php endwhile; // end of the loop. ?>
+
+				<?php if( is_active_sidebar( 'page' ) ) : ?>
+
+					<section class="row page-section">
+
+						<header class="section-header col-12">
+							<h2 class="section-heading"><span><?php _e( 'What We Offer', 'pai' ); ?></span></h2>
+						</header>
+
+						<?php dynamic_sidebar( 'page' ) ?>
+
+					</section>
+
+				<?php endif; ?>
 
 			</main><!-- #main -->
 
