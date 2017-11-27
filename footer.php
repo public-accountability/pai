@@ -11,6 +11,32 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
+<?php if( is_active_sidebar( 'page' ) ) : ?>
+
+	<div class="wrapper" id="wrapper-page-promo">
+
+		<div class="<?php echo esc_html( $container ); ?>">
+
+			<div class="row">
+
+				<section class="page-section">
+
+					<header class="section-header col-12">
+					<h2 class="section-heading"><span><?php _e( 'What We Offer', 'pai' ); ?></span></h2>
+					</header>
+
+					<?php dynamic_sidebar( 'page' ) ?>
+
+				</section>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<?php endif; ?>
+
 <?php get_sidebar( 'footerfull' ); ?>
 
 <?php if ( is_active_sidebar( 'site-info' ) ) : ?>
