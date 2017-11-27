@@ -12,18 +12,20 @@
 $cat_args = array(
   'show_option_all'    => __( 'All Categories', 'pai' ),
   'hide_if_empty'      => true,
-  'name'               => 'category'
+  'name'               => 'category',
+  'post_type'          => array( 'report' )
 );
 $series_args = array(
   'show_option_all'    => __( 'All Series', 'pai' ),
   'hide_if_empty'      => true,
   'taxonomy'           => 'series',
-  'name'               => 'series'
+  'name'               => 'series',
+  'post_type'          => array( 'report' )
 );
 $archive_args = array(
   'type'               => 'yearly',
   'post_type'          => 'report',
-  'format'             => 'option'
+  'format'             => 'option',
 );
 ?>
 
