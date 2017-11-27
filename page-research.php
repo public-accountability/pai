@@ -117,11 +117,13 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							</head>
 						<?php endif; ?>
 
-						<div class="post-filter">
+						<div id="research-filters" class="post-filter">
+
+							<?php get_template_part( 'global-templates/filters', 'form' ); ?>
 
 						</div>
 
-						<div class="list-view">
+						<div id="research-posts" class="list-view">
 
 						<?php while( $report_query->have_posts() ) : $report_query->the_post(); ?>
 
