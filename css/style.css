@@ -8114,7 +8114,11 @@ h4 a {
       color: #000; }
   #main-menu .dropdown:hover .dropdown-menu, #main-menu .dropdown:focus .dropdown-menu {
     display: block;
-    btn-border-radius: 0; }
+    border-radius: 0;
+    border-color: #fff; }
+  #main-menu .dropdown-menu {
+    margin-top: 0;
+    border-radius: 0; }
 
 #section-menu {
   text-transform: uppercase;

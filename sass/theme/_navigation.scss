@@ -68,9 +68,15 @@
     &:focus {
       .dropdown-menu {
         display: block;
-        btn-border-radius: 0;
+        border-radius: 0;
+        border-color: $white;
       }
     }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    border-radius: 0;
   }
 }
 
