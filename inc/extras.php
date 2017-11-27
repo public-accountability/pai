@@ -189,7 +189,7 @@ add_filter( 'get_search_form', 'pai_custom_search_form' );
 function pai_terms_clauses( $clauses, $taxonomy, $args ) {
   global $wpdb;
 
-  if ( $args['post_type'] ) {
+  if ( isset( $args['post_type'] ) && !empty( $args['post_type'] ) ) {
     $post_types = $args['post_type'];
 
     if ( is_array( $args['post_type'] ) ) {
