@@ -25,7 +25,17 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 					<?php get_template_part( 'loop-templates/content', get_post_type() ); ?>
 
-						<?php understrap_post_nav(); ?>
+					<?php if( is_active_sidebar( 'page' ) ) : ?>
+
+						<section class="page-promo">
+
+							<?php dynamic_sidebar( 'page' ) ?>
+
+						</section>
+
+					<?php endif; ?>
+
+					<?php understrap_post_nav(); ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.

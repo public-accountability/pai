@@ -11,9 +11,9 @@ $the_theme = wp_get_theme();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<?php if( is_active_sidebar( 'page' ) ) : ?>
+<?php if( is_active_sidebar( 'footer-top' ) ) : ?>
 
-	<div class="wrapper" id="wrapper-page-promo">
+	<div class="wrapper" id="wrapper-footer-top">
 
 		<div class="<?php echo esc_html( $container ); ?>">
 
@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<h2 class="section-heading"><span><?php _e( 'What We Offer', 'pai' ); ?></span></h2>
 					</header>
 
-					<?php dynamic_sidebar( 'page' ) ?>
+					<?php dynamic_sidebar( 'footer-top' ) ?>
 
 				</section>
 

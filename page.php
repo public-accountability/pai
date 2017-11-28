@@ -42,6 +42,16 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php endwhile; // end of the loop. ?>
 
+				<?php if( is_active_sidebar( 'page' ) ) : ?>
+
+						<section class="page-promo">
+
+							<?php dynamic_sidebar( 'page' ) ?>
+
+						</section>
+
+				<?php endif; ?>
+
 			</main><!-- #main -->
 
 		</div><!-- #primary -->

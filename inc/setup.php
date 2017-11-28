@@ -72,9 +72,19 @@ function pai_widgets(){
   ) );
 
   register_sidebar( array(
-    'name'          => __( 'Page Widget', 'pai' ),
+    'name'          => __( 'Page Promo', 'pai' ),
     'id'            => 'page',
     'description'   => __( 'Page widget area.', 'pai' ),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => __( 'Footer Top', 'pai' ),
+    'id'            => 'footer-top',
+    'description'   => __( 'Top footer area.', 'pai' ),
     'before_widget' => '<article id="%1$s" class="widget %2$s">',
     'after_widget'  => '</article>',
     'before_title'  => '<div class="entry-meta">',
