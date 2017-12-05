@@ -18,7 +18,7 @@
 
 	<?php if( $excerpt = $post->post_excerpt ) : ?>
 
-		<div class="entry-content">
+		<div class="entry-excerpt">
 
 			<?php esc_html_e( $excerpt, 'pai' ); ?>
 
@@ -28,7 +28,7 @@
 
 	<footer class="entry-footer">
 
-		<div class="entry-meta">
+		<div class="entry-meta post-date">
 
 			<?php pai_published_date(); ?>
 
