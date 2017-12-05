@@ -53,7 +53,15 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 		<!-- Do the right sidebar check -->
 		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-			<?php get_sidebar( 'right' ); ?>
+			<?php if( 'report' === get_post_type() ) : ?>
+
+				<?php get_sidebar( 'report' ); ?>
+
+			<?php else : ?>
+
+				<?php get_sidebar( 'right' ); ?>
+
+			<?php endif; ?>
 
 		<?php endif; ?>
 

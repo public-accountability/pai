@@ -139,7 +139,19 @@
     padding: $spacer $spacer ($spacer*2) $spacer;
     background-color: $white;
 
-    .entry-header {}
+    .entry-header {
+      background-color: transparent;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $secondary;
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
 
   }
 

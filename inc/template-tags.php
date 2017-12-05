@@ -96,3 +96,18 @@ function pai_featured_the_excerpt( $text = null ) {
 
   echo $text;
 }
+
+/**
+ * Display Authors
+ *
+ * @uses coauthors_posts_links
+ *
+ * @return void
+ */
+function pai_the_author_posts_link() {
+  if ( function_exists( 'coauthors_posts_links' ) ) {
+    coauthors_posts_links();
+  } else {
+    the_author_posts_link();
+  }
+}
