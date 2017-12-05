@@ -29,6 +29,21 @@ function understrap_remove_scripts() {
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 /**
+ * Disable JetPack CSS
+ *
+ * @since 0.0.1
+ *
+ * @link https://tjkelly.com/blog/remove-wordpress-jetpack-css/
+ *
+ * @return void
+ */
+function pai_remove_jetpack_styles() {
+  wp_deregister_style( 'sharedaddy' );
+  wp_deregister_style( 'sharing' );
+}
+add_action( 'wp_print_styles', 'pai_remove_jetpack_styles' );
+
+/**
  * Enqueue Styles
  *
  * @since 0.1.0
@@ -38,10 +53,6 @@ add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
  * @return void
  */
 function theme_enqueue_styles() {
-
-  wp_deregister_style( 'sharedaddy' );
-  wp_deregister_style( 'sharing' );
-  wp_deregister_style( 'social-logos' );
 
 	// Get the theme data
   $the_theme = wp_get_theme();
