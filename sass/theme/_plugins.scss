@@ -1,0 +1,60 @@
+.sharing-screen-reader-text {
+  @include visually-hidden;
+}
+
+.sd-sharing {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li {
+    align-self: center;
+    text-align: center;
+  }
+
+  li + li {
+    margin-top: 0 !important;
+  }
+
+  a {
+    @extend .fa;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 2rem;
+    background-color: $body-color;
+    color: $body-color-inverted;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: $primary;
+    }
+
+    &.share-facebook {
+      &:before {
+        content: $fa-var-facebook;
+      }
+    }
+    &.share-twitter {
+      &:before {
+        content: $fa-var-twitter;
+      }
+    }
+    &.share-email {
+      &:before {
+        content: $fa-var-envelope;
+      }
+    }
+    &.share-reddit {
+      &:before {
+        content: $fa-var-reddit;
+      }
+    }
+  }
+  .share-end {
+    display: none;
+  }
+}

@@ -1,19 +1,215 @@
 .single {
 
   /* Single Report */
-  .report {
-    h2,
-    h3 {
+  .content-area {
+
+    .report {
+
+      h1 {
+        font-weight: bold;
+      }
+
+      h2,
+      h3 {
+        font-family: $font-family-sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      h2 {
+        @extend .background-line;
+        margin-top: 3.375rem;
+        margin-bottom: 2.875rem;
+      }
+
+      h3 {
+        margin-top: 2.625rem;
+        margin-bottom: 2.25rem;
+        font-size: 1rem;
+      }
+
+      table {
+        @extend .table;
+      }
+
+      .entry-content {
+        margin-top: 3.125rem;
+      }
+
+      .entry-subtitle {
+        margin-bottom: 1.625rem;
+        font-size: 1.5rem;
+        font-family: $font-family-sans-serif;
+      }
+
+      .entry-meta {
+        ul {
+          @include no-bullets;
+        }
+
+        .categories {
+          margin-bottom: 2.25rem;
+
+          text-transform: uppercase;
+          font-weight: bold;
+
+          a {
+            color: $primary;
+          }
+        }
+      }
+
+      .post-date {
+        margin-bottom: 2.875rem;
+      }
+
+      .authors {
+        font-family: $font-family-sans-serif;
+        text-transform: uppercase;
+
+        a {
+          color: $body-color;
+          text-decoration: underline;
+        }
+
+        .hr {
+          display: block;
+          margin-bottom: 5rem;
+          border-top: 1px solid $black;
+          width: 112px;
+        }
+
+      }
+    }
+
+  }
+
+  .widget-area {
+    font-family: $font-family-sans-serif;
+
+    aside + aside {
+      margin-top: 1.625rem;
+    }
+
+    ul {
+      @include no-bullets;
+
+      li + li {
+        margin-top: .75rem;
+      }
+
+      ul {
+        margin-left: 1rem;
+      }
+    }
+
+    .widgettitle,
+    .widget-title {
       font-family: $font-family-sans-serif;
+      font-size: 1.125rem;
       text-transform: uppercase;
     }
 
-    h2 {
-      @extend .background-line;
-      margin-top: 7.625rem;
-      margin-bottom: 4.25rem;
+    .entry-title {
+      font-family: $font-family-sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      line-height: 1.5rem;
     }
 
+    .btn {
+      display: block;
+      width: 100%;
+    }
+
+    .sd-content {
+      margin-top: 4.125rem;
+    }
+
+    .toc,
+    .ez-toc {
+      padding: 1rem;
+      border: 1px solid $body-color;
+      background-color: $white;
+
+      .widgettitle,
+      .widget-title {
+        color: $secondary;
+      }
+    }
+
+    .related-reports,
+    .press-mentions {
+      .widget-title,
+      .widgettitle {
+        margin-bottom: 1.375rem;
+      }
+    }
+
+    .post-list {
+      li {
+        padding: 1rem 2rem 1rem 1rem;
+        min-height: 100px;
+        background-color: $secondary;
+
+        background-image: url('../images/right-arrow.svg');
+        background-position: right 12px top 24px;
+        background-repeat: no-repeat;
+        background-size: auto 24px;
+
+        color: $body-color-inverted;
+        border-color: $secondary;
+
+        a {
+          color: $body-color-inverted;
+        }
+
+        .entry-excerpt {
+          margin-bottom: .5rem;
+        }
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: $body-color;
+          color: $body-color-inverted;
+          border-color: $body-color;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-left: 2.5rem;
+    }
+  }
+
+}
+
+.single-report {
+
+  #primary {
+    @extend .col-md-9;
+  }
+
+  #right-sidebar {
+
+    .sticky {
+
+      @include media-breakpoint-up(md) {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 10%;
+        margin-top: 5em;
+      }
+
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: table;
+    }
   }
 
 }
