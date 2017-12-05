@@ -24,25 +24,6 @@
  }
 
 /**
- * Remove JetPack Share Links from Content and Excerpt
- *
- * @since 0.0.9
- *
- * @link https://jetpack.com/2013/06/10/moving-sharing-icons/
- *
- * @return void
- */
-function pai_jetpack_remove_share() {
-    remove_filter( 'the_content', 'sharing_display', 19 );
-    remove_filter( 'the_excerpt', 'sharing_display', 19 );
-
-    if ( class_exists( 'Jetpack_Likes' ) ) {
-        remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
-    }
-}
-// add_action( 'loop_start', 'pai_jetpack_remove_share' );
-
-/**
  * Modify Default Archive title
  *
  * @since 0.1.0
