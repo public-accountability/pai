@@ -11,17 +11,34 @@
 
 	<header class="entry-header">
 
+		<div class="entry-meta">
+
+			<?php echo get_the_term_list( $post->ID, 'category', '<ul class="categories"><li>', ',</li><li>', '</li></ul>' ); ?>
+
+		</div><!-- .entry-meta -->
+
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<div class="entry-meta">
+		<?php if( $excerpt = $post->post_excerpt ) : ?>
+			<div class="entry-subtitle">
+				<?php esc_html_e( $excerpt, 'pai' ); ?>
+			</div>
+		<?php endif; ?>
+
+		<div class="entry-meta post-date">
 
 			<?php pai_published_date(); ?>
 
 		</div><!-- .entry-meta -->
 
-	</header><!-- .entry-header -->
+		<div class="entry-meta authors">
+			<span class="hr"></span>
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			<?php pai_the_author_posts_link(); ?>
+
+		</div>
+
+	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 
@@ -37,8 +54,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 
