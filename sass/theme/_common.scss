@@ -88,3 +88,41 @@ h4 {
     }
   }
 }
+
+.background-line {
+  display: table;
+  white-space: nowrap;
+
+  &:after {
+    border-top: 1px solid $body-color;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    width: 100%;
+  }
+  &:after {
+    left: 1.5%;
+  }
+}
+
+.background-line--centered {
+  display: table;
+  white-space: nowrap;
+  
+  &:before,
+  &:after {
+    border-top: 1px solid $body-color;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    width: 45%;
+  }
+  &:before {
+    right: 1.5%;
+  }
+  &:after {
+    left: 1.5%;
+  }
+}

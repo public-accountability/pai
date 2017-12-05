@@ -129,6 +129,16 @@
         color: $body-color;
       }
     }
+
+    &:hover,
+    &:focus {
+      background-color: $secondary;
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
   }
 
 }

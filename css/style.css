@@ -8060,6 +8060,34 @@ h4 a {
   h4 a.active {
     color: #1a1a1a; }
 
+.background-line, .single .report h2 {
+  display: table;
+  white-space: nowrap; }
+  .background-line:after, .single .report h2:after {
+    border-top: 1px solid #000;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    width: 100%; }
+  .background-line:after, .single .report h2:after {
+    left: 1.5%; }
+
+.background-line--centered {
+  display: table;
+  white-space: nowrap; }
+  .background-line--centered:before, .background-line--centered:after {
+    border-top: 1px solid #000;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    width: 45%; }
+  .background-line--centered:before {
+    right: 1.5%; }
+  .background-line--centered:after {
+    left: 1.5%; }
+
 .lead {
   font-family: "PT Serif", serif;
   font-size: 4rem; }
@@ -8244,6 +8272,16 @@ h4 a {
 #search-link .search-icon {
   font-size: 1.125rem; }
 
+.single {
+  /* Single Report */ }
+  .single .report h2,
+  .single .report h3 {
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    text-transform: uppercase; }
+  .single .report h2 {
+    margin-top: 7.625rem;
+    margin-bottom: 4.25rem; }
+
 @media (min-width: 768px) {
   .page-template-default .site-main > article .entry-header,
   .page-template-page-research .site-main > article .entry-header {
@@ -8348,6 +8386,11 @@ h4 a {
       line-height: 1.1; }
     .page-section article .textwidget a {
       color: #000; }
+  .page-section article:hover, .page-section article:focus {
+    background-color: #45acd7;
+    color: #fff; }
+    .page-section article:hover a, .page-section article:focus a {
+      color: #fff; }
 
 .section-heading {
   text-align: center;
@@ -8528,6 +8571,13 @@ iframe {
   #recent-news article {
     padding: 0.8rem 0.8rem 1.6rem 0.8rem;
     background-color: #fff; }
+    #recent-news article .entry-header {
+      background-color: transparent; }
+    #recent-news article:hover, #recent-news article:focus {
+      background-color: #45acd7;
+      color: #fff; }
+      #recent-news article:hover a, #recent-news article:focus a {
+        color: #fff; }
 
 #newsletter .entry-header,
 #newsletter .entry-content,

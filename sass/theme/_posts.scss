@@ -1,1 +1,19 @@
-.single {}
+.single {
+
+  /* Single Report */
+  .report {
+    h2,
+    h3 {
+      font-family: $font-family-sans-serif;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      @extend .background-line;
+      margin-top: 7.625rem;
+      margin-bottom: 4.25rem;
+    }
+
+  }
+
+}
