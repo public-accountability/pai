@@ -111,20 +111,3 @@
   }
   add_action( 'wp_ajax_do_research_filters', 'pai_filter_posts' ); // part after `wp_ajax_` corresponds to action called in JS
   add_action( 'wp_ajax_nopriv_do_research_filters', 'pai_filter_posts' ); // part after `wp_ajax_nopriv_` corresponds to action called in JS
-
- /**
-  * Pre-get Filters
-  *
-  * Filter post query
-  *
-  * @since 0.1.0
-  *
-  * @uses pre_get_posts filter
-  * @link https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
-  *
-  * @param {obj} $query
-  * @return void
-  */
- function pai_pre_get_posts( $query ) {
- }
- add_action( 'pre_get_posts', 'pai_pre_get_posts' );

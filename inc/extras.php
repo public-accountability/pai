@@ -183,3 +183,27 @@ function pai_terms_clauses( $clauses, $taxonomy, $args ) {
   return $clauses;
 }
 add_filter( 'terms_clauses', 'pai_terms_clauses', 99999, 3 );
+
+/**
+ * Pre-get Filters
+ *
+ * Filter post query
+ *
+ * @since 0.1.0
+ *
+ * @uses pre_get_posts filter
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
+ *
+ * @param {obj} $query
+ * @return void
+ */
+function pai_pre_get_posts( $query ) {
+  if( is_admin() || ! $query->is_main_query() ) {
+    return;
+  }
+
+  if( $query->is_archive() ) {
+    $query->set( 'post_type', array( 'post', 'report' ) );
+  }
+}
+add_action( 'pre_get_posts', 'pai_pre_get_posts' );
