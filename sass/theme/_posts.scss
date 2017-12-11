@@ -13,19 +13,40 @@
       h3 {
         font-family: $font-family-sans-serif;
         text-transform: uppercase;
-        font-weight: bold;
       }
 
       h2 {
         @extend .background-line;
-        margin-top: 3.375rem;
+        margin-top: 7.5rem;
         margin-bottom: 2.875rem;
+        font-size: 2rem;
       }
 
       h3 {
         margin-top: 2.625rem;
         margin-bottom: 2.25rem;
         font-size: 1rem;
+        font-weight: bold;
+      }
+
+      p + p {
+        margin-top: 2.25rem;
+      }
+
+      blockquote {
+        margin-top: 4.5rem;
+        margin-bottom: 4.5rem;
+        padding-left: 2.375rem;
+        font-style: italic;
+        border-left: 1px solid $body-color;
+
+        footer {
+          display: inline-block;
+
+          &:before {
+            content: ' - ';
+          }
+        }
       }
 
       table {
@@ -48,13 +69,13 @@
         }
 
         .categories {
-          margin-bottom: 2.25rem;
+          margin-bottom: 2rem;
 
           text-transform: uppercase;
           font-weight: bold;
 
           a {
-            color: $primary;
+            color: $secondary;
           }
         }
       }
@@ -187,6 +208,7 @@
 }
 
 .single-report {
+  font-size: 1.25rem;
 
   #primary {
     @extend .col-md-9;
