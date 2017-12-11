@@ -63,6 +63,9 @@ function pai_get_featured_posts() {
   return apply_filters( 'pai_get_featured_posts', array() );
 }
 
+/**
+ * Get Featured Tag
+ */
 function pai_get_featured_tag() {
   if( class_exists( 'Featured_Content' ) && current_theme_supports( 'featured-content' ) ) {
     $settings = Featured_Content::get_setting();
@@ -111,3 +114,29 @@ function pai_jetpack_remove_share() {
     }
 }
 add_action( 'loop_start', 'pai_jetpack_remove_share' );
+
+/**
+ * Allow Related Posts Functionality for Reports
+ *
+ * @param array $allowed_post_types
+ * @return array $allowed_post_types
+ */
+function pai_allow_cpt_related_posts( $allowed_post_types ) {
+    $allowed_post_types[] = 'report';
+    return $allowed_post_types;
+}
+add_filter( 'rest_api_allowed_post_types', 'pai_allow_cpt_related_posts' );
+
+/**
+ * Remove Related Posts from Default Location
+ *
+ * @return void
+ */
+function pai_remove_default_related_posts() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'pai_remove_default_related_posts', 20 );

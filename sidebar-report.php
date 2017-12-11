@@ -33,6 +33,12 @@
 					</ul>
 
 			</aside>
+		<?php else : ?>
+
+			<?php if( class_exists( 'Jetpack_RelatedPosts' ) ) : ?>
+				<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>
+			<?php endif; ?>
+
 		<?php endif; ?>
 
 		<?php if( function_exists( 'get_field' ) && $press = get_field( 'related_press' ) ) : ?>
