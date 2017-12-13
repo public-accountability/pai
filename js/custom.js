@@ -3,7 +3,7 @@
   var wrapper = $( '.site-main > article .entry-content' );
   var content = $( '.entry-content > .entry-body' );
 
-  if( typeof wrapper !== 'undefined' && typeof content !== 'undefined' ) {
+  if( typeof wrapper != 'undefined' && typeof content != 'undefined' && content.length != 0 ) {
 
   	var contentHeight = $( content.outerHeight(true) );
 

@@ -16,8 +16,10 @@
 }
 
 
-.home #full-width-page-wrapper {
-  padding-top: 0;
+.home {
+  #full-width-page-wrapper {
+    padding-top: 0;
+  }
 }
 
 /* Sections */
@@ -137,7 +139,12 @@
 
   article {
     padding: $spacer $spacer ($spacer*2) $spacer;
-    background-color: $white;
+    background-color: $secondary;
+    color: $white;
+
+    a {
+      color: $white;
+    }
 
     .entry-header {
       background-color: transparent;
@@ -145,12 +152,7 @@
 
     &:hover,
     &:focus {
-      background-color: $secondary;
-      color: $white;
-
-      a {
-        color: $white;
-      }
+      background-color: $body-bg-inverted;
     }
 
   }
