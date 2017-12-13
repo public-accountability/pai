@@ -8737,22 +8737,39 @@ h4 a {
   #wrapper-footer a {
     color: #fff; }
 
-.search-filters label {
-  border: 1px solid #ced4da; }
-
-.search-filters input,
-.search-filters button,
-.search-filters select {
-  padding: 1.125rem;
-  box-shadow: none;
-  border-radius: 0;
-  border: none;
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-  color: #797979; }
-
-.search-filters button {
-  background-color: #ced4da;
-  color: #fff; }
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: -1rem;
+  margin-left: -1rem; }
+  .search-filters label {
+    margin: 1rem;
+    flex: 1 1 auto;
+    border: 1px solid #ced4da; }
+  .search-filters input,
+  .search-filters button,
+  .search-filters select {
+    padding: 1.125rem;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    color: #797979; }
+  .search-filters select {
+    width: 100%;
+    height: 60px; }
+  .search-filters input {
+    width: 75%;
+    margin: 0; }
+  .search-filters button {
+    width: 25%;
+    margin: 0;
+    background-color: #ced4da;
+    cursor: pointer;
+    color: #fff; }
+  .search-filters .search-group {
+    width: 100%; }
 
 iframe {
   border: 0; }
