@@ -8484,77 +8484,43 @@ h1 {
     padding-left: 0; } }
 
 /* Research Page */
-.page-template-page-research {
-  /*.grid-list {
-    @extend .grid;
+.page-template-page-research .site-main h2,
+.page-template-page-research .site-main h3 {
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  text-transform: uppercase; }
 
-    @include media-breakpoint-up(md) {
-      margin-right: -2rem;
-      margin-left: -2rem;
-    }
+.page-template-page-research .site-main h2 {
+  margin-top: 3.375rem;
+  margin-bottom: 2.375rem;
+  font-size: 2rem; }
 
-    article {
-      flex-grow: 1;
+.page-template-page-research .site-main h3 {
+  margin-top: 2.625rem;
+  margin-bottom: 2.25rem;
+  font-size: 1rem;
+  font-weight: bold; }
 
-      @include media-breakpoint-up(md) {
-        flex-basis: calc( 33.333% - 6rem );
-        margin-right: 2rem;
-        margin-left: 2rem;
-      }
+.page-template-page-research .site-main > article .entry-content {
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-size: 1.5rem; }
+  @media (min-width: 768px) {
+    .page-template-page-research .site-main > article .entry-content {
+      padding-right: 7.125rem; } }
 
-      .entry-footer {
-        margin-top: 1.5rem;
-      }
+.page-template-page-research .list-view article {
+  /* First article is featured */ }
+  .page-template-page-research .list-view article:first-of-type {
+    flex-basis: 100%; }
 
-      .understrap-read-more-link {
+.page-template-page-research .form-title {
+  margin-bottom: 2.125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #45acd7; }
 
-        color: $body-color;
-        border-bottom: 1px solid $body-color;
-
-        &:hover,
-        &:focus {
-          text-decoration: none;
-        }
-
-        &:after {
-          @extend .fa;
-          padding-left: .5rem;
-          content: $fa-var-angle-double-right;
-        }
-      }
-    }
-  }*/ }
-  .page-template-page-research .site-main h2,
-  .page-template-page-research .site-main h3 {
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    text-transform: uppercase; }
-  .page-template-page-research .site-main h2 {
-    margin-top: 3.375rem;
-    margin-bottom: 2.375rem;
-    font-size: 2rem; }
-  .page-template-page-research .site-main h3 {
-    margin-top: 2.625rem;
-    margin-bottom: 2.25rem;
-    font-size: 1rem;
-    font-weight: bold; }
-  .page-template-page-research .site-main > article .entry-content {
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    font-size: 1.5rem; }
-    @media (min-width: 768px) {
-      .page-template-page-research .site-main > article .entry-content {
-        padding-right: 7.125rem; } }
-  .page-template-page-research .list-view article {
-    /* First article is featured */ }
-    .page-template-page-research .list-view article:first-of-type {
-      flex-basis: 100%; }
-  .page-template-page-research .form-title {
-    margin-bottom: 2.125rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #45acd7; }
-  .page-template-page-research .post-filter {
-    margin-top: 4.625rem;
-    margin-bottom: 5rem; }
+.page-template-page-research .post-filter {
+  margin-top: 4.625rem;
+  margin-bottom: 5rem; }
 
 #report-series-wrapper h2,
 #report-series-wrapper h3,
@@ -8607,6 +8573,14 @@ h1 {
     .category .taxonomy-description,
     .tax-series .taxonomy-description {
       padding-right: 7.125rem; } }
+
+/* Report Series Page */
+.page-template-page-series .grid-list .entry-title {
+  margin-top: 1.25rem;
+  font-weight: bold;
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase; }
 
 .home-section,
 .page-section {
