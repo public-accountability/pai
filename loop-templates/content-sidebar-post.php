@@ -1,24 +1,18 @@
 <?php
 /**
- * Report post partial template.
+ * Widget post partial template.
  *
  * @package understrap
  * @subpackage pai
  */
 
 ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<li <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
-		<div class="entry-meta">
-
-			<?php echo get_the_term_list( $post->ID, 'category', '<ul class="categories"><li>', ',</li><li>', '</li></ul>' ); ?>
-
-		</div><!-- .entry-meta -->
-
-		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink( $post->ID ) ) ),
-		'</a></h3>' ); ?>
+		<?php the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink( $post->ID ) ) ),
+		'</a></h4>' ); ?>
 
 	</header><!-- .entry-header -->
 
@@ -42,4 +36,4 @@
 
 	</footer><!-- .entry-footer -->
 
-</article><!-- #post-## -->
+</li><!-- #post-## -->

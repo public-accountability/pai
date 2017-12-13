@@ -8728,6 +8728,17 @@ h1 {
     .single .widget-area {
       padding-left: 2.5rem; } }
 
+.page-promo {
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #f0f0f0; }
+  .page-promo .widget-title,
+  .page-promo .widgettitle {
+    margin-bottom: 1rem;
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    text-transform: uppercase; }
+
 #wrapper-footer-full,
 #wrapper-footer {
   background-color: #343434; }

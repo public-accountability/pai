@@ -1,18 +1,27 @@
 <?php
 /**
- * Widget post partial template.
+ * Post list partial template.
  *
  * @package understrap
  * @subpackage pai
  */
 
 ?>
-<li <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
-		<?php the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink( $post->ID ) ) ),
-		'</a></h4>' ); ?>
+		<?php if( is_category( 'press-mention' ) && ( $source_url = get_post_meta( $post->ID, 'source_url', true ) ) ) : ?>
+
+			<?php the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark" target="_blank">', esc_url( $source_url ) ),
+			'</a></h4>' ); ?>
+
+		<?php else : ?>
+
+			<?php the_title( sprintf( '<h4 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink( $post->ID ) ) ),
+			'</a></h4>' ); ?>
+
+		<?php endif; ?>
 
 	</header><!-- .entry-header -->
 
@@ -28,6 +37,14 @@
 
 	<footer class="entry-footer">
 
+		<?php if( is_category( 'press-mention' ) && ( $publication = get_post_meta( $post->ID, 'publication', true ) ) ) : ?>
+
+			<div class="entry-meta source-publication">
+				<?php esc_html_e( $publication ); ?>
+			</div>
+
+		<?php endif; ?>
+
 		<div class="entry-meta post-date">
 
 			<?php pai_published_date(); ?>
@@ -36,4 +53,4 @@
 
 	</footer><!-- .entry-footer -->
 
-</li><!-- #post-## -->
+</article><!-- #post-## -->
