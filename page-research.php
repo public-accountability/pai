@@ -69,7 +69,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			) );
 			?>
 
-			<section id="report-series">
+			<section id="report-series" class="col-md-12">
 
 				<?php if( !empty( $terms ) ) : ?>
 
@@ -138,7 +138,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<?php if( $report_query->have_posts() ) : ?>
 
-				<section id="research-reports">
+				<section id="research-reports" class="col-md-12">
 
 					<?php if( $research_reports_heading = get_post_meta( $post->ID, 'research_reports_section_section_title', true ) ) : ?>
 						<head class="section-heading">
