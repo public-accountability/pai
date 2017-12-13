@@ -14,7 +14,9 @@ $red: #ff001d;
 $primary: #214a6c;
 $secondary: #45acd7;
 
-$body-bg: #f0f0f0;
+$body-bg: $white;
+$body-bg-alt: #f0f0f0;
+$body-bg-inverted: $black;
 $bg-faded: #ccc;
 $body-color: $black;
 $body-color-inverted: $white;

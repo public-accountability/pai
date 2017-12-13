@@ -140,3 +140,13 @@ h4 {
     padding: 0 1rem;
   }
 }
+
+.entry-meta {
+  .categories {
+    @include no-bullets;
+  }
+
+  .entry-date {
+    font-family: $font-family-sans-serif;
+  }
+}

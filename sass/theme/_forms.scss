@@ -1,0 +1,25 @@
+.search-filters {
+  label {
+    border: 1px solid $gray-400;
+  }
+
+  input,
+  button,
+  select {
+    padding: 1.125rem;
+    box-shadow: none;
+    border-radius: $btn-border-radius;
+    border: none;
+    font-family: $font-family-sans-serif;
+    color: $text-muted;
+  }
+
+  select {
+    &:focus {}
+  }
+
+  button {
+    background-color: $gray-400;
+    color: $body-color-inverted;
+  }
+}
