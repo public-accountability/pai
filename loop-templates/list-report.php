@@ -1,6 +1,6 @@
 <?php
 /**
- * Widget post partial template.
+ * Report post partial template.
  *
  * @package understrap
  * @subpackage pai
