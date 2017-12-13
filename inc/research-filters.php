@@ -17,11 +17,12 @@
   * @return void
   */
   function pai_research_filters_enqueue_scripts() {
-    /**
-    * frontend ajax requests.
+   /**
+    * Frontend AJAX requests.
     */
     if( is_page( 'research' ) ) {
-      wp_enqueue_script( 'pai-research-filters', get_stylesheet_directory_uri() . '/js/research-filters.js', array('jquery'), null, true );
+      wp_deregister_script( 'jquery-slim' );
+      wp_enqueue_script( 'pai-research-filters', get_stylesheet_directory_uri() . '/js/research-filters.js', array( 'jquery' ), null, true );
       wp_localize_script( 'pai-research-filters', 'research_filters',
         array(
           'nonce'         => wp_create_nonce( 'pai_research_filters' ),
@@ -89,7 +90,7 @@
       while( $posts_query->have_posts() ) :
         $posts_query->the_post();
 
-        get_template_part( 'loop-templates/content-section', 'report' );
+        get_template_part( 'loop-templates/list', 'report' );
 
       endwhile;
 
