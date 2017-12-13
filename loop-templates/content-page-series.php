@@ -60,13 +60,13 @@ $terms = get_terms( array(
 
 				<div class="entry-content">
 
-					<?php echo $term->description; ?>
+					<?php echo apply_filters( 'the_content', $term->description ); ?>
 
 				</div><!-- .entry-content -->
 
 				<footer class="entry-footer">
 
-					<p><a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark" class="understrap-read-more-link"><?php _e( 'View the Series', 'pai' ); ?></a></p>
+					<p><a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark" class="understrap-read-more-link read-more"><?php _e( 'View the Series', 'pai' ); ?></a></p>
 
 				</footer><!-- .entry-footer -->
 
