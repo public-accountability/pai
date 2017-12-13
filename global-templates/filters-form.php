@@ -32,11 +32,10 @@ $archive_args = array(
 <h3 class="form-title"><?php esc_html_e( 'Filter Reports', 'pai' ); ?></h3>
 
 <form role="search" method="get" id="searchform" class="searchform search-filters" action="<?php home_url( '/' ); ?> ">
-	<label for="s">
+	<label for="s" class="search-fields">
     <span class="screen-reader-text"><?php esc_html_e( 'Search For', 'pai' ); ?></span>
     <div class="search-group">
-      <input type="search" value="<?php get_search_query(); ?>" name="s" id="s" placeholder="<?php _e( 'Search', 'pai' ); ?>" />
-  		<button type="submit"><span class="fa fa-long-arrow-right"></span><span class="screen-reader-text"><?php _e( 'Search', 'pai' ); ?></span></button>
+      <input type="search" value="<?php get_search_query(); ?>" name="s" id="s" placeholder="<?php _e( 'Search', 'pai' ); ?>" /><button type="submit"><span class="fa fa-long-arrow-right"></span><span class="screen-reader-text"><?php _e( 'Search', 'pai' ); ?></span></button>
     </div>
   </label>
   <label for="category" class="select-field">
