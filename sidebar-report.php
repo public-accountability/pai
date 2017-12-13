@@ -49,7 +49,7 @@
 				<ul class="post-list">
 
 					<?php foreach( $press as $post ) : ?>
-						<?php get_template_part( 'loop-templates/list', 'post' ) ?>
+						<?php get_template_part( 'loop-templates/content', 'sidebar-post' ) ?>
 					<?php endforeach; ?>
 
 				</ul>
