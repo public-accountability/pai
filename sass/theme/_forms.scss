@@ -46,3 +46,17 @@
     width: 100%;
   }
 }
+
+.form-title {
+  margin-bottom: 2.125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font-family-sans-serif;
+  color: $secondary;
+}
+
+.post-filter {
+  margin-top: 4.625rem;
+  margin-bottom: 5rem;
+}

@@ -3,14 +3,13 @@
   /**
    * Variables
    */
-  var contentEl = $( '#research-posts' );
+  var contentEl = $( '.js-results' );
 
-  var searchForm = $( '#searchform' );
-  var searchSubmit = $( '#research-filters :button' );
-  var filterEl = $( '#research-filters select' );
+  var searchForm = $( '.js-filter-form' );
+  var searchSubmit = $( '.js-search-submit' );
+  var filterEl = $( '.js-filter-form select' );
 
-  var searchField = $( '#research-filters input[type="search"]' );
-  var filterOptions = $( '#research-filters select' );
+  var searchField = $( '.js-search-field' );
 
   var page = 1;
   var args = {};
@@ -23,7 +22,7 @@
 
     args['s'] = searchField.val();
 
-    filterOptions.each( function( i, value ) {
+    $(this).each( function( i, value ) {
       var value = $(this).val();
       if( value.length !== 0 ) {
         args[$(this).closest('select').attr('name')] = value;
@@ -43,7 +42,7 @@
 
     args['s'] = searchField.val();
 
-    filterOptions.each( function( i, value ) {
+    $(this).each( function( index, value ) {
       var value = $(this).val();
       if( value.length !== 0 ) {
         args[$(this).closest('select').attr('name')] = value;

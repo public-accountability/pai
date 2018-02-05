@@ -36,11 +36,17 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						<?php endif; ?>
 						<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						//the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
+
+						<?php if( is_post_type_archive( 'report' ) ) : ?>
+
+							<?php get_template_part( 'global-templates/filters-form' ); ?>
+
+						<?php endif; ?>
 					</header><!-- .page-header -->
 
-					<div class="list-view">
+					<div class="list-view js-results">
 
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>

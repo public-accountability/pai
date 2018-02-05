@@ -56,128 +56,50 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 </div><!-- Wrapper end -->
 
-<div id="report-series-wrapper" class="wrapper">
+<?php if( function_exists( 'have_rows' ) && have_rows( 'subpages' ) ) : ?>
 
-	<div class="container">
+	<div class="research-sections-wrapper" class="wrapper">
 
-		<div class="row">
+		<div class="container">
 
-			<?php
-			$terms = get_terms( array(
-					'taxonomy' 		=> 'series',
-					'hide_empty' 	=> true,
-			) );
-			?>
+			<div class="row">
 
-			<section id="report-series" class="col-md-12">
+				<section id="report-series" class="grid-list">
 
-				<?php if( !empty( $terms ) ) : ?>
+						<?php while( have_rows( 'subpages' ) ) :
+							the_row(); ?>
 
-					<?php if( $report_series_heading = get_post_meta( $post->ID, 'research_series_section_section_title', true ) ) : ?>
-						<head class="section-heading">
-							<h2 class="section-title"><?php echo esc_html_e( $report_series_heading, 'pai' ); ?></h2>
+							<?php if( $page = get_sub_field( 'page' ) ) : ?>
 
-							<?php if( $report_series_description = get_post_meta( $post->ID, 'research_series_section_section_description', true ) ) : ?>
+								<article class="page">
 
-								<div class="section-description"><?php echo $report_series_description; ?></div>
+									<header class="entry-header">
+										<?php echo sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">%s</a></h2>',
+											esc_url( $page['url'] ),
+											apply_filters( 'the_title', $page['title'] )
+										 ); ?>
+									</header>
 
-							<?php endif; ?>
-						</head>
-					<?php endif; ?>
+									<?php if( $description = get_sub_field( 'page_description' ) ) : ?>
+										<div class="entry-content">
+											<?php echo apply_filters( 'the_excerpt', $description ); ?>
+										</div>
+									<?php endif; ?>
 
-					<div class="grid-list">
-
-					<?php foreach( $terms as $term ) : ?>
-
-						<article class="term" id="term-<?php echo $term->term_id; ?>">
-
-							<header class="entry-header">
-
-								<h3 class="entry-title"><a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark"><?php echo esc_attr( $term->name ); ?></a></h3>
-
-							</header><!-- .entry-header -->
-
-							<div class="entry-content">
-
-								<?php echo $term->description; ?>
-
-							</div><!-- .entry-content -->
-
-							<footer class="entry-footer">
-
-								<p><a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark" class="understrap-read-more-link"><?php _e( 'View the Series', 'pai' ); ?></a></p>
-
-							</footer><!-- .entry-footer -->
-
-						</article><!-- #post-## -->
-
-					<?php endforeach; ?>
-
-					</div>
-
-				<?php endif; ?>
-
-			</section><!-- #report-series -->
-
-		</div><!-- .row-->
-
-	</div><!-- Container end -->
-
-</div><!-- #report-series-wrapper -->
-
-<div id="research-reports-wrapper" class="wrapper">
-
-	<div class="container">
-
-		<div class="row">
-
-			<?php $report_args = array(
-				'post_type'		=> 'report',
-			); ?>
-			<?php $report_query = new WP_Query( $report_args ); ?>
-
-			<?php if( $report_query->have_posts() ) : ?>
-
-				<section id="research-reports" class="col-md-12">
-
-					<?php if( $research_reports_heading = get_post_meta( $post->ID, 'research_reports_section_section_title', true ) ) : ?>
-						<head class="section-heading">
-							<h2 class="section-title"><?php echo esc_html_e( $research_reports_heading, 'pai' ); ?></h2>
-
-							<?php if( $research_reports_description = get_post_meta( $post->ID, 'research_reports_section_section_description', true ) ) : ?>
-
-								<div class="section-description"><?php echo $research_reports_description; ?></div>
+								</article>
 
 							<?php endif; ?>
-						</head>
-					<?php endif; ?>
 
-					<div id="research-filters" class="post-filter">
+						<?php endwhile; ?>
 
-						<?php get_template_part( 'global-templates/filters', 'form' ); ?>
+				</section><!-- #report-series -->
 
-					</div>
+			</div>
 
-					<div id="research-posts" class="list-view">
+		</div>
 
-					<?php $count = 1; ?>
+	</div>
 
-					<?php while( $report_query->have_posts() ) : $report_query->the_post(); ?>
-
-						<?php get_template_part( 'loop-templates/list', 'report' ); ?>
-
-					<?php endwhile; ?>
-
-					</div>
-
-				</section><!-- #research-reports -->
-
-			<?php endif; ?>
-
-		</div><!-- .row-->
-
-	</div><!-- Container end -->
-
-</div><!-- #research-reports-wrapper -->
+<?php endif; ?>
 
 <?php get_footer(); ?>

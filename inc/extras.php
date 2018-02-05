@@ -46,7 +46,6 @@ function pai_get_the_archive_title( $title ) {
 }
 add_filter( 'get_the_archive_title', 'pai_get_the_archive_title' );
 
-add_filter( 'wp_nav_menu_objects', 'pai_section_wp_nav_menu_objects', 10, 2 );
 /**
  * Second-level Navigation
  * Display the second level nav items for current page
@@ -109,6 +108,7 @@ function pai_section_wp_nav_menu_objects( $sorted_menu_items, $args ) {
     return $sorted_menu_items;
   }
 }
+add_filter( 'wp_nav_menu_objects', 'pai_section_wp_nav_menu_objects', 10, 2 );
 
 /**
  * Add Search Menu Item
@@ -116,8 +116,8 @@ function pai_section_wp_nav_menu_objects( $sorted_menu_items, $args ) {
  * @since 0.1.0
  *
  * @uses wp_nav_menu_items filter
- * @param [type] $items [description]
- * @param [type] $args  [description]
+ * @param array $items
+ * @param array $args
  */
 function pai_add_search_menu( $items, $args ) {
   if( 'primary' === $args->theme_location ) {
@@ -166,8 +166,8 @@ add_filter( 'get_search_form', 'pai_custom_search_form' );
  *
  * @param array $clauses
  * @param string $taxonomy
- * @param $args array
- * @return $clauses array
+ * @param array $args
+ * @return array $clauses
  */
 function pai_terms_clauses( $clauses, $taxonomy, $args ) {
   global $wpdb;
@@ -185,27 +185,3 @@ function pai_terms_clauses( $clauses, $taxonomy, $args ) {
   return $clauses;
 }
 add_filter( 'terms_clauses', 'pai_terms_clauses', 99999, 3 );
-
-/**
- * Pre-get Filters
- *
- * Filter post query
- *
- * @since 0.1.0
- *
- * @uses pre_get_posts filter
- * @link https://codex.wordpress.org/Plugin_API/Action_Reference/pre_get_posts
- *
- * @param {obj} $query
- * @return void
- */
-function pai_pre_get_posts( $query ) {
-  if( is_admin() || ! $query->is_main_query() ) {
-    return;
-  }
-
-  if( $query->is_archive() ) {
-    $query->set( 'post_type', array( 'post', 'report' ) );
-  }
-}
-add_action( 'pre_get_posts', 'pai_pre_get_posts' );
