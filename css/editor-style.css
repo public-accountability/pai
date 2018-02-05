@@ -8512,16 +8512,6 @@ h1 {
   .page-template-page-research .list-view article:first-of-type {
     flex-basis: 100%; }
 
-.page-template-page-research .form-title {
-  margin-bottom: 2.125rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #45acd7; }
-
-.page-template-page-research .post-filter {
-  margin-top: 4.625rem;
-  margin-bottom: 5rem; }
-
 #report-series-wrapper h2,
 #report-series-wrapper h3,
 #research-reports-wrapper h2,
@@ -8807,6 +8797,18 @@ h1 {
     color: #fff; }
   .search-filters .search-group {
     width: 100%; }
+
+.form-title {
+  margin-bottom: 2.125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  color: #45acd7; }
+
+.post-filter {
+  margin-top: 4.625rem;
+  margin-bottom: 5rem; }
 
 iframe {
   border: 0; }
