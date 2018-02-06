@@ -150,3 +150,57 @@ h4 {
     font-family: $font-family-sans-serif;
   }
 }
+
+%primary-grid-item {
+  padding: .8rem;
+  background-color: $secondary;
+  color: $body-color-inverted;
+
+  a {
+    color: $body-color-inverted;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $body-color;
+  }
+}
+
+%secondary-grid-item {
+  padding: .8rem;
+  border: 1px solid $body-color;
+  background: $body-bg;
+  color: $body-color;
+
+  a {
+    color: $body-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $secondary;
+    background-color: $secondary;
+    color: $body-color-inverted;
+
+    a {
+      color: $body-color-inverted;
+    }
+  }
+}
+
+%right-arrow {
+  background-image: url('../images/right-arrow.svg');
+  background-position: right 2.5rem bottom 2.5rem;
+  background-repeat: no-repeat;
+  background-size: auto 38px;
+}
