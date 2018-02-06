@@ -58,26 +58,25 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 <?php if( function_exists( 'have_rows' ) && have_rows( 'subpages' ) ) : ?>
 
-	<div class="research-sections-wrapper" class="wrapper">
+	<div id="research-sections-wrapper" class="wrapper">
 
 		<div class="container">
 
 			<div class="row">
 
-				<section id="report-series" class="grid-list">
+				<section id="research-subpages" class="list-view research-pages">
 
 						<?php while( have_rows( 'subpages' ) ) :
 							the_row(); ?>
 
 							<?php if( $page = get_sub_field( 'page' ) ) : ?>
 
-								<article class="page">
+								<article class="subpage">
+
+									<a href="<?php echo esc_url( $page['url'] ); ?>" title="<?php echo esc_attr( $page['title'] ); ?>" rel="bookmark">
 
 									<header class="entry-header">
-										<?php echo sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">%s</a></h2>',
-											esc_url( $page['url'] ),
-											apply_filters( 'the_title', $page['title'] )
-										 ); ?>
+										<h2 class="entry-title"><?php echo apply_filters( 'the_title', $page['title'] ); ?></h2>
 									</header>
 
 									<?php if( $description = get_sub_field( 'page_description' ) ) : ?>
@@ -85,6 +84,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 											<?php echo apply_filters( 'the_excerpt', $description ); ?>
 										</div>
 									<?php endif; ?>
+
+								</a>
 
 								</article>
 

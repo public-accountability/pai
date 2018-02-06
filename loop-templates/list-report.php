@@ -9,16 +9,17 @@
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
+	<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" title="<?php echo esc_attr( $post->post_name ); ?>" rel="bookmark">
+
 	<header class="entry-header">
 
-		<div class="entry-meta">
+		<div class="entry-meta entry-categories">
 
 			<?php echo get_the_term_list( $post->ID, 'category', '<ul class="categories"><li>', ',</li><li>', '</li></ul>' ); ?>
 
 		</div><!-- .entry-meta -->
 
-		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink( $post->ID ) ) ),
-		'</a></h3>' ); ?>
+		<h3 class="entry-title"><?php the_title(); ?></h3>
 
 	</header><!-- .entry-header -->
 
@@ -26,7 +27,7 @@
 
 		<div class="entry-excerpt">
 
-			<?php esc_html_e( $excerpt, 'pai' ); ?>
+			<?php echo apply_filters( 'the_excerpt', $excerpt ); ?>
 
 		</div><!-- .entry-content -->
 

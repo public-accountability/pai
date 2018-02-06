@@ -8114,6 +8114,41 @@ h4 a {
 .entry-meta .entry-date {
   font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
 
+.list-view article, #recent-news article {
+  padding: .8rem;
+  background-color: #45acd7;
+  color: #fff; }
+  .list-view article a, #recent-news article a {
+    color: #fff; }
+    .list-view article a:hover, #recent-news article a:hover, .list-view article a:focus, #recent-news article a:focus {
+      text-decoration: none; }
+  .list-view article:hover, #recent-news article:hover, .list-view article:focus, #recent-news article:focus {
+    background-color: #000; }
+
+.list-view .subpage, .page-section article {
+  padding: .8rem;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000; }
+  .list-view .subpage a, .page-section article a {
+    color: #000; }
+    .list-view .subpage a:hover, .page-section article a:hover, .list-view .subpage a:focus, .page-section article a:focus {
+      text-decoration: none; }
+  .list-view .subpage:hover, .page-section article:hover, .list-view .subpage:focus, .page-section article:focus {
+    border-color: #45acd7;
+    background-color: #45acd7;
+    color: #fff; }
+    .list-view .subpage:hover a, .page-section article:hover a, .list-view .subpage:focus a, .page-section article:focus a {
+      color: #fff; }
+
+.list-view .post,
+.list-view .report,
+.list-view .series {
+  background-image: url("../images/right-arrow.svg");
+  background-position: right 2.5rem bottom 2.5rem;
+  background-repeat: no-repeat;
+  background-size: auto 38px; }
+
 h1 {
   margin-bottom: 2rem; }
 
@@ -8381,34 +8416,35 @@ h1 {
   .list-view article {
     padding: 2.5rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: #45acd7;
-    color: #fff;
-    background-image: url("../images/right-arrow.svg");
-    background-position: right 2.5rem bottom 2.5rem;
-    background-repeat: no-repeat;
-    background-size: auto 38px; }
-    .list-view article a {
-      color: #fff; }
+    margin-bottom: 1rem; }
+    .list-view article h2,
     .list-view article h3 {
-      margin-top: 1.25rem;
       font-weight: bold;
       font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
       text-transform: uppercase; }
     .list-view article .entry-content,
     .list-view article .entry-excerpt {
-      margin-bottom: 4rem;
       font-size: 1.125rem; }
-      .list-view article .entry-content:p,
-      .list-view article .entry-excerpt:p {
+      .list-view article .entry-content p,
+      .list-view article .entry-excerpt p {
         font-size: 1.125rem; }
     @media (min-width: 768px) {
       .list-view article {
         flex: 1 1 calc( 50% - 2rem);
         margin-right: 1rem;
         margin-left: 1rem; } }
-    .list-view article:hover, .list-view article:focus {
-      background-color: #000; }
+  .list-view .post,
+  .list-view .report,
+  .list-view .series {
+    padding-bottom: 4rem; }
+    .list-view .post .entry-footer,
+    .list-view .report .entry-footer,
+    .list-view .series .entry-footer {
+      margin-top: 2rem; }
+  .list-view .subpage {
+    padding: 2.5rem; }
+  .list-view .report .entry-header .entry-meta {
+    margin-bottom: 1.25rem; }
   .list-view .entry-meta {
     text-transform: uppercase; }
   @media (min-width: 768px) {
@@ -8440,138 +8476,94 @@ h1 {
       padding-left: .5rem;
       content: ""; }
 
-@media (min-width: 768px) {
-  .page-template-default .site-main > article .entry-header {
-    margin-bottom: 5rem; } }
+.page-template-default {
+  /* .site-main {
+    & > article {
 
-.page-template-default .site-main > article .entry-title {
-  display: inline-block;
-  padding: 1.5rem;
-  background-color: #fff;
-  font-weight: bold; }
+      .entry-header {
+        @include media-breakpoint-up(md) {
+          margin-bottom: 5rem;
+        }
+      }
 
-.page-template-default .site-main > article .entry-content {
-  height: auto; }
+      .entry-title {
+        display: inline-block;
+        padding: 1.5rem;
+        background-color: $white;
+        font-weight: bold;
+      }
+
+      .entry-content {
+        height: auto;
+
+        @include media-breakpoint-up(md) {
+          position: relative;
+        }
+
+        @include clearfix;
+      }
+
+      .entry-body {
+        background-color: $white;
+        font-family: $headings-font-family;
+        padding: 1.875rem;
+
+        @include media-breakpoint-up(md) {
+          position: absolute;
+          top: 0;
+          margin-top: -3.25rem;
+          margin-left: 5.75rem;
+          width: 65%;
+          font-size: 1.25rem;
+        }
+      }
+
+      .entry-main {
+        > * {
+          @include media-breakpoint-up(md) {
+            width: 66.666%;
+            padding-left: 100px;
+          }
+        }
+
+        .section-heading {
+          @include media-breakpoint-up(md) {
+            width: 100%;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  } */ }
+
+.page-template-default .page .entry-content,
+.page-template-page-research .page .entry-content,
+.page-template-page-series .page .entry-content {
+  font-size: 1.5rem;
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
   @media (min-width: 768px) {
-    .page-template-default .site-main > article .entry-content {
-      position: relative; } }
-  .page-template-default .site-main > article .entry-content:after {
-    content: "";
-    display: table;
-    clear: both; }
+    .page-template-default .page .entry-content,
+    .page-template-page-research .page .entry-content,
+    .page-template-page-series .page .entry-content {
+      padding-right: 15%; } }
 
-.page-template-default .site-main > article .entry-body {
-  background-color: #fff;
-  font-family: "PT Serif", serif;
-  padding: 1.875rem; }
-  @media (min-width: 768px) {
-    .page-template-default .site-main > article .entry-body {
-      position: absolute;
-      top: 0;
-      margin-top: -3.25rem;
-      margin-left: 5.75rem;
-      width: 65%;
-      font-size: 1.25rem; } }
-
-@media (min-width: 768px) {
-  .page-template-default .site-main > article .entry-main > * {
-    width: 66.666%;
-    padding-left: 100px; } }
-
-@media (min-width: 768px) {
-  .page-template-default .site-main > article .entry-main .section-heading {
-    width: 100%;
-    padding-left: 0; } }
-
-/* Research Page */
-.page-template-page-research .site-main h2,
-.page-template-page-research .site-main h3 {
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-  text-transform: uppercase; }
-
-.page-template-page-research .site-main h2 {
-  margin-top: 3.375rem;
-  margin-bottom: 2.375rem;
-  font-size: 2rem; }
-
-.page-template-page-research .site-main h3 {
-  margin-top: 2.625rem;
-  margin-bottom: 2.25rem;
-  font-size: 1rem;
-  font-weight: bold; }
-
-.page-template-page-research .site-main > article .entry-content {
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-  font-size: 1.5rem; }
-  @media (min-width: 768px) {
-    .page-template-page-research .site-main > article .entry-content {
-      padding-right: 7.125rem; } }
-
-.page-template-page-research .list-view article {
-  /* First article is featured */ }
-  .page-template-page-research .list-view article:first-of-type {
-    flex-basis: 100%; }
-
-#report-series-wrapper h2,
-#report-series-wrapper h3,
-#research-reports-wrapper h2,
-#research-reports-wrapper h3 {
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-  text-transform: uppercase; }
-
-#report-series-wrapper h2,
-#research-reports-wrapper h2 {
-  margin-top: 3.375rem;
-  margin-bottom: 2.375rem;
-  font-size: 2rem; }
-
-#report-series-wrapper .section-description,
-#research-reports-wrapper .section-description {
-  margin-bottom: 2rem;
-  font-size: 1.25rem; }
-  @media (min-width: 768px) {
-    #report-series-wrapper .section-description,
-    #research-reports-wrapper .section-description {
-      width: 75%; } }
+.page-template-default .page .entry-footer,
+.page-template-page-research .page .entry-footer,
+.page-template-page-series .page .entry-footer {
+  margin-top: 2rem; }
 
 #report-series-wrapper article,
-#research-reports-wrapper article {
+#research-sections-wrapper article {
   /* Featured */ }
   #report-series-wrapper article:first-of-type .entry-excerpt,
-  #research-reports-wrapper article:first-of-type .entry-excerpt {
+  #research-sections-wrapper article:first-of-type .entry-excerpt {
     font-size: 1.75rem; }
 
 #report-series-wrapper {
   background-color: #f0f0f0; }
-  #report-series-wrapper h3 {
-    font-size: 1rem; }
 
 /* Archive  */
-.category .taxonomy-title,
-.tax-series .taxonomy-title {
-  margin-bottom: 2.375rem;
-  text-transform: uppercase;
-  color: #45acd7;
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-  font-weight: bold; }
-
-.category .taxonomy-description,
-.tax-series .taxonomy-description {
-  font-size: 1.5rem;
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
-  @media (min-width: 768px) {
-    .category .taxonomy-description,
-    .tax-series .taxonomy-description {
-      padding-right: 7.125rem; } }
-
 /* Report Series Page */
-.page-template-page-series .grid-list .entry-title {
-  margin-top: 1.25rem;
-  font-weight: bold;
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase; }
-
 .home-section,
 .page-section {
   margin-left: auto;
@@ -8610,25 +8602,14 @@ h1 {
     overflow: hidden;
     position: absolute !important; }
 
-.page-section article {
-  padding: 0.8rem 0.8rem 1.6rem 0.8rem;
-  background-color: #fff; }
-  .page-section article .textwidget {
+.page-section article .textwidget {
+  font-size: 2rem;
+  font-family: "PT Serif", serif; }
+  .page-section article .textwidget p {
     font-size: 2rem;
     font-family: "PT Serif", serif;
-    color: #000; }
-    .page-section article .textwidget p {
-      font-size: 2rem;
-      font-family: "PT Serif", serif;
-      font-weight: bold;
-      line-height: 1.1; }
-    .page-section article .textwidget a {
-      color: #000; }
-  .page-section article:hover, .page-section article:focus {
-    background-color: #45acd7;
-    color: #fff; }
-    .page-section article:hover a, .page-section article:focus a {
-      color: #fff; }
+    font-weight: bold;
+    line-height: 1.1; }
 
 .section-heading {
   text-align: center;
@@ -8924,7 +8905,8 @@ iframe {
 #featured-research {
   margin-bottom: 5.2rem; }
   #featured-research .entry-header {
-    padding: 0.8rem; }
+    padding: 0.8rem;
+    border: 1px solid #000; }
   @media (max-width: 991px) {
     #featured-research .entry-header:after {
       content: "";
@@ -8968,20 +8950,13 @@ iframe {
     #our-work article .entry-content {
       width: 82%;
       margin-left: auto;
-      margin-right: auto; } }
+      margin-right: auto;
+      border: 1px solid #000; } }
 
 #recent-news {
   width: 100%; }
-  #recent-news article {
-    padding: 0.8rem 0.8rem 1.6rem 0.8rem;
-    background-color: #45acd7;
-    color: #fff; }
-    #recent-news article a {
-      color: #fff; }
-    #recent-news article .entry-header {
-      background-color: transparent; }
-    #recent-news article:hover, #recent-news article:focus {
-      background-color: #000; }
+  #recent-news article .entry-header {
+    background-color: transparent; }
 
 #newsletter .entry-header,
 #newsletter .entry-content,

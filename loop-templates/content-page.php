@@ -17,8 +17,6 @@
 
 	<div class="entry-content">
 
-		<?php echo get_the_post_thumbnail( $post->ID, 'slide' ); ?>
-
 		<?php $extended = get_extended( $post->post_content ); ?>
 
 		<div class="entry-body">
@@ -26,7 +24,7 @@
 			<?php if( isset( $extended['extended'] ) && !empty( $extended['extended'] ) ) : ?>
 				<?php echo apply_filters( 'the_excerpt', $extended['main'] ); ?>
 			<?php else : ?>
-				<?php the_excerpt(); ?>
+				<?php the_content(); ?>
 			<?php endif; ?>
 
 		</div>

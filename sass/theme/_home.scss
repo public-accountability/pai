@@ -44,6 +44,7 @@
 
   .entry-header {
     padding: $spacer;
+    border: 1px solid $body-color;
   }
 
   @include media-breakpoint-down(md) {
@@ -124,6 +125,7 @@
         width: 82%;
         margin-left: auto;
         margin-right: auto;
+        border: 1px solid $body-color;
       }
 
     }
@@ -138,21 +140,10 @@
   @extend .grid;
 
   article {
-    padding: $spacer $spacer ($spacer*2) $spacer;
-    background-color: $secondary;
-    color: $white;
-
-    a {
-      color: $white;
-    }
+    @extend %primary-grid-item;
 
     .entry-header {
       background-color: transparent;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: $body-bg-inverted;
     }
 
   }

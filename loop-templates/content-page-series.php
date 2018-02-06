@@ -44,17 +44,19 @@ $terms = get_terms( array(
 ) );
 ?>
 
-<div class="grid-list">
+<section id="report-series-section" class="list-view reports-list">
 
 	<?php if( !empty( $terms ) ) : ?>
 
 		<?php foreach( $terms as $term ) : ?>
 
-			<article class="term" id="term-<?php echo $term->term_id; ?>">
+			<article class="series" id="series-<?php echo $term->slug; ?>">
+
+				<a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark">
 
 				<header class="entry-header">
 
-					<h2 class="entry-title"><a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark"><?php echo esc_attr( $term->name ); ?></a></h2>
+					<h2 class="entry-title"><?php echo esc_attr( $term->name ); ?></h2>
 
 				</header><!-- .entry-header -->
 
@@ -64,16 +66,14 @@ $terms = get_terms( array(
 
 				</div><!-- .entry-content -->
 
-				<footer class="entry-footer">
+				<footer class="entry-footer"></footer><!-- .entry-footer -->
 
-					<p><a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark" class="understrap-read-more-link read-more"><?php _e( 'View the Series', 'pai' ); ?></a></p>
-
-				</footer><!-- .entry-footer -->
-
+				</a>
+				
 			</article><!-- #post-## -->
 
 		<?php endforeach; ?>
 
 	<?php endif; ?>
 
-</div><!-- .grid-list -->
+</section><!-- .list-view -->
