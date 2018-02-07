@@ -86,8 +86,8 @@ function pai_widgets(){
     'name'          => __( 'Footer Top', 'pai' ),
     'id'            => 'footer-top',
     'description'   => __( 'Top footer area.', 'pai' ),
-    'before_widget' => '<article id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</article>',
+    'before_widget' => '<div class="grid-item widget-item"><article id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</article></div><!-- .grid-item -->',
     'before_title'  => '<div class="entry-meta">',
     'after_title'   => '</div>',
   ) );

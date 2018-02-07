@@ -1,4 +1,29 @@
-.widget-title {}
+.page-section {
+
+  .grid-item {
+    
+    &.widget-item {
+      display: flex;
+    }
+  }
+
+  article {
+    @extend %secondary-grid-item;
+
+    .textwidget {
+      font-size: 2rem;
+      font-family: $headings-font-family;
+      p {
+        font-size: 2rem;
+        font-family: $headings-font-family;
+        font-weight: bold;
+        line-height: 1.1;
+      }
+    }
+
+  }
+
+}
 
 .single {
   .widget-area {

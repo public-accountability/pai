@@ -11,6 +11,8 @@
 
 	<!-- ******************* Featured Content ******************* -->
 
+	<div class="container">
+
 	<div id="carouselExampleControls" class="carousel slide featured-content" data-ride="carousel">
 
 		<div class="carousel-inner" role="listbox">
@@ -48,6 +50,9 @@
 		</a>
 
 	</div><!-- .carousel -->
+
+</div>
+
 
 </div>
 

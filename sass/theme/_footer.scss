@@ -2,11 +2,22 @@
 
 #colophon {
 
-  @include media-breakpoint-up(md) {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .widget {}
 
+}
+
+#wrapper-footer-top {
+  .grid-item {
+    @extend .col-md-4;
+  }
+
+  @include media-breakpoint-down(md) {
+    .grid-item + .grid-item {
+      margin-top: 2rem;
+    }
+  }
+  
+  .widget {
+    @extend %secondary-grid-item;
+  }
 }

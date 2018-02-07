@@ -88,10 +88,15 @@
     if( $posts_query->have_posts() ) {
 
       while( $posts_query->have_posts() ) :
-        $posts_query->the_post();
+        $posts_query->the_post(); ?>
 
-        get_template_part( 'loop-templates/list', 'report' );
+        <div class="grid-item">
 
+          <?php get_template_part( 'loop-templates/list', 'report' ); ?>
+
+        </div><!-- .grid-item -->
+
+      <?php
       endwhile;
 
     } else {

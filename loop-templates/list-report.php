@@ -9,38 +9,41 @@
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>" title="<?php echo esc_attr( $post->post_name ); ?>" rel="bookmark">
+		<header class="entry-header">
 
-	<header class="entry-header">
+			<div class="entry-meta entry-categories">
 
-		<div class="entry-meta entry-categories">
+				<?php echo get_the_term_list( $post->ID, 'category', '<ul class="categories"><li>', ',</li><li>', '</li></ul>' ); ?>
 
-			<?php echo get_the_term_list( $post->ID, 'category', '<ul class="categories"><li>', ',</li><li>', '</li></ul>' ); ?>
+			</div><!-- .entry-meta -->
 
-		</div><!-- .entry-meta -->
+			<?php the_title(
+				sprintf( '<h2 class="entry-title"><a href="%s" class="block-link" title="%s" rel="bookmark">',
+				 esc_url( get_permalink( $post->ID ) ),
+				 esc_attr( $post->post_title )
+				),
+			'</a></h2>' ); ?>
 
-		<h3 class="entry-title"><?php the_title(); ?></h3>
+		</header><!-- .entry-header -->
 
-	</header><!-- .entry-header -->
+		<?php if( $excerpt = $post->post_excerpt ) : ?>
 
-	<?php if( $excerpt = $post->post_excerpt ) : ?>
+			<div class="entry-excerpt">
 
-		<div class="entry-excerpt">
+				<?php echo apply_filters( 'the_excerpt', $excerpt ); ?>
 
-			<?php echo apply_filters( 'the_excerpt', $excerpt ); ?>
+			</div><!-- .entry-content -->
 
-		</div><!-- .entry-content -->
+		<?php endif; ?>
 
-	<?php endif; ?>
+		<footer class="entry-footer">
 
-	<footer class="entry-footer">
+			<div class="entry-meta post-date">
 
-		<div class="entry-meta post-date">
+				<?php pai_published_date(); ?>
 
-			<?php pai_published_date(); ?>
+			</div><!-- .entry-meta -->
 
-		</div><!-- .entry-meta -->
-
-	</footer><!-- .entry-footer -->
+		</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

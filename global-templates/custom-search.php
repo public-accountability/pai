@@ -10,7 +10,7 @@
 
 <div id="search">
     <button type="button" class="close"><?php _e( '×', 'pai' ); ?> </button>
-    <form role="search" method="get" id="searchform" class="searchform" action="<?php home_url( '/' ); ?> ">
+    <form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url( '/' ); ?> ">
 			<label class="screen-reader-text" for="s"><?php _e( 'Search for:', 'pai' ); ?></label>
       <div class="search-group">
         <input type="search" value="<?php get_search_query(); ?> " name="s" id="s" placeholder="<?php _e( 'Search', 'pai' ); ?>" />

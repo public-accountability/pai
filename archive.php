@@ -36,7 +36,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						<?php endif; ?>
 						<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						//the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 
 						<?php if( is_post_type_archive( 'report' ) ) : ?>
@@ -46,24 +46,28 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						<?php endif; ?>
 					</header><!-- .page-header -->
 
-					<div class="list-view js-results">
+						<section class="list-view row js-results">
 
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php
+							<div class="grid-item">
 
-							/*
-							 * Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'loop-templates/list', get_post_type() );
-							?>
+								<?php
+
+								/*
+								 * Include the Post-Format-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								 */
+								get_template_part( 'loop-templates/list', get_post_type() );
+								?>
+
+							</div><!-- .grid-item -->
 
 						<?php endwhile; ?>
 
-					</div>
+					</section>
 
 				<?php else : ?>
 
@@ -85,7 +89,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 		<?php endif; ?>
 
-	</div> <!-- .row -->
+	 </div><!-- .row -->
 
 </div><!-- Container end -->
 

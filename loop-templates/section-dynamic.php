@@ -41,10 +41,15 @@ $section_query = new WP_Query( $args );
 if( $section_query->have_posts() ) : ?>
 
 	<?php
-	while( $section_query->have_posts() ) : $section_query->the_post() ;
+	while( $section_query->have_posts() ) : $section_query->the_post() ; ?>
 
-	get_template_part( 'loop-templates/content-section', get_post_type() );
+	<div class="grid-item">
 
+		<?php get_template_part( 'loop-templates/list', get_post_type() ); ?>
+
+	</div><!-- .grid-item -->
+
+	<?php
 	endwhile;
 
 	wp_reset_postdata();
