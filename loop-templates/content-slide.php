@@ -9,7 +9,7 @@
 ?>
 <article <?php post_class( 'carousel-item' ); ?> id="post-<?php the_ID(); ?>">
 
-	<?php the_post_thumbnail( get_the_id(), 'slide' ); ?>
+	<?php the_post_thumbnail( get_the_id(), 'slide', array( 'class' => 'slider-image' ) ); ?>
 
 	<header class="entry-header">
 

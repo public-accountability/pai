@@ -3,7 +3,6 @@
  * Partial template for content in page.php
  *
  * @package understrap
- * @subpackage pai
  */
 
 ?>
@@ -15,23 +14,13 @@
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content page-content">
 
-		<?php $extended = get_extended( $post->post_content ); ?>
-
-		<div class="entry-body">
-
-			<?php if( isset( $extended['extended'] ) && !empty( $extended['extended'] ) ) : ?>
-				<?php echo apply_filters( 'the_excerpt', $extended['main'] ); ?>
-			<?php else : ?>
-				<?php the_content(); ?>
-			<?php endif; ?>
-
-		</div>
+		<?php the_content(); ?>
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'pai' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -40,17 +29,7 @@
 
 	<footer class="entry-footer">
 
-		<div class="entry-main">
-
-			<?php if( isset( $extended['extended'] ) && !empty( $extended['extended'] ) ) : ?>
-				<?php echo apply_filters( 'the_content', $extended['extended'] ); ?>
-			<?php else : ?>
-				<?php the_content(); ?>
-			<?php endif; ?>
-
-		</div>
-
-		<?php edit_post_link( __( 'Edit', 'pai' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-footer -->
 

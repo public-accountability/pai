@@ -14,7 +14,7 @@
 
 		<header class="entry-header">
 
-			<?php echo sprintf( '<h1 class="entry-title">%s</h1>',
+			<?php echo sprintf( '<h1 class="entry-title screen-reader-text">%s</h1>',
 				apply_filters( 'the_title', $heading )
 		  ); ?>
 

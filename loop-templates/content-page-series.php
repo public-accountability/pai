@@ -16,7 +16,7 @@
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="entry-content">
+	<div class="entry-content page-content">
 
 		<?php the_content(); ?>
 
@@ -44,33 +44,37 @@ $terms = get_terms( array(
 ) );
 ?>
 
-<section id="report-series-section" class="list-view reports-list">
+<section id="report-series-section" class="list-view reports-list row">
 
 	<?php if( !empty( $terms ) ) : ?>
 
 		<?php foreach( $terms as $term ) : ?>
 
-			<article class="series" id="series-<?php echo $term->slug; ?>">
+			<div class="grid-item">
 
-				<a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark">
+				<article class="series" id="series-<?php echo $term->slug; ?>">
 
-				<header class="entry-header">
+					<a href="<?php echo esc_url( get_term_link( $term->term_id ) ); ?>" title="<?php echo esc_attr( $term->name ); ?>" rel="bookmark">
 
-					<h2 class="entry-title"><?php echo esc_attr( $term->name ); ?></h2>
+					<header class="entry-header">
 
-				</header><!-- .entry-header -->
+						<h2 class="entry-title"><?php echo esc_attr( $term->name ); ?></h2>
 
-				<div class="entry-content">
+					</header><!-- .entry-header -->
 
-					<?php echo apply_filters( 'the_content', $term->description ); ?>
+					<div class="entry-content">
 
-				</div><!-- .entry-content -->
+						<?php echo apply_filters( 'the_content', $term->description ); ?>
 
-				<footer class="entry-footer"></footer><!-- .entry-footer -->
+					</div><!-- .entry-content -->
 
-				</a>
-				
-			</article><!-- #post-## -->
+					<footer class="entry-footer"></footer><!-- .entry-footer -->
+
+					</a>
+
+				</article><!-- #post-## -->
+
+			</div><!-- .grid-item -->
 
 		<?php endforeach; ?>
 

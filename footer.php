@@ -17,19 +17,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="<?php echo esc_html( $container ); ?>">
 
-			<div class="row">
-
-				<section class="page-section">
+				<section class="page-section row">
 
 					<header class="section-header col-12">
-					<h2 class="section-heading"><span><?php _e( 'What We Offer', 'pai' ); ?></span></h2>
+						<h2 class="section-heading"><span><?php _e( 'What We Offer', 'pai' ); ?></span></h2>
 					</header>
 
 					<?php dynamic_sidebar( 'footer-top' ) ?>
 
 				</section>
-
-			</div>
 
 		</div>
 

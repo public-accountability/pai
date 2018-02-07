@@ -43,7 +43,7 @@ $section_query = new WP_Query( $args );
 
 	<!-- ******************* Featured Content ******************* -->
 
-	<div id="carouselControls" class="carousel slide featured-content" data-ride="carousel">
+	<div id="carouselControls" class="carousel slide featured-content container" data-ride="carousel">
 
 		<div class="carousel-inner" role="listbox">
 
