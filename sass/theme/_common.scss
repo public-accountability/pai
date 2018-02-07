@@ -1,6 +1,6 @@
 body {
   @include media-breakpoint-up(sm) {
-    font-size: 14px;
+    font-size: 15px;
   }
   @include media-breakpoint-up(md) {
     font-size: 16px;
@@ -151,6 +151,7 @@ h4 {
   }
 }
 
+
 %primary-grid-item {
   padding: .8rem;
   background-color: $secondary;
@@ -161,6 +162,7 @@ h4 {
 
     &:hover,
     &:focus {
+      color: $body-color-inverted;
       text-decoration: none;
     }
   }
@@ -168,6 +170,32 @@ h4 {
   &:hover,
   &:focus {
     background-color: $body-color;
+  }
+}
+
+%alternate-grid-item {
+  padding: .8rem;
+  background: $body-bg-alt;
+  color: $body-color;
+
+  a {
+    color: $body-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $body-color;
+    background-color: $body-color;
+    color: $body-color-inverted;
+
+    a {
+      color: $body-color-inverted;
+    }
   }
 }
 
@@ -202,5 +230,51 @@ h4 {
   background-image: url('../images/right-arrow.svg');
   background-position: right 2.5rem bottom 2.5rem;
   background-repeat: no-repeat;
-  background-size: auto 38px;
+  background-size: auto 2.375rem;
+
+  .entry-footer {
+    padding-bottom: 1rem;
+  }
+}
+
+.section-header {
+  @extend .col-md-12;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+  font-size: .9375rem;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  &:before {
+      border-top: 1px solid $gray-600;
+      content:"";
+      margin: 0 auto;
+      position: absolute;
+      top: 50%; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      z-index: -1;
+  }
+
+  span {
+      background: $body-bg;
+      padding: 0 1rem;
+  }
 }

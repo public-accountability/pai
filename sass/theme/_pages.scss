@@ -1,64 +1,3 @@
-.page-template-default {
-  /* .site-main {
-    & > article {
-
-      .entry-header {
-        @include media-breakpoint-up(md) {
-          margin-bottom: 5rem;
-        }
-      }
-
-      .entry-title {
-        display: inline-block;
-        padding: 1.5rem;
-        background-color: $white;
-        font-weight: bold;
-      }
-
-      .entry-content {
-        height: auto;
-
-        @include media-breakpoint-up(md) {
-          position: relative;
-        }
-
-        @include clearfix;
-      }
-
-      .entry-body {
-        background-color: $white;
-        font-family: $headings-font-family;
-        padding: 1.875rem;
-
-        @include media-breakpoint-up(md) {
-          position: absolute;
-          top: 0;
-          margin-top: -3.25rem;
-          margin-left: 5.75rem;
-          width: 65%;
-          font-size: 1.25rem;
-        }
-      }
-
-      .entry-main {
-        > * {
-          @include media-breakpoint-up(md) {
-            width: 66.666%;
-            padding-left: 100px;
-          }
-        }
-
-        .section-heading {
-          @include media-breakpoint-up(md) {
-            width: 100%;
-            padding-left: 0;
-          }
-        }
-      }
-    }
-  } */
-}
-
 .page-template-default,
 .page-template-page-research,
 .page-template-page-series {
@@ -67,11 +6,12 @@
 
     .entry-content {
 
-      font-size: 1.5rem;
-      font-family: $font-family-sans-serif;
+      p:first-of-type {
+        @extend .lead;
 
-      @include media-breakpoint-up(md) {
-        padding-right: 15%;
+        @include media-breakpoint-up(md) {
+          padding-right: 15%;
+        }
       }
 
     }
@@ -80,129 +20,5 @@
       margin-top: 2rem;
     }
 
-  }
-}
-
-#report-series-wrapper,
-#research-sections-wrapper {
-
-  article {
-
-    /* Featured */
-    &:first-of-type {
-
-      .entry-excerpt {
-        font-size: 1.75rem;
-      }
-
-    }
-  }
-
-}
-
-#report-series-wrapper {
-  background-color: $body-bg-alt;
-}
-
-#research-series-wrapper {}
-
-/* Archive  */
-.category,
-.tax-series {}
-
-/* Report Series Page */
-.page-template-page-series {}
-
-.home-section,
-.page-section {
-
-  margin-left: auto;
-  margin-right: auto;
-
-  article {
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-  }
-
-  h2 {
-    font-size: 1rem;
-    font-family: $font-family-base;
-    text-transform: uppercase;
-  }
-
-  .entry-header,
-  .entry-content,
-  .entry-media,
-  .entry-footer {
-    background-color: $white;
-  }
-
-  .entry-title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  .entry-header {}
-  .entry-content {}
-  .entry-media {}
-
-  .entry-meta {
-    text-transform: uppercase;
-    font-size: 1rem;
-  }
-
-  .updated {
-    @include visually-hidden;
-  }
-}
-
-
-.page-section {
-
-  @extend .grid;
-
-  article {
-    @extend %secondary-grid-item;
-
-    .textwidget {
-      font-size: 2rem;
-      font-family: $headings-font-family;
-      p {
-        font-size: 2rem;
-        font-family: $headings-font-family;
-        font-weight: bold;
-        line-height: 1.1;
-      }
-    }
-
-  }
-
-}
-
-.section-heading {
-  text-align: center;
-  margin-top: ($spacer * 5);
-  margin-bottom: ($spacer * 5);
-
-  position: relative;
-  z-index: 1;
-
-  font-size: .9375rem;
-  font-family: $font-family-sans-serif;
-  text-transform: uppercase;
-
-  &:before {
-      border-top: 1px solid $gray-600;
-      content:"";
-      margin: 0 auto;
-      position: absolute;
-      top: 50%; left: 0; right: 0; bottom: 0;
-      width: 100%;
-      z-index: -1;
-  }
-
-  span {
-      background: $body-bg;
-      padding: 0 1rem;
   }
 }

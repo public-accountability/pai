@@ -15,36 +15,36 @@
   }
 }
 
-
-.home {
-  #full-width-page-wrapper {
-    padding-top: 0;
+.home-section {
+  .grid-item {
+    @extend .col-md-4;
   }
+
+  @include media-breakpoint-down(md) {
+    .grid-item + .grid-item {
+      margin-top: 2rem;
+    }
+  }
+
 }
 
-/* Sections */
-
-#wrapper-hero {
-  width: 100%;
-}
-
-/* Static Hero */
 #wrapper-statichero {
 
-  margin-bottom: ($spacer * 8);
-
   @include media-breakpoint-up(md) {
-    margin-bottom: ($spacer * 11.25);
+    margin-bottom: 3rem;
   }
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 9rem;
+  }
+
 }
 
-/* Slider */
 #featured-research {
   margin-bottom: ($spacer * 6.5);
 
   .entry-header {
-    padding: $spacer;
-    border: 1px solid $body-color;
+    @extend %secondary-grid-item;
   }
 
   @include media-breakpoint-down(md) {
@@ -83,51 +83,33 @@
   }
 }
 
+#newsletter {}
+
 #our-work {
-  width: 100%;
-
-  .section-header {
-
-    span {
-      font-family: $font-family-base;
-    }
-
-  }
-
-  h2 {
-    font-size: 2.625rem;
-    font-family: $headings-font-family;
-    text-transform: none;
-    font-weight: bold;
-  }
-
-  article {
-    margin-bottom: ($spacer * 2);
+  .home-section-item {
+    padding-top: 200px;
 
     .entry-content {
-      padding: $spacer;
-      margin-top: 200px;
-      background-color: $white;
-    }
-
-    .entry-media {
-      margin-bottom: 0;
+      @extend %secondary-grid-item;
     }
 
   }
 
-  @extend .grid;
-
   @include media-breakpoint-up(md) {
-    article {
 
-      .entry-content {
-        width: 82%;
-        margin-left: auto;
-        margin-right: auto;
-        border: 1px solid $body-color;
-      }
+    .home-section-item {
+      position: relative;
+      height: 300px;
+    }
 
+    .entry-content {
+      position: absolute;
+      width: 82%;
+      margin-right: auto;
+      margin-left: auto;
+      top: 200px;
+      right: 0;
+      left: 0;
     }
 
   }
@@ -135,73 +117,7 @@
 }
 
 #recent-news {
-  width: 100%;
-
-  @extend .grid;
-
-  article {
+  .post {
     @extend %primary-grid-item;
-
-    .entry-header {
-      background-color: transparent;
-    }
-
-  }
-
-}
-
-#newsletter,
-#support-us {
-  .entry-header,
-  .entry-content,
-  .entry-media,
-  .entry-footer {
-    background-color: transparent;
-  }
-}
-
-#newsletter {
-
-  padding-top: ($spacer * 5);
-  border-top: 1px solid $body-color;
-
-  article {
-    width: 100%;
-  }
-
-  .entry-terms {
-    &:after {
-      content: none;
-    }
-  }
-
-  @include media-breakpoint-up(sm) {
-
-    .entry-content {
-      width: 58%;
-      margin-right: auto;
-      margin-left: auto;
-      display: flex;
-      justify-content: space-between;
-
-      .entry-meta,
-      .entry-shortcode {
-        width: 48%;
-      }
-    }
-
-  }
-}
-
-#support-us {
-  .entry-header,
-  .entry-content,
-  .entry-media,
-  .entry-footer {
-    text-align: center;
-  }
-
-  .entry-content {
-    margin-bottom: ($spacer * 3.125);
   }
 }
