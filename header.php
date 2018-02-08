@@ -85,17 +85,4 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- .wrapper-navbar end -->
 
-	<div class="wrapper-fluid wrapper-navbar" id="wrapper-sectionnav">
-		<!-- Second Level Navigation -->
-		<nav class="navbar navbar-expand-md navbar-light bg-faded">
-			<?php if ( 'container' == $container ) : ?>
-				<div class="container">
-			<?php endif; ?>
-
-			<?php if ( 'container' == $container ) : ?>
-			</div><!-- .container -->
-			<?php endif; ?>
-		</nav>
-	</div>
-
 	<?php get_search_form(); ?>

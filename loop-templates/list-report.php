@@ -13,7 +13,7 @@
 
 			<div class="entry-meta entry-categories">
 
-				<?php echo get_the_term_list( $post->ID, 'category', '<ul class="categories"><li>', ',</li><li>', '</li></ul>' ); ?>
+				<?php echo get_the_term_list( $post->ID, 'topic', '<ul class="categories"><li>', ',</li><li>', '</li></ul>' ); ?>
 
 			</div><!-- .entry-meta -->
 

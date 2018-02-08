@@ -1041,22 +1041,22 @@ pre {
   .offset-xl-11 {
     margin-left: 91.66667%; } }
 
-.table, .single .content-area .report table {
+.table, .single-report .content-area table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
   background-color: transparent; }
-  .table th, .single .content-area .report table th,
-  .table td, .single .content-area .report table td {
+  .table th, .single-report .content-area table th,
+  .table td, .single-report .content-area table td {
     padding: 0.75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6; }
-  .table thead th, .single .content-area .report table thead th {
+  .table thead th, .single-report .content-area table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6; }
-  .table tbody + tbody, .single .content-area .report table tbody + tbody {
+  .table tbody + tbody, .single-report .content-area table tbody + tbody {
     border-top: 2px solid #dee2e6; }
-  .table .table, .single .content-area .report table .table, .table .single .content-area .report table, .single .content-area .report .table table, .single .content-area .report table table {
+  .table .table, .single-report .content-area table .table, .table .single-report .content-area table, .single-report .content-area .table table, .single-report .content-area table table {
     background-color: #fff; }
 
 .table-sm th,
@@ -1177,12 +1177,12 @@ pre {
   .table-hover .table-active:hover > th {
     background-color: rgba(0, 0, 0, 0.075); }
 
-.table .thead-dark th, .single .content-area .report table .thead-dark th {
+.table .thead-dark th, .single-report .content-area table .thead-dark th {
   color: #fff;
   background-color: #212529;
   border-color: #32383e; }
 
-.table .thead-light th, .single .content-area .report table .thead-light th {
+.table .thead-light th, .single-report .content-area table .thead-light th {
   color: #495057;
   background-color: #e9ecef;
   border-color: #dee2e6; }
@@ -6028,10 +6028,10 @@ a.text-dark:hover, a.text-dark:focus {
     display: none; }
   .badge {
     border: 1px solid #000; }
-  .table, .single .content-area .report table {
+  .table, .single-report .content-area table {
     border-collapse: collapse !important; }
-    .table td, .single .content-area .report table td,
-    .table th, .single .content-area .report table th {
+    .table td, .single-report .content-area table td,
+    .table th, .single-report .content-area table th {
       background-color: #fff !important; }
   .table-bordered th,
   .table-bordered td {
@@ -8555,11 +8555,11 @@ h4 a {
   h4 a.active {
     color: #1a1a1a; }
 
-.background-line, .single .content-area .report h2 {
+.background-line, .single-report .content-area h2 {
   margin-top: 2rem;
   position: relative;
   z-index: 1; }
-  .background-line:before, .single .content-area .report h2:before {
+  .background-line:before, .single-report .content-area h2:before {
     border-top: 1px solid #000;
     content: " ";
     margin: 0 auto;
@@ -8570,7 +8570,7 @@ h4 a {
     bottom: 0;
     width: 95%;
     z-index: -1; }
-  .background-line span, .single .content-area .report h2 span {
+  .background-line span, .single-report .content-area h2 span {
     background: #fff;
     padding: 0 1rem 0 0; }
 
@@ -8614,20 +8614,28 @@ h4 a {
   .list-view article:hover, .list-view article:focus {
     background-color: #000; }
 
-.list-view .subpage, .page-section article, #wrapper-footer-top .widget, #featured-research .entry-header, #our-work .home-section-item .entry-content, #recent-news .post {
+.nav-links .nav-previous,
+.nav-links .nav-next, .list-view .subpage, .page-section article, #wrapper-footer-top .widget, #featured-research .entry-header, #our-work .home-section-item .entry-content, #recent-news .post {
   padding: .8rem;
   border: 1px solid #000;
   background: #fff;
   color: #000; }
-  .list-view .subpage a, .page-section article a, #wrapper-footer-top .widget a, #featured-research .entry-header a, #our-work .home-section-item .entry-content a, #recent-news .post a {
+  .nav-links .nav-previous a,
+  .nav-links .nav-next a, .list-view .subpage a, .page-section article a, #wrapper-footer-top .widget a, #featured-research .entry-header a, #our-work .home-section-item .entry-content a, #recent-news .post a {
     color: #000; }
-    .list-view .subpage a:hover, .page-section article a:hover, #wrapper-footer-top .widget a:hover, #featured-research .entry-header a:hover, #our-work .home-section-item .entry-content a:hover, #recent-news .post a:hover, .list-view .subpage a:focus, .page-section article a:focus, #wrapper-footer-top .widget a:focus, #featured-research .entry-header a:focus, #our-work .home-section-item .entry-content a:focus, #recent-news .post a:focus {
+    .nav-links .nav-previous a:hover,
+    .nav-links .nav-next a:hover, .list-view .subpage a:hover, .page-section article a:hover, #wrapper-footer-top .widget a:hover, #featured-research .entry-header a:hover, #our-work .home-section-item .entry-content a:hover, #recent-news .post a:hover, .nav-links .nav-previous a:focus,
+    .nav-links .nav-next a:focus, .list-view .subpage a:focus, .page-section article a:focus, #wrapper-footer-top .widget a:focus, #featured-research .entry-header a:focus, #our-work .home-section-item .entry-content a:focus, #recent-news .post a:focus {
       text-decoration: none; }
-  .list-view .subpage:hover, .page-section article:hover, #wrapper-footer-top .widget:hover, #featured-research .entry-header:hover, #our-work .home-section-item .entry-content:hover, #recent-news .post:hover, .list-view .subpage:focus, .page-section article:focus, #wrapper-footer-top .widget:focus, #featured-research .entry-header:focus, #our-work .home-section-item .entry-content:focus, #recent-news .post:focus {
+  .nav-links .nav-previous:hover,
+  .nav-links .nav-next:hover, .list-view .subpage:hover, .page-section article:hover, #wrapper-footer-top .widget:hover, #featured-research .entry-header:hover, #our-work .home-section-item .entry-content:hover, #recent-news .post:hover, .nav-links .nav-previous:focus,
+  .nav-links .nav-next:focus, .list-view .subpage:focus, .page-section article:focus, #wrapper-footer-top .widget:focus, #featured-research .entry-header:focus, #our-work .home-section-item .entry-content:focus, #recent-news .post:focus {
     border-color: #45acd7;
     background-color: #45acd7;
     color: #fff; }
-    .list-view .subpage:hover a, .page-section article:hover a, #wrapper-footer-top .widget:hover a, #featured-research .entry-header:hover a, #our-work .home-section-item .entry-content:hover a, #recent-news .post:hover a, .list-view .subpage:focus a, .page-section article:focus a, #wrapper-footer-top .widget:focus a, #featured-research .entry-header:focus a, #our-work .home-section-item .entry-content:focus a, #recent-news .post:focus a {
+    .nav-links .nav-previous:hover a,
+    .nav-links .nav-next:hover a, .list-view .subpage:hover a, .page-section article:hover a, #wrapper-footer-top .widget:hover a, #featured-research .entry-header:hover a, #our-work .home-section-item .entry-content:hover a, #recent-news .post:hover a, .nav-links .nav-previous:focus a,
+    .nav-links .nav-next:focus a, .list-view .subpage:focus a, .page-section article:focus a, #wrapper-footer-top .widget:focus a, #featured-research .entry-header:focus a, #our-work .home-section-item .entry-content:focus a, #recent-news .post:focus a {
       color: #fff; }
 
 .list-view .post,
@@ -8783,6 +8791,44 @@ h1 {
     border-color: #000;
     text-decoration: none; }
 
+.nav-links .nav-previous,
+.nav-links .nav-next {
+  flex-basis: 100%;
+  justify-content: flex-end; }
+  .nav-links .nav-previous:before,
+  .nav-links .nav-next:before {
+    display: block;
+    color: #797979;
+    text-transform: uppercase;
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    font-size: 1rem; }
+  .nav-links .nav-previous:hover:before, .nav-links .nav-previous:focus:before,
+  .nav-links .nav-next:hover:before,
+  .nav-links .nav-next:focus:before {
+    color: #fff; }
+
+.nav-links .nav-previous:before {
+  content: 'Previous'; }
+
+.nav-links .nav-next {
+  text-align: right; }
+  .nav-links .nav-next:before {
+    content: 'Next'; }
+
+.nav-links .grid-item {
+  display: flex;
+  align-items: stretch; }
+  .nav-links .grid-item.previous {
+    padding-left: 0; }
+  .nav-links .grid-item.next {
+    padding-right: 0; }
+  @media (max-width: 991.98px) {
+    .nav-links .grid-item.previous {
+      padding-right: 0;
+      margin-bottom: 1rem; }
+    .nav-links .grid-item.next {
+      padding-left: 0; } }
+
 #search {
   position: fixed;
   top: 0px;
@@ -8868,68 +8914,54 @@ h1 {
 #search-link .search-icon {
   font-size: 1.125rem; }
 
+.archive .taxonomy-title {
+  text-transform: uppercase;
+  color: #45acd7;
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem; }
+
 @media (min-width: 768px) {
   .archive .taxonomy-description {
     padding-right: 15%; } }
 
-.single {
-  /* Single Report */ }
-  .single .content-area .report h1 {
-    font-weight: bold; }
-  .single .content-area .report h2,
-  .single .content-area .report h3 {
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    text-transform: uppercase; }
-  .single .content-area .report h2 {
-    margin-top: 7.5rem;
-    margin-bottom: 2.875rem;
-    font-size: 2rem; }
-  .single .content-area .report h3 {
-    margin-top: 2.625rem;
-    margin-bottom: 2.25rem;
-    font-size: 1rem;
-    font-weight: bold; }
-  .single .content-area .report p + p {
-    margin-top: 2.25rem; }
-  .single .content-area .report blockquote {
-    margin-top: 4.5rem;
-    margin-bottom: 4.5rem;
-    padding-left: 2.375rem;
-    font-style: italic;
-    border-left: 1px solid #000; }
-    .single .content-area .report blockquote footer {
-      display: inline-block; }
-      .single .content-area .report blockquote footer:before {
-        content: ' - '; }
-  .single .content-area .report .entry-content {
-    margin-top: 3.125rem; }
-  .single .content-area .report .entry-subtitle {
-    margin-bottom: 1.625rem;
-    font-size: 1.5rem;
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
-  .single .content-area .report .entry-meta ul {
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-  .single .content-area .report .entry-meta .categories {
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    font-weight: bold; }
-    .single .content-area .report .entry-meta .categories a {
-      color: #45acd7; }
-  .single .content-area .report .post-date {
-    margin-bottom: 2.875rem; }
-  .single .content-area .report .authors {
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    text-transform: uppercase; }
-    .single .content-area .report .authors a {
-      color: #000;
-      text-decoration: underline; }
-    .single .content-area .report .authors .hr {
-      display: block;
-      margin-bottom: 5rem;
-      border-top: 1px solid #000;
-      width: 112px; }
+.single .content-area .entry-meta ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.single .content-area .entry-meta .categories {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: bold; }
+  .single .content-area .entry-meta .categories a {
+    color: #45acd7; }
+
+.single .content-area .post-date {
+  margin-bottom: 2.875rem; }
+
+.single .content-area .authors {
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  text-transform: uppercase; }
+  .single .content-area .authors a {
+    color: #000;
+    text-decoration: underline; }
+  .single .content-area .authors .hr {
+    display: block;
+    margin-bottom: 5rem;
+    border-top: 1px solid #000;
+    width: 112px; }
+
+.single-post .content-area .entry-meta {
+  margin-bottom: 2rem; }
+
+.single-post .content-area .updated {
+  display: none; }
+  .single-post .content-area .updated.published {
+    display: inline; }
+
+.single-post .content-area .byline {
+  display: none; }
 
 .single-report {
   font-size: 1.25rem; }
@@ -8947,6 +8979,39 @@ h1 {
   .single-report #right-sidebar:before, .single-report #right-sidebar:after {
     content: '';
     display: table; }
+  .single-report .content-area h1 {
+    font-weight: bold; }
+  .single-report .content-area h2,
+  .single-report .content-area h3 {
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    text-transform: uppercase; }
+  .single-report .content-area h2 {
+    margin-top: 7.5rem;
+    margin-bottom: 2.875rem;
+    font-size: 2rem; }
+  .single-report .content-area h3 {
+    margin-top: 2.625rem;
+    margin-bottom: 2.25rem;
+    font-size: 1rem;
+    font-weight: bold; }
+  .single-report .content-area p + p {
+    margin-top: 2.25rem; }
+  .single-report .content-area blockquote {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    padding-left: 2.375rem;
+    font-style: italic;
+    border-left: 1px solid #000; }
+    .single-report .content-area blockquote footer {
+      display: inline-block; }
+      .single-report .content-area blockquote footer:before {
+        content: ' - '; }
+  .single-report .content-area .entry-content {
+    margin-top: 3.125rem; }
+  .single-report .content-area .entry-subtitle {
+    margin-bottom: 1.625rem;
+    font-size: 1.5rem;
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
 
 /* Post List */
 .list-view .grid-item {
@@ -8989,6 +9054,11 @@ h1 {
 
 .category-press-mention .source-publication:after {
   content: ' | '; }
+
+.page-template-default .form-title,
+.page-template-page-research .form-title,
+.page-template-page-series .form-title {
+  margin-top: 2rem; }
 
 @media (min-width: 768px) {
   .page-template-default .page .entry-content p:first-of-type,

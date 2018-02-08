@@ -1,6 +1,6 @@
 <?php
 /**
- * Single post partial template.
+ * Slide partial template.
  *
  * @package understrap
  * @subpackage pai
