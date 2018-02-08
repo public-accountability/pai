@@ -53,6 +53,12 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 							<div class="grid-item">
 
+								<?php if( has_category( 'press-mention' ) ) : ?>
+
+									<?php get_template_part( 'loop-templates/list', 'press-mention' ); ?>
+
+								<?php else : ?>
+
 								<?php
 
 								/*
@@ -62,6 +68,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 								 */
 								get_template_part( 'loop-templates/list', get_post_type() );
 								?>
+
+							<?php endif; ?>
 
 							</div><!-- .grid-item -->
 

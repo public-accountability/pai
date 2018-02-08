@@ -11,12 +11,17 @@
     @extend .col-md-4;
   }
 
+  .entry-meta {
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+  }
+
   @include media-breakpoint-down(md) {
     .grid-item + .grid-item {
       margin-top: 2rem;
     }
   }
-  
+
   .widget {
     @extend %secondary-grid-item;
   }

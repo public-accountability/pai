@@ -218,3 +218,11 @@
   }
 
 }
+
+.category-press-mention {
+  .source-publication {
+    &:after {
+      content: ' | ';
+    }
+  }
+}
