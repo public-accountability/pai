@@ -1,4 +1,12 @@
 .archive {
+  .taxonomy-title {
+    text-transform: uppercase;
+    color: $secondary;
+    font-family: $font-family-sans-serif;
+    font-weight:  700;
+    font-size: 1.25rem;
+  }
+
   .taxonomy-description {
     @extend .lead;
 
@@ -10,111 +18,70 @@
 
 .single {
 
-  /* Single Report */
   .content-area {
 
-    .report {
-
-      h1 {
-        font-weight: bold;
+    .entry-meta {
+      ul {
+        @include no-bullets;
       }
 
-      h2,
-      h3 {
-        font-family: $font-family-sans-serif;
+      .categories {
+        margin-bottom: 2rem;
+
         text-transform: uppercase;
-      }
-
-      h2 {
-        @extend .background-line;
-        margin-top: 7.5rem;
-        margin-bottom: 2.875rem;
-        font-size: 2rem;
-      }
-
-      h3 {
-        margin-top: 2.625rem;
-        margin-bottom: 2.25rem;
-        font-size: 1rem;
         font-weight: bold;
-      }
-
-      p + p {
-        margin-top: 2.25rem;
-      }
-
-      blockquote {
-        margin-top: 4.5rem;
-        margin-bottom: 4.5rem;
-        padding-left: 2.375rem;
-        font-style: italic;
-        border-left: 1px solid $body-color;
-
-        footer {
-          display: inline-block;
-
-          &:before {
-            content: ' - ';
-          }
-        }
-      }
-
-      table {
-        @extend .table;
-      }
-
-      .entry-content {
-        margin-top: 3.125rem;
-      }
-
-      .entry-subtitle {
-        margin-bottom: 1.625rem;
-        font-size: 1.5rem;
-        font-family: $font-family-sans-serif;
-      }
-
-      .entry-meta {
-        ul {
-          @include no-bullets;
-        }
-
-        .categories {
-          margin-bottom: 2rem;
-
-          text-transform: uppercase;
-          font-weight: bold;
-
-          a {
-            color: $secondary;
-          }
-        }
-      }
-
-      .post-date {
-        margin-bottom: 2.875rem;
-      }
-
-      .authors {
-        font-family: $font-family-sans-serif;
-        text-transform: uppercase;
 
         a {
-          color: $body-color;
-          text-decoration: underline;
+          color: $secondary;
         }
-
-        .hr {
-          display: block;
-          margin-bottom: 5rem;
-          border-top: 1px solid $black;
-          width: 112px;
-        }
-
       }
     }
 
+    .post-date {
+      margin-bottom: 2.875rem;
+    }
+
+    .authors {
+      font-family: $font-family-sans-serif;
+      text-transform: uppercase;
+
+      a {
+        color: $body-color;
+        text-decoration: underline;
+      }
+
+      .hr {
+        display: block;
+        margin-bottom: 5rem;
+        border-top: 1px solid $black;
+        width: 112px;
+      }
+
+    }
+
+
   }
 
+}
+
+.single-post {
+  .content-area {
+    .entry-meta {
+      margin-bottom: 2rem;
+    }
+
+    .updated {
+      display: none;
+
+      &.published {
+        display: inline;
+      }
+    }
+
+    .byline {
+      display: none;
+    }
+  }
 }
 
 .single-report {
@@ -151,6 +118,66 @@
     &:after {
       content: '';
       display: table;
+    }
+  }
+
+  .content-area {
+    h1 {
+      font-weight: bold;
+    }
+
+    h2,
+    h3 {
+      font-family: $font-family-sans-serif;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      @extend .background-line;
+      margin-top: 7.5rem;
+      margin-bottom: 2.875rem;
+      font-size: 2rem;
+    }
+
+    h3 {
+      margin-top: 2.625rem;
+      margin-bottom: 2.25rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    p + p {
+      margin-top: 2.25rem;
+    }
+
+    blockquote {
+      margin-top: 4.5rem;
+      margin-bottom: 4.5rem;
+      padding-left: 2.375rem;
+      font-style: italic;
+      border-left: 1px solid $body-color;
+
+      footer {
+        display: inline-block;
+
+        &:before {
+          content: ' - ';
+        }
+      }
+    }
+
+    table {
+      @extend .table;
+    }
+
+    .entry-content {
+      margin-top: 3.125rem;
+    }
+
+    .entry-subtitle {
+      margin-bottom: 1.625rem;
+      font-size: 1.5rem;
+      font-family: $font-family-sans-serif;
     }
   }
 
