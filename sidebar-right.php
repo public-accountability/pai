@@ -3,6 +3,7 @@
  * The right sidebar containing the main widget area.
  *
  * @package understrap
+ * @subpackage pai
  */
 
 if ( ! is_active_sidebar( 'right-sidebar' ) ) {

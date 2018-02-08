@@ -9071,6 +9071,11 @@ h1 {
 .page-template-page-series .page .entry-footer {
   margin-top: 2rem; }
 
+.author .author-header {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #000; }
+
 .page-section .grid-item.widget-item {
   display: flex; }
 
