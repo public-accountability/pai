@@ -185,3 +185,22 @@ function pai_terms_clauses( $clauses, $taxonomy, $args ) {
   return $clauses;
 }
 add_filter( 'terms_clauses', 'pai_terms_clauses', 99999, 3 );
+
+/**
+ * Include Reports on Author Pages
+ *
+ * @since 0.1.0
+ *
+ * @param  obj $query [description]
+ * @return void
+ */
+function pai_pre_get_posts( $query ) {
+  if( is_admin() || ! $query->is_main_query() ) {
+    return;
+  }
+
+  if( $query->is_author() ) {
+    $query->set( 'post_type', array( 'report' ) );
+  }
+}
+add_action( 'pre_get_posts', 'pai_pre_get_posts' );
