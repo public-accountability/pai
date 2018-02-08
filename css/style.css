@@ -493,7 +493,7 @@ pre {
     padding-right: 0;
     padding-left: 0; }
 
-.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, #newsletter .grid-item, #support-us .grid-item, .col,
 .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, #wrapper-footer-top .grid-item, .home-section .grid-item, .col-md-5, .col-md-6, .list-view .grid-item, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .section-header, .col-md,
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .single-report #primary, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
@@ -559,7 +559,7 @@ pre {
   flex: 0 0 91.66667%;
   max-width: 91.66667%; }
 
-.col-12 {
+.col-12, #newsletter .grid-item, #support-us .grid-item {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -8508,6 +8508,9 @@ a.skip-link {
 .entry-terms:after {
   content: ' | '; }
 
+.grid-item .entry-terms {
+  text-transform: uppercase; }
+
 .btn {
   padding: 1.1rem 1.7rem;
   text-transform: uppercase;
@@ -8599,32 +8602,32 @@ h4 a {
 .entry-meta .entry-date {
   font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
 
-.list-view article, #recent-news .post {
+.list-view article {
   padding: .8rem;
   background-color: #45acd7;
   color: #fff; }
-  .list-view article a, #recent-news .post a {
+  .list-view article a {
     color: #fff; }
-    .list-view article a:hover, #recent-news .post a:hover, .list-view article a:focus, #recent-news .post a:focus {
+    .list-view article a:hover, .list-view article a:focus {
       color: #fff;
       text-decoration: none; }
-  .list-view article:hover, #recent-news .post:hover, .list-view article:focus, #recent-news .post:focus {
+  .list-view article:hover, .list-view article:focus {
     background-color: #000; }
 
-.list-view .subpage, .page-section article, #wrapper-footer-top .widget, #featured-research .entry-header, #our-work .home-section-item .entry-content {
+.list-view .subpage, .page-section article, #wrapper-footer-top .widget, #featured-research .entry-header, #our-work .home-section-item .entry-content, #recent-news .post {
   padding: .8rem;
   border: 1px solid #000;
   background: #fff;
   color: #000; }
-  .list-view .subpage a, .page-section article a, #wrapper-footer-top .widget a, #featured-research .entry-header a, #our-work .home-section-item .entry-content a {
+  .list-view .subpage a, .page-section article a, #wrapper-footer-top .widget a, #featured-research .entry-header a, #our-work .home-section-item .entry-content a, #recent-news .post a {
     color: #000; }
-    .list-view .subpage a:hover, .page-section article a:hover, #wrapper-footer-top .widget a:hover, #featured-research .entry-header a:hover, #our-work .home-section-item .entry-content a:hover, .list-view .subpage a:focus, .page-section article a:focus, #wrapper-footer-top .widget a:focus, #featured-research .entry-header a:focus, #our-work .home-section-item .entry-content a:focus {
+    .list-view .subpage a:hover, .page-section article a:hover, #wrapper-footer-top .widget a:hover, #featured-research .entry-header a:hover, #our-work .home-section-item .entry-content a:hover, #recent-news .post a:hover, .list-view .subpage a:focus, .page-section article a:focus, #wrapper-footer-top .widget a:focus, #featured-research .entry-header a:focus, #our-work .home-section-item .entry-content a:focus, #recent-news .post a:focus {
       text-decoration: none; }
-  .list-view .subpage:hover, .page-section article:hover, #wrapper-footer-top .widget:hover, #featured-research .entry-header:hover, #our-work .home-section-item .entry-content:hover, .list-view .subpage:focus, .page-section article:focus, #wrapper-footer-top .widget:focus, #featured-research .entry-header:focus, #our-work .home-section-item .entry-content:focus {
+  .list-view .subpage:hover, .page-section article:hover, #wrapper-footer-top .widget:hover, #featured-research .entry-header:hover, #our-work .home-section-item .entry-content:hover, #recent-news .post:hover, .list-view .subpage:focus, .page-section article:focus, #wrapper-footer-top .widget:focus, #featured-research .entry-header:focus, #our-work .home-section-item .entry-content:focus, #recent-news .post:focus {
     border-color: #45acd7;
     background-color: #45acd7;
     color: #fff; }
-    .list-view .subpage:hover a, .page-section article:hover a, #wrapper-footer-top .widget:hover a, #featured-research .entry-header:hover a, #our-work .home-section-item .entry-content:hover a, .list-view .subpage:focus a, .page-section article:focus a, #wrapper-footer-top .widget:focus a, #featured-research .entry-header:focus a, #our-work .home-section-item .entry-content:focus a {
+    .list-view .subpage:hover a, .page-section article:hover a, #wrapper-footer-top .widget:hover a, #featured-research .entry-header:hover a, #our-work .home-section-item .entry-content:hover a, #recent-news .post:hover a, .list-view .subpage:focus a, .page-section article:focus a, #wrapper-footer-top .widget:focus a, #featured-research .entry-header:focus a, #our-work .home-section-item .entry-content:focus a, #recent-news .post:focus a {
       color: #fff; }
 
 .list-view .post,
@@ -8673,6 +8676,9 @@ h4 a {
 
 h1 {
   margin-bottom: 2rem; }
+
+.entry-title {
+  font-weight: 700; }
 
 .lead, .archive .taxonomy-description, .page-template-default .page .entry-content p:first-of-type,
 .page-template-page-research .page .entry-content p:first-of-type,
@@ -8981,6 +8987,9 @@ h1 {
 .list-view .entry-meta {
   text-transform: uppercase; }
 
+.category-press-mention .source-publication:after {
+  content: ' | '; }
+
 @media (min-width: 768px) {
   .page-template-default .page .entry-content p:first-of-type,
   .page-template-page-research .page .entry-content p:first-of-type,
@@ -9201,6 +9210,10 @@ home-section-item {
   width: 180px;
   margin-right: 4rem; }
 
+#wrapper-footer-top .entry-meta {
+  margin-bottom: .5rem;
+  text-transform: uppercase; }
+
 @media (max-width: 991.98px) {
   #wrapper-footer-top .grid-item + .grid-item {
     margin-top: 2rem; } }
@@ -9261,6 +9274,9 @@ home-section-item {
   .home-section .grid-item + .grid-item {
     margin-top: 2rem; } }
 
+.home-section .entry-meta {
+  margin-bottom: .5rem; }
+
 @media (min-width: 768px) {
   #wrapper-statichero {
     margin-bottom: 3rem; } }
@@ -9271,6 +9287,14 @@ home-section-item {
 
 #featured-research {
   margin-bottom: 5.2rem; }
+  #featured-research .entry-header {
+    padding-bottom: 2rem; }
+  #featured-research .entry-meta {
+    text-transform: uppercase; }
+  #featured-research .updated {
+    display: none; }
+    #featured-research .updated.published {
+      display: inline; }
   @media (max-width: 991.98px) {
     #featured-research .entry-header:after {
       content: "";
@@ -9293,18 +9317,61 @@ home-section-item {
   #featured-research .featured-category:after {
     content: ' | '; }
 
+#newsletter .grid-item {
+  display: flex; }
+
+#newsletter .home-section-item {
+  padding-top: 5rem;
+  border-top: 1px solid #000;
+  flex-basis: 100%; }
+
+#newsletter .entry-content {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media (min-width: 576px) {
+  #newsletter h3,
+  #newsletter .entry-shortcode {
+    padding: 0 1rem; } }
+
 #our-work .home-section-item {
   padding-top: 200px; }
 
+#our-work .section-header span {
+  font-family: "PT Serif", serif; }
+
+#our-work h2 {
+  font-size: 2.625rem;
+  font-family: "PT Serif", serif;
+  text-transform: none;
+  font-weight: 700; }
+
 @media (min-width: 768px) {
-  #our-work .home-section-item {
-    position: relative;
-    height: 300px; }
-  #our-work .entry-content {
-    position: absolute;
-    width: 82%;
-    margin-right: auto;
-    margin-left: auto;
-    top: 200px;
-    right: 0;
-    left: 0; } }
+  #our-work {
+    margin-bottom: 5rem; }
+    #our-work .home-section-item {
+      position: relative;
+      height: 300px; }
+    #our-work .entry-content {
+      position: absolute;
+      width: 82%;
+      margin-right: auto;
+      margin-left: auto;
+      top: 200px;
+      right: 0;
+      left: 0; } }
+
+#recent-news .grid-item {
+  display: flex; }
+
+#recent-news .entry-meta {
+  text-transform: uppercase; }
+
+#recent-news .source-publication:after {
+  content: ' | '; }
+
+#support-us .grid-item {
+  text-align: center; }
+  #support-us .grid-item .entry-footer {
+    margin-top: 2rem; }
