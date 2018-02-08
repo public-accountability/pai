@@ -88,7 +88,7 @@ function pai_featured_the_excerpt( $text = null ) {
   $excerpt_length = apply_filters( 'excerpt_length',15 );
   $excerpt_more = apply_filters( 'excerpt_more', '...' );
   $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-  $text = apply_filters( 'get_the_excerpt', $text );
+  //$text = apply_filters( 'get_the_excerpt', $text );
 
   /* Readd excerpt filters added by parent theme */
   add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
