@@ -53,7 +53,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					<?php while( $query->have_posts() ) : $query->the_post(); ?>
 
 					<div class="grid-item">
-						<?php get_template_part( 'loop-templates/list', 'report' ); ?>
+						<?php get_template_part( 'loop-templates/entry', 'report' ); ?>
 					</div>
 
 					<?php endwhile; ?>

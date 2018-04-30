@@ -42,6 +42,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php
 				$args = array(
+					'posts_per_page'		=> get_option( 'posts_per_page' ),
 					'tax_query' 				=> array(
 						array(
 							'taxonomy'         => 'category',
@@ -59,7 +60,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					<?php while( $query->have_posts() ) : $query->the_post(); ?>
 
 					<div class="grid-item">
-						<?php get_template_part( 'loop-templates/list', 'press-mention' ); ?>
+						<?php get_template_part( 'loop-templates/entry', 'press' ); ?>
 					</div>
 
 					<?php endwhile; ?>
