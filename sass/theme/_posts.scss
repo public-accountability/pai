@@ -187,6 +187,9 @@
 .list-view {
 
   .grid-item {
+    &:first-of-type {
+      @extend .col-md-12;
+    }
     @extend .col-md-6;
     display: flex;
   }
