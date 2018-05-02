@@ -2,10 +2,11 @@
 /**
  * Template Name: Research Page Template
  *
- * The template for displaying the research page
+ * Template for displaying a list of series
  *
  * @package understrap
  * @subpackage pai
+ * @since 0.1.0
  */
 
 get_header();
@@ -39,46 +40,29 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php endwhile; // end of the loop. ?>
 
-				<?php if( function_exists( 'have_rows' ) && have_rows( 'subpages' ) ) : ?>
+				<?php
+				$args = array(
+					'post_type'					=> array( 'report' )
+				);
 
-					<section id="research-subpages" class="list-view research-pages row">
+				$query = new WP_Query( $args );
 
-							<?php while( have_rows( 'subpages' ) ) :
-								the_row(); ?>
+				if( $query->have_posts() ) : ?>
 
-								<?php if( $page = get_sub_field( 'page' ) ) : ?>
+				<section id="press-posts" class="list-view press-posts row">
+					<?php while( $query->have_posts() ) : $query->the_post(); ?>
 
-									<div class="grid-item">
+					<div class="grid-item">
+						<?php get_template_part( 'loop-templates/entry', 'report' ); ?>
+					</div>
 
-										<article class="subpage">
-
-											<a href="<?php echo esc_url( $page['url'] ); ?>" title="<?php echo esc_attr( $page['title'] ); ?>" rel="bookmark">
-
-												<header class="entry-header">
-													<h2 class="entry-title"><?php echo apply_filters( 'the_title', $page['title'] ); ?></h2>
-												</header>
-
-												<?php if( $description = get_sub_field( 'page_description' ) ) : ?>
-													<div class="entry-content">
-														<?php echo apply_filters( 'the_excerpt', $description ); ?>
-													</div>
-												<?php endif; ?>
-
-											</a>
-
-										</article>
-
-									</div><!-- .grid-item -->
-
-								<?php endif; ?>
-
-							<?php endwhile; ?>
-
-					</section><!-- #report-series -->
-
+					<?php endwhile; ?>
 				<?php endif; ?>
 
 			</main><!-- #main -->
+
+			<!-- The pagination component -->
+			<?php understrap_pagination( $query ); ?>
 
 		</div><!-- #primary -->
 

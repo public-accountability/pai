@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Series Page Template
+ * Template Name: Press Page Template
  *
  * Template for displaying a list of series
  *
@@ -29,7 +29,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'page-series' ); ?>
+					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.
@@ -40,7 +40,36 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php endwhile; // end of the loop. ?>
 
+				<?php
+				$args = array(
+					'posts_per_page'		=> get_option( 'posts_per_page' ),
+					'tax_query' 				=> array(
+						array(
+							'taxonomy'         => 'category',
+							'terms'            => 'press-mention',
+							'field'            => 'slug',
+						)
+					),
+				);
+
+				$query = new WP_Query( $args );
+
+				if( $query->have_posts() ) : ?>
+
+				<section id="press-posts" class="list-view press-posts row">
+					<?php while( $query->have_posts() ) : $query->the_post(); ?>
+
+					<div class="grid-item">
+						<?php get_template_part( 'loop-templates/entry', 'press' ); ?>
+					</div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+
 			</main><!-- #main -->
+
+			<!-- The pagination component -->
+			<?php understrap_pagination( $query ); ?>
 
 		</div><!-- #primary -->
 
