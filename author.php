@@ -28,12 +28,24 @@ $sidebar_pos = 'none';
 
 				<?php $author = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug', $author_name ) : get_userdata( intval( $author ) ); ?>
 
+				<?php
+				global $wp_query;
+				$author = $wp_query->get_queried_object();
+				?>
+
 				<header class="page-header author-header">
 
-					<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-					?>
+					<?php if( $display_name = $author->display_name ) : ?>
+						<h1 class="page-title"><?php echo apply_filters( 'the_title', $display_name ); ?></h1>
+					<?php else : ?>
+						<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+					<?php endif; ?>
+
+					<?php if( $description = $author->description ) : ?>
+						<div class="taxonomy-description"><?php echo apply_filters( 'the_content', $description ); ?></div>
+					<?php else : ?>
+						<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+					<?php endif; ?>
 
 				</header><!-- .page-header -->
 
@@ -53,7 +65,7 @@ $sidebar_pos = 'none';
 								 * If you want to override this in a child theme, then include a file
 								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 								 */
-								get_template_part( 'loop-templates/list', 'report' );
+								get_template_part( 'loop-templates/entry', 'report' );
 								?>
 
 							</div>

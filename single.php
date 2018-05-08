@@ -24,15 +24,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php if( 'report' === get_post_type() ) : ?>
-
-						<?php get_template_part( 'loop-templates/content', get_post_type() ); ?>
-
-					<?php else : ?>
-
-						<?php get_template_part( 'loop-templates/content', 'single' ); ?>
-
-					<?php endif; ?>
+					<?php get_template_part( 'loop-templates/content-single', get_post_type() ); ?>
 
 					<?php if( is_active_sidebar( 'page' ) ) : ?>
 

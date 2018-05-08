@@ -26,3 +26,15 @@
 
   }
 }
+
+.page-header,
+.page-content {
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid $gray-3;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 5rem;
+    margin-bottom: 6rem;
+  }
+}
