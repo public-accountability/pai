@@ -38,3 +38,69 @@
     margin-bottom: 6rem;
   }
 }
+
+/* Team Page */
+.type-team-member {
+
+  h3,
+  h4 {
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  h4 {
+    &:after {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      display: block;
+      content: '';
+      width: 4.125rem;
+      border-bottom: 2px solid $secondary;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    .entry-image {
+      padding-right: 2.5rem;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .entry-body {
+      padding-left: 2.5rem;
+    }
+  }
+
+}
+
+.type-team-member + .type-team-member {
+  margin-top: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 10rem;
+  }
+}
+
+.team-category {
+  margin-bottom: 2rem;
+  color: $secondary;
+
+  &:not(:first-of-type) {
+    margin-top: 3rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 6rem;
+
+    &:not(:first-child) {
+      margin-top: 7rem;
+    }
+  }
+}

@@ -8692,6 +8692,12 @@ h4 a {
     background: #fff;
     padding: 0 1rem; }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700; }
+
 h1 {
   margin-bottom: 2rem; }
 
@@ -9114,6 +9120,50 @@ h1 {
     .page-content {
       padding-bottom: 5rem;
       margin-bottom: 6rem; } }
+
+/* Team Page */
+.type-team-member h3,
+.type-team-member h4 {
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  text-transform: uppercase;
+  font-weight: normal; }
+
+.type-team-member h4:after {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: block;
+  content: '';
+  width: 4.125rem;
+  border-bottom: 2px solid #45acd7; }
+
+@media (min-width: 576px) {
+  .type-team-member .entry-image {
+    padding-right: 2.5rem; }
+    .type-team-member .entry-image img {
+      width: 100%;
+      height: auto; }
+  .type-team-member .entry-body {
+    padding-left: 2.5rem; } }
+
+.type-team-member + .type-team-member {
+  margin-top: 2rem; }
+  @media (min-width: 768px) {
+    .type-team-member + .type-team-member {
+      margin-top: 5rem; } }
+  @media (min-width: 992px) {
+    .type-team-member + .type-team-member {
+      margin-top: 10rem; } }
+
+.team-category {
+  margin-bottom: 2rem;
+  color: #45acd7; }
+  .team-category:not(:first-of-type) {
+    margin-top: 3rem; }
+  @media (min-width: 768px) {
+    .team-category {
+      margin-bottom: 6rem; }
+      .team-category:not(:first-child) {
+        margin-top: 7rem; } }
 
 .author .author-header {
   margin-bottom: 2rem;
