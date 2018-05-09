@@ -9,19 +9,19 @@
  * @since 0.1.0
  */
 
-/**
- * Override Parent Post Excerpt
- *
- * @since 0.1.0
- *
- * @param  string $post_excerpt
- * @return string $post_excerpt
- */
- function pai_excerpts_get_more_link( $post_excerpt ) {
+ /**
+  * Adds a custom read more link to all excerpts, manually or automatically generated
+  *
+  * @param string $post_excerpt Posts's excerpt.
+  *
+  * @return string
+  */
+ function all_excerpts_get_more_link( $post_excerpt ) {
 
-   return $post_excerpt . ' ...<p><a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
-   'pai' ) . '</a></p>';
+   return $post_excerpt . '...<p> <a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
+   'understrap' ) . '</a></p>';
  }
+ add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
 
 /**
  * Modify Default Archive title

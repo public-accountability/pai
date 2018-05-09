@@ -3927,47 +3927,44 @@ Object.defineProperty(exports, '__esModule', { value: true });
 	}
 })();
 
-(function($) {
-  var minWidth = 768;
-  var wrapper = $( '.site-main > article .entry-content' );
-  var content = $( '.entry-content > .entry-body' );
-
-  if( typeof wrapper != 'undefined' && typeof content != 'undefined' && content.length != 0 ) {
-
-  	var contentHeight = $( content.outerHeight(true) );
-
-  	if( $(this).width() >= minWidth ) {
-  		wrapper.css( 'min-height', content.outerHeight(true) + 'px' );
-  	} else {
-  		wrapper.css( 'min-height', 'auto' );
-  	}
-
-  	$(window).on('resize', function(event) {
-  		var wrapper = $( '.site-main > article .entry-content' );
-  		var content = $( '.entry-content > .entry-body' );
-
-  		if( $(this).width() > minWidth ) {
-  			wrapper.css( 'min-height', content.outerHeight(true) + 'px' );
-  		} else {
-  			wrapper.css( 'min-height', 'auto' );
-  		}
-  	});
-
-  }
-})(jQuery);
-
-/**
- * Search UI Functions
- */
  (function($) {
+	 var minWidth = 768;
+	 var wrapper = $( '.site-main > article .entry-content' );
+	 var content = $( '.entry-content > .entry-body' );
 
-   var searchButton = jQuery('a[href="#search"]');
-   var searchForm = jQuery('#search');
+	 if( typeof wrapper != 'undefined' && typeof content != 'undefined' && content.length != 0 ) {
+
+		var contentHeight = $( content.outerHeight(true) );
+
+		if( $(this).width() >= minWidth ) {
+			wrapper.css( 'min-height', content.outerHeight(true) + 'px' );
+		} else {
+			wrapper.css( 'min-height', 'auto' );
+		}
+
+		$(window).on('resize', function(event) {
+			var wrapper = $( '.site-main > article .entry-content' );
+			var content = $( '.entry-content > .entry-body' );
+
+			if( $(this).width() > minWidth ) {
+				wrapper.css( 'min-height', content.outerHeight(true) + 'px' );
+			} else {
+				wrapper.css( 'min-height', 'auto' );
+			}
+		});
+
+	 }
+
+	 /**
+	  * Search UI Functions
+	  */
+   var searchButton = $('a[href="#search"]');
+   var searchForm = $('#search');
 
    searchButton.on('click', function(event) {
      event.preventDefault();
      searchForm.addClass('open');
-     jQuery('#search > form > input[type="search"]').focus();
+     $('#search > form > input[type="search"]').focus();
    });
 
    $('#search, #search button.close').on('click keyup', function(event) {
