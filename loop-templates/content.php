@@ -52,10 +52,6 @@
 
 	<footer class="entry-footer">
 
-		<?php if( !has_category( 'projects' ) ) : ?>
-			<?php understrap_entry_footer(); ?>
-		<?php endif; ?>
-
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
