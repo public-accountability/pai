@@ -3,7 +3,9 @@ body {}
 h1,
 h2,
 h3,
-h4 {}
+h4 {
+  font-weight: 700;
+}
 
 h1 {
   margin-bottom: 2rem;
@@ -23,5 +25,5 @@ h1 {
 .btn,
 .entry-meta,
 .section-heading span {
-  font-family: $font-family-sans-serif
+  font-family: $font-family-sans-serif;
 }
