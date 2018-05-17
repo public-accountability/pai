@@ -1,6 +1,16 @@
 #wrapper-footer-full {}
 
-#colophon {
+.site-footer {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .menu {
+    li {
+      padding-left: 1rem;
+    }
+  }
 
   .widget {}
 

@@ -10,17 +10,15 @@
 
 <?php
 $cat_args = array(
-  'show_option_all'    => __( 'All Categories', 'pai' ),
+  'show_option_all'    => __( 'All Topics', 'pai' ),
   'hide_if_empty'      => true,
-  'name'               => 'category',
-  'post_type'          => array( 'report' )
+  'taxonomy'           => 'topic',
 );
 $series_args = array(
   'show_option_all'    => __( 'All Series', 'pai' ),
   'hide_if_empty'      => true,
   'taxonomy'           => 'series',
   'name'               => 'series',
-  'post_type'          => array( 'report' )
 );
 $archive_args = array(
   'type'               => 'yearly',
@@ -39,7 +37,7 @@ $archive_args = array(
     </div>
   </label>
   <label for="category" class="select-field js-category-fields">
-    <span class="screen-reader-text"><?php esc_html_e( 'Select a Category', 'pai' ); ?></span>
+    <span class="screen-reader-text"><?php esc_html_e( 'Select a Topic', 'pai' ); ?></span>
     <?php wp_dropdown_categories( $cat_args ); ?>
   </label>
   <label for="series" class="select-field js-series-fields">

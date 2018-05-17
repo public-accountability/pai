@@ -32,7 +32,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					<header class="page-header">
 						<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						the_archive_description( '<div class="taxonomy-description intro">', '</div>' );
 						?>
 					</header><!-- .page-header -->
 
