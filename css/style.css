@@ -299,7 +299,7 @@ template {
   display: none !important; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .actionnetwork-signup-form p, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-family: "PT Serif", serif;
   font-weight: 500;
@@ -312,7 +312,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 2rem; }
 
-h3, .h3 {
+h3, .h3, .actionnetwork-signup-form p {
   font-size: 1.75rem; }
 
 h4, .h4 {
@@ -9335,6 +9335,48 @@ h1 {
   margin-top: 4.625rem;
   margin-bottom: 5rem; }
 
+#newsletter .grid-item {
+  display: flex; }
+
+#newsletter .home-section-item {
+  padding-top: 5rem;
+  border-top: 1px solid #000;
+  flex-basis: 100%; }
+
+#newsletter .entry-content {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+@media (min-width: 576px) {
+  #newsletter h3,
+  #newsletter .entry-shortcode {
+    padding: 0 1rem; } }
+
+.actionnetwork-signup {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+  .actionnetwork-signup label {
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    text-transform: uppercase; }
+  .actionnetwork-signup input[type="submit"] {
+    background-color: #797979;
+    border-color: #797979;
+    color: #fff;
+    text-transform: uppercase; }
+    .actionnetwork-signup input[type="submit"]:hover, .actionnetwork-signup input[type="submit"]:focus, .actionnetwork-signup input[type="submit"]:active, .actionnetwork-signup input[type="submit"].active {
+      background-color: #fff;
+      border-color: #797979;
+      color: #797979; }
+  .actionnetwork-signup input {
+    width: 100%;
+    padding: .5rem .75rem;
+    border-radius: 0;
+    border: 1px solid #797979;
+    line-height: 24px;
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
+
 iframe {
   border: 0; }
 
@@ -9375,6 +9417,13 @@ home-section-item {
 .navbar-brand {
   width: 270px;
   margin-right: 4rem; }
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; }
+  .site-footer .menu li {
+    padding-left: 1rem; }
 
 #wrapper-footer-top .entry-meta {
   margin-bottom: .5rem;
