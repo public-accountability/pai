@@ -324,9 +324,8 @@ h5, .h5 {
 h6, .h6 {
   font-size: 1rem; }
 
-.lead, .archive .taxonomy-description, .page-template-default .page .entry-content p:first-of-type,
-.page-template-page-research .page .entry-content p:first-of-type,
-.page-template-page-series .page .entry-content p:first-of-type {
+.lead, .archive .taxonomy-description, .page-header .intro,
+.page-content .intro {
   font-size: 1.25rem;
   font-weight: 300; }
 
@@ -8671,11 +8670,11 @@ h4 a {
   margin-bottom: 2rem; }
   @media (min-width: 768px) {
     .section-heading {
-      margin-top: 2rem;
+      margin-top: 3rem;
       margin-bottom: 3rem; } }
   @media (min-width: 992px) {
     .section-heading {
-      margin-top: 2rem;
+      margin-top: 5rem;
       margin-bottom: 5rem; } }
   .section-heading:before {
     border-top: 1px solid #797979;
@@ -8704,9 +8703,8 @@ h1 {
 .entry-title {
   font-weight: 700; }
 
-.lead, .archive .taxonomy-description, .page-template-default .page .entry-content p:first-of-type,
-.page-template-page-research .page .entry-content p:first-of-type,
-.page-template-page-series .page .entry-content p:first-of-type {
+.lead, .archive .taxonomy-description, .page-header .intro,
+.page-content .intro {
   font-size: 1.5rem;
   font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
   font-weight: normal; }
@@ -9099,25 +9097,24 @@ h1 {
 .page-template-page-series .form-title {
   margin-top: 2rem; }
 
-@media (min-width: 768px) {
-  .page-template-default .page .entry-content p:first-of-type,
-  .page-template-page-research .page .entry-content p:first-of-type,
-  .page-template-page-series .page .entry-content p:first-of-type {
-    padding-right: 15%; } }
-
 .page-template-default .page .entry-footer,
 .page-template-page-research .page .entry-footer,
 .page-template-page-series .page .entry-footer {
   margin-top: 2rem; }
 
-.page-header,
-.page-content {
+@media (min-width: 768px) {
+  .page-header .intro,
+  .page-content .intro {
+    padding-right: 15%; } }
+
+.page-header:not(.has-secondary-content),
+.page-content:not(.has-secondary-content) {
   padding-bottom: 2rem;
   margin-bottom: 3rem;
   border-bottom: 2px solid #b3b3b3; }
   @media (min-width: 768px) {
-    .page-header,
-    .page-content {
+    .page-header:not(.has-secondary-content),
+    .page-content:not(.has-secondary-content) {
       padding-bottom: 5rem;
       margin-bottom: 6rem; } }
 
@@ -9376,7 +9373,7 @@ home-section-item {
   color: #797979; }
 
 .navbar-brand {
-  width: 180px;
+  width: 270px;
   margin-right: 4rem; }
 
 #wrapper-footer-top .entry-meta {
