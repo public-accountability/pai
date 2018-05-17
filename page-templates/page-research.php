@@ -49,14 +49,22 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				if( $query->have_posts() ) : ?>
 
-				<section id="press-posts" class="list-view press-posts row">
+				<?php get_template_part( 'global-templates/filters-form' ); ?>
+
+				<section id="report-posts" class="list-view row js-results">
+
 					<?php while( $query->have_posts() ) : $query->the_post(); ?>
 
 					<div class="grid-item">
+
 						<?php get_template_part( 'loop-templates/entry', 'report' ); ?>
+
 					</div>
 
 					<?php endwhile; ?>
+
+				</section>
+
 				<?php endif; ?>
 
 			</main><!-- #main -->

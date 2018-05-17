@@ -73,8 +73,6 @@
     })
     .success(function(response, textStatus, XMLHttpRequest) {
 
-      // console.log( response );
-
       contentEl.html( response.content );
 
     })

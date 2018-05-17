@@ -20,7 +20,7 @@
    /**
     * Frontend AJAX requests.
     */
-    if( is_post_type_archive( 'report' ) ) {
+    if( is_page_template( 'page-templates/page-research.php' ) ) {
       wp_deregister_script( 'jquery-slim' );
       wp_enqueue_script( 'pai-research-filters', get_stylesheet_directory_uri() . '/js/research-filters.js', array( 'jquery' ), null, true );
       wp_localize_script( 'pai-research-filters', 'research_filters',
@@ -63,8 +63,8 @@
       $args['s'] = sanitize_text_field( $_POST['args']['s'] );
     }
 
-    if( $_POST['args']['category'] ) {
-      $args['cat'] = absint( $_POST['args']['category'] );
+    if( $_POST['args']['topic'] ) {
+      $args['cat'] = absint( $_POST['args']['topic'] );
     }
 
     if( $_POST['args']['series'] ) {
@@ -92,7 +92,7 @@
 
         <div class="grid-item">
 
-          <?php get_template_part( 'loop-templates/list', 'report' ); ?>
+          <?php get_template_part( 'loop-templates/entry', 'report' ); ?>
 
         </div><!-- .grid-item -->
 
