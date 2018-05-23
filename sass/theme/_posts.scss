@@ -287,6 +287,12 @@
 
 }
 
+.grid-item {
+  &> article {
+    width: 100%;
+  }
+}
+
 .category-press-mention {
   .source-publication {
     &:after {
