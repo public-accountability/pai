@@ -45,7 +45,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					$team_array = get_field( 'team_members' );
 
 					/* Get Array Categories */
-					$field = get_field_object( 'field_category' );
+					$field = get_field_object( 'field_type' );
 					$categories = $field['choices'];
 					?>
 
@@ -59,7 +59,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 								<?php foreach( $team_array as $person ) : ?>
 
-									<?php if( !empty( $person['category']['value'] ) && $value === $person['category']['value'] ) : ?>
+									<?php if( !empty( $person['type']['value'] ) && $value === $person['type']['value'] ) : ?>
 
 										<article class="hentry type-team-member row">
 

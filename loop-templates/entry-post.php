@@ -11,31 +11,11 @@
 
 		<header class="entry-header">
 
-			<?php if( has_category( 'press-mention' ) && ( $publication = get_post_meta( $post->ID, 'publication', true ) ) ) : ?>
+			<div class="entry-meta">
 
-				<div class="entry-meta">
+				<?php pai_published_date(); ?>
 
-					<?php if( $url = get_post_meta( $post->ID, 'source_url', true ) ) :  ?>
-
-						<span class="source-publication">
-							<a href="<?php echo esc_url( $url ); ?>" title="View <?php echo esc_attr( $publication ); ?>" target="_blank"><?php esc_html_e( $publication ); ?></a>
-						</span>
-
-						<?php pai_published_date(); ?>
-
-					<?php else : ?>
-
-						<span class="source-publication">
-							<?php esc_html_e( $publication ); ?>
-						</span>
-
-						<?php pai_published_date(); ?>
-
-					<?php endif; ?>
-
-				</div>
-
-			<?php endif; ?>
+			</div>
 
 			<?php if( has_category( 'press-mention' ) && ( $source_url = get_post_meta( $post->ID, 'source_url', true ) ) ) : ?>
 
@@ -84,10 +64,6 @@
 				<?php if( has_category( 'projects' ) ) : ?>
 
 					<?php the_post_thumbnail( 'medium', array( 'class' => 'project-logo img-fluid' ) ); ?>
-
-				<?php elseif( !has_category( 'press-mention' ) ) : ?>
-
-					<?php pai_published_date(); ?>
 
 				<?php endif; ?>
 
