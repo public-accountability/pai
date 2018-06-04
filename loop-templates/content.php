@@ -37,7 +37,7 @@
 
 		<?php else : ?>
 
-			<?php the_excerpt(); ?>
+			<?php pai_custom_excerpt(); ?>
 
 		<?php endif; ?>
 

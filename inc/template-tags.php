@@ -182,3 +182,22 @@ function pai_default_featured_image( $image_size = 'thumbnail', $image_class = a
   <?php
   }
 }
+
+/**
+ * Custom Excerpt Template Tag
+ *
+ * @since 0.1.7
+ *
+ * @param  integer $length
+ * @param  string  $more
+ * @return void
+ */
+function pai_custom_excerpt( $length = 55, $more = ' &#133;' ) {
+  $content = wp_trim_words( strip_shortcodes( get_the_content() ), $length, $more );
+
+  echo sprintf( '%s<p><a class="btn btn-secondary understrap-read-more-link" href="%s">%s <span>&rarr;</span></a></p>',
+    apply_filters( 'the_content', $content ),
+    esc_url( get_permalink( get_the_ID() ) ),
+    __( 'Read More', 'pai' )
+  );
+}

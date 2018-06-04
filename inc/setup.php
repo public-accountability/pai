@@ -16,7 +16,7 @@
  */
 function pai_remove_parent_filters() {
   remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
-  remove_filter( 'excerpt_more', 'custom_excerpt_more' );
+  //remove_filter( 'excerpt_more', 'custom_excerpt_more' );
 }
 add_action( 'after_setup_theme', 'pai_remove_parent_filters' );
 
@@ -32,7 +32,21 @@ function pai_excerpt_more( $more ) {
   return $more . '<p><a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
  'pai' ) . '</a></p>';
 }
-add_filter( 'excerpt_more', 'pai_excerpt_more' );
+//add_filter( 'excerpt_more', 'pai_excerpt_more' );
+
+/**
+ * Adds a custom read more link to all excerpts, manually or automatically generated
+ *
+ * @param string $post_excerpt Posts's excerpt.
+ *
+ * @return string
+ */
+function pai_wp_trim_excerpt( $post_excerpt ) {
+
+  return $post_excerpt . ' &#133;<p><a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>.',
+  'understrap' ) . '</a></p>';
+}
+add_filter( 'wp_trim_excerpt', 'pai_wp_trim_excerpt' );
 
 /**
  * Basic Theme Set-up
@@ -59,8 +73,10 @@ function pai_setup() {
         'post_types' => array( 'report' ),
     ) );
 
+    remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+
 }
-add_action( 'after_setup_theme', 'pai_setup', 20 );
+add_action( 'after_setup_theme', 'pai_setup', 99 );
 
 /**
  * Set Image Sizes
