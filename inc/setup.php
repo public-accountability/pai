@@ -9,6 +9,9 @@
  * @since 0.1.0
  */
 
+remove_filter( 'excerpt_more', 'custom_excerpt_more' );
+remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+
 /**
  * Removes the ... from the excerpt read more link
  *
