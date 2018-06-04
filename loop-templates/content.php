@@ -22,13 +22,13 @@
 
 	<div class="entry-content">
 
-		<?php if( has_category( 'projects', 'project' ) ) : ?>
+		<?php if( has_category( 'projects' ) || has_category( 'project' ) ) : ?>
 
 			<?php the_content(); ?>
 
 			<?php if( $url = get_post_meta( $post->ID, 'url', true ) ) : ?>
 
-				<?php echo sprintf( '<a href="%s" rel="bookmark" class="btn btn-secondary understrap-read-more" target="_blank">%s</a>',
+				<?php echo sprintf( '<a href="%s" rel="bookmark" class="btn btn-secondary understrap-read-more" target="_blank">%s <span>&rarr;</span></a>',
 					esc_url( $url ),
 					esc_html( 'Learn More' )
 				); ?>
