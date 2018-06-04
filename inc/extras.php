@@ -18,10 +18,14 @@
   */
  function all_excerpts_get_more_link( $post_excerpt ) {
 
-   return $post_excerpt . '...<p> <a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
-   'understrap' ) . '</a></p>';
+   return $post_excerpt;
  }
  add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+
+function custom_excerpt_more( $more ) {
+	return '';
+}
+add_filter( 'excerpt_more', 'custom_excerpt_more' );
 
 /**
  * Modify Default Archive title

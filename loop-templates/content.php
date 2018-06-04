@@ -22,11 +22,7 @@
 
 	<div class="entry-content">
 
-		<?php if( !has_category( 'projects' ) && !has_category( 'project' ) ) : ?>
-
-			<?php the_excerpt(); ?>
-
-		<?php else : ?>
+		<?php if( has_category( 'projects', 'project' ) ) : ?>
 
 			<?php the_content(); ?>
 
@@ -38,6 +34,10 @@
 				); ?>
 
 			<?php endif; ?>
+
+		<?php else : ?>
+
+			<?php the_excerpt(); ?>
 
 		<?php endif; ?>
 
