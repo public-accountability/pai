@@ -9,8 +9,16 @@
  * @since 0.1.0
  */
 
-remove_filter( 'excerpt_more', 'custom_excerpt_more' );
-remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+/**
+ * Remove Parent Filters
+ *
+ * @return void
+ */
+function pai_remove_parent_filters() {
+  remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+  remove_filter( 'excerpt_more', 'custom_excerpt_more' );
+}
+add_action( 'after_setup_theme', 'pai_remove_parent_filters' );
 
 /**
  * Removes the ... from the excerpt read more link
@@ -19,23 +27,12 @@ remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
  *
  * @return string
  */
-function custom_excerpt_more( $more ) {
-  return '';
+function pai_excerpt_more( $more ) {
+  $more = ' &#133;';
+  return $more . '<p><a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
+ 'pai' ) . '</a></p>';
 }
-add_filter( 'excerpt_more', 'custom_excerpt_more' );
-
-/**
- * Adds a custom read more link to all excerpts, manually or automatically generated
- *
- * @param string $post_excerpt Posts's excerpt.
- *
- * @return string
- */
-function all_excerpts_get_more_link( $post_excerpt ) {
-   return $post_excerpt . '<p><a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
-   'pai' ) . '</a></p>';
- }
-add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+add_filter( 'excerpt_more', 'pai_excerpt_more' );
 
 /**
  * Basic Theme Set-up
