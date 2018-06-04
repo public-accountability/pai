@@ -10,6 +10,31 @@
  */
 
 /**
+ * Removes the ... from the excerpt read more link
+ *
+ * @param string $more The excerpt.
+ *
+ * @return string
+ */
+function custom_excerpt_more( $more ) {
+  return '';
+}
+add_filter( 'excerpt_more', 'custom_excerpt_more' );
+
+/**
+ * Adds a custom read more link to all excerpts, manually or automatically generated
+ *
+ * @param string $post_excerpt Posts's excerpt.
+ *
+ * @return string
+ */
+function all_excerpts_get_more_link( $post_excerpt ) {
+   return $post_excerpt . '<p><a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More <span>&rarr;</span>',
+   'pai' ) . '</a></p>';
+ }
+add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+
+/**
  * Basic Theme Set-up
  *
  * @since 0.1.0
