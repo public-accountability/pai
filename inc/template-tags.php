@@ -35,7 +35,7 @@ function pai_jetpack_share() {
  * @return void
  */
 function pai_featured_post_meta() {
-  $category = pai_get_featured_tag();
+  $featured_tag = pai_get_featured_tag();
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -50,7 +50,15 @@ function pai_featured_post_meta() {
 		esc_html_x( 'Posted on %s', 'post date', 'pai' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
-	echo '<span class="featured-category">' . $category . '</span><span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.
+
+  if( 'report' === get_post_type() ) {
+    $featured_label = esc_attr( 'Report' );
+  } else {
+    $category = get_the_category();
+    $featured_label = ( 'uncategorized' !== $category[0]->slug ) ? $category[0]->slug : '';
+  }
+
+	echo '<span class="featured-category">' . $featured_tag . ' ' . $featured_label. '</span><span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.
 }
 
 /**
@@ -150,4 +158,27 @@ function understrap_post_nav() {
       </nav><!-- .navigation -->
 
   <?php
+}
+
+/**
+ * Display Default Image
+ *
+ * @uses get_theme_mod() @link https://developer.wordpress.org/reference/functions/get_theme_mod/
+ * @uses wp_get_attachment_image() @link https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
+ *
+ * @param  string $image_size
+ * @param  array  $image_class
+ * @return void
+ */
+function pai_default_featured_image( $image_size = 'thumbnail', $image_class = array( 'class' => 'wp-post-image' ) ) {
+  if( $default = get_theme_mod( 'default_featured_image' ) ) {
+
+    echo wp_get_attachment_image( $default, $image_size, '', $image_class );
+
+  } else { ?>
+
+    <img src="<?php echo trailingslashit( get_stylesheet_directory_uri() ) . 'images/default-featured-image.jpg' ?> " alt="" class="<?php echo $image_class['class']; ?> ">
+
+  <?php
+  }
 }
