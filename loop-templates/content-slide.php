@@ -9,7 +9,15 @@
 ?>
 <article <?php post_class( 'carousel-item' ); ?> id="post-<?php the_ID(); ?>">
 
-	<?php the_post_thumbnail( get_the_id(), 'slide', array( 'class' => 'slider-image' ) ); ?>
+	<?php if( has_post_thumbnail( $post ) ) : ?>
+
+		<?php the_post_thumbnail( 'slide', array( 'class' => 'slider-image' ) ); ?>
+
+	<?php else : ?>
+
+		<?php pai_default_featured_image( 'slide', array( 'class' => 'slider-image wp-post-image' ) ); ?>
+
+	<?php endif; ?>
 
 	<header class="entry-header">
 

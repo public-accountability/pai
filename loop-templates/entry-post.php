@@ -39,7 +39,7 @@
 
 		</header><!-- .entry-header -->
 
-		<?php if( has_category( 'projects' ) ) : ?>
+		<?php if( has_category( 'projects', 'project' ) ) : ?>
 
 			<div class="entry-excerpt">
 
@@ -61,7 +61,7 @@
 
 			<div class="entry-meta post-date">
 
-				<?php if( has_category( 'projects' ) ) : ?>
+				<?php if( has_category( 'projects', 'project' ) ) : ?>
 
 					<?php the_post_thumbnail( 'medium', array( 'class' => 'project-logo img-fluid' ) ); ?>
 

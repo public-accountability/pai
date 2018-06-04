@@ -13,7 +13,7 @@
 
 		<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
 
-		<?php if( !has_category( 'projects' ) ) : ?>
+		<?php if( !has_category( 'projects' ) && !has_category( 'project' ) ) : ?>
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 			'</a></h2>' ); ?>
 		<?php endif; ?>
@@ -22,7 +22,7 @@
 
 	<div class="entry-content">
 
-		<?php if( !has_category( 'projects' ) ) : ?>
+		<?php if( !has_category( 'projects' ) && !has_category( 'project' ) ) : ?>
 
 			<?php the_excerpt(); ?>
 
