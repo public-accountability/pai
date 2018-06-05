@@ -79,6 +79,32 @@ function pai_published_date() {
 }
 
 /**
+ * Displays Publish Date
+ *
+ * @since 0.1.7
+ *
+ * @return void
+ */
+ function pai_posted_on() {
+ 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+ 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+ 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+ 	}
+ 	$time_string = sprintf( $time_string,
+ 		esc_attr( get_the_date( 'c' ) ),
+ 		esc_html( get_the_date() ),
+ 		esc_attr( get_the_modified_date( 'c' ) ),
+ 		esc_html( get_the_modified_date() )
+ 	);
+ 	$posted_on = sprintf(
+ 		esc_html_x( 'Posted on %s', 'post date', 'pai' ),
+ 		$time_string
+ 	);
+
+ 	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+ }
+
+/**
  * Display Custom Excerpt
  *
  * @uses all_excerpts_get_more_link()
@@ -93,7 +119,7 @@ function pai_featured_the_excerpt( $text = null ) {
   remove_filter( 'excerpt_more', 'custom_excerpt_more' );
 
   $text = ( !empty( $text ) ) ? $text : get_the_excerpt();
-  $excerpt_length = apply_filters( 'excerpt_length',15 );
+  $excerpt_length = apply_filters( 'excerpt_length', 15 );
   $excerpt_more = apply_filters( 'excerpt_more', '...' );
   $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
   //$text = apply_filters( 'get_the_excerpt', $text );

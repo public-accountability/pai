@@ -18,6 +18,14 @@
 			'</a></h2>' ); ?>
 		<?php endif; ?>
 
+		<?php if( has_category( 'jobs' ) || has_category( 'job' ) ) : ?>
+			<div class="entry-meta">
+
+				<?php pai_posted_on(); ?>
+
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
