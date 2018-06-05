@@ -31,12 +31,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 					</header><!-- .page-header -->
 
-					<div id="press-posts" class="list-view press-posts row">
-
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-
-						<div class="grid-item">
 
 							<?php
 							/**
@@ -44,18 +40,14 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 							 * If you want to overload this in a child theme then include a file
 							 * called content-search.php and that will be used instead.
 							 */
-							get_template_part( 'loop-templates/entry', 'post' );
+							get_template_part( 'loop-templates/content'  );
 							?>
-
-						</div>
 
 					<?php endwhile; ?>
 
 				<?php else : ?>
 
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-				</div>
 
 				<?php endif; ?>
 

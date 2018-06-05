@@ -11,12 +11,14 @@
 
 	<header class="entry-header">
 
-		<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+		<?php if( !is_search() ) : ?>
 
-		<?php if( !has_category( 'projects' ) && !has_category( 'project' ) ) : ?>
-			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>' ); ?>
+			<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+
 		<?php endif; ?>
+
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+		'</a></h2>' ); ?>
 
 		<?php if( has_category( 'jobs' ) || has_category( 'job' ) ) : ?>
 			<div class="entry-meta">
@@ -30,7 +32,7 @@
 
 	<div class="entry-content">
 
-		<?php if( has_category( 'projects' ) || has_category( 'project' ) ) : ?>
+		<?php if( !is_search() && ( has_category( 'projects' ) || has_category( 'project' ) ) ) : ?>
 
 			<?php the_content(); ?>
 
