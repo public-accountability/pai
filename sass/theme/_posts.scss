@@ -15,6 +15,7 @@
     }
   }
 
+  .category-project,
   .category-projects {
     .wp-post-image {
       max-width: 280px;
@@ -22,6 +23,10 @@
       height: auto;
       margin-bottom: 1rem;
       text-align: center;
+    }
+
+    .entry-title {
+      @extend .sr-only;
     }
 
     @include media-breakpoint-up(sm) {
@@ -34,24 +39,66 @@
     @include media-breakpoint-up(md) {
       .wp-post-image {}
     }
+
+    @include media-breakpoint-up(lg) {
+      width: 75%;
+    }
   }
 
   .hentry + .hentry {
     margin-top: 2rem;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 3.75rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 4.6875rem;
+    }
+
   }
 
-  @include media-breakpoint-up(md) {
-    .category-projects + .category-projects {
+  .category-job,
+  .category-jobs {
+    @include media-breakpoint-up(lg) {
+      width: 75%;
+    }
+  }
+
+  /* @include media-breakpoint-up(md) {
+    .category-projects + .category-projects,
+    .category-project + .category-project {
       margin-top: 5rem;
     }
   }
 
   @include media-breakpoint-up(lg) {
-    .category-projects + .category-projects {
+    .category-projects + .category-projects,
+    .category-project + .category-project {
       margin-top: 10rem;
     }
+  } */
+
+}
+
+.search-results {
+
+  .page-title {
+    span {}
   }
 
+  .hentry + .hentry {
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 3.75rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 4.6875rem;
+    }
+
+  }
 }
 
 .single {
@@ -90,7 +137,7 @@
 
       .hr {
         display: block;
-        margin-bottom: 5rem;
+        margin-bottom: 4rem;
         border-top: 1px solid $black;
         width: 112px;
       }
@@ -209,7 +256,7 @@
     }
 
     .entry-content {
-      margin-top: 3.125rem;
+      margin-top: 4rem;
     }
 
     .entry-subtitle {
