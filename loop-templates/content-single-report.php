@@ -34,7 +34,7 @@
 		<div class="entry-meta authors">
 			<span class="hr"></span>
 
-			<?php pai_the_author_posts_link(); ?>
+			<span class="label"><?php _e( 'Author(s):' ); ?></span> <?php pai_the_author_posts_link(); ?>
 
 		</div>
 
