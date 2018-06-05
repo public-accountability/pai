@@ -17,7 +17,7 @@
 
 .home-section {
   .grid-item {
-    @extend .col-md-4;
+    @extend .col-lg-4;
   }
 
   @include media-breakpoint-down(md) {
@@ -30,26 +30,40 @@
     margin-bottom: .5rem;
   }
 
+  @include media-breakpoint-up(lg) {
+    .section-heading {
+      margin-top: 1rem;
+    }
+  }
+
+}
+
+#wrapper-footer-top {
+  .section-heading {
+    margin-top: 1rem;
+  }
 }
 
 #wrapper-statichero {
+
+  margin-bottom: 2rem;
 
   @include media-breakpoint-up(md) {
     margin-bottom: 3rem;
   }
 
   @include media-breakpoint-up(lg) {
-    margin-bottom: 9rem;
+    margin-bottom: 6rem;
   }
 
 }
 
 #featured-research {
-  margin-bottom: ($spacer * 6.5);
+  /* margin-bottom: ($spacer * 4); */
 
   .entry-header {
     @extend %secondary-grid-item;
-    padding-bottom: 2rem;
+    padding: 1.6rem 1.6rem 2rem 1.6rem;
   }
 
   .entry-meta {
@@ -69,7 +83,7 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     .carousel-inner {
       margin-top: -80px;
 
@@ -156,7 +170,7 @@
     font-weight: 700;
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
 
     margin-bottom: 5rem;
 

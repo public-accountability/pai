@@ -81,11 +81,11 @@
   margin-top: 2rem;
 
   @include media-breakpoint-up(md) {
-    margin-top: 5rem;
+    margin-top: 3.75rem;
   }
 
   @include media-breakpoint-up(lg) {
-    margin-top: 10rem;
+    margin-top: 4.6875rem;
   }
 }
 
@@ -94,14 +94,14 @@
   color: $secondary;
 
   &:not(:first-of-type) {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   @include media-breakpoint-up(md) {
-    margin-bottom: 6rem;
+    margin-bottom: 3.75rem;
 
     &:not(:first-child) {
-      margin-top: 7rem;
+      margin-top: 3.75rem;
     }
   }
 }
