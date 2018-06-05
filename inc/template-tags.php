@@ -113,22 +113,10 @@ function pai_published_date() {
  * @param string $text
  * @return void
  */
-function pai_featured_the_excerpt( $text = null ) {
-  /* Remove excerpt filters added by parent theme */
-  remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
-  remove_filter( 'excerpt_more', 'custom_excerpt_more' );
+function pai_featured_the_excerpt( $length = 55, $more = '' ) {
+  $content = wp_trim_words( strip_shortcodes( get_the_content() ), $length, $more );
 
-  $text = ( !empty( $text ) ) ? $text : get_the_excerpt();
-  $excerpt_length = apply_filters( 'excerpt_length', 15 );
-  $excerpt_more = apply_filters( 'excerpt_more', '...' );
-  $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-  //$text = apply_filters( 'get_the_excerpt', $text );
-
-  /* Readd excerpt filters added by parent theme */
-  add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
-  add_filter( 'excerpt_more', 'custom_excerpt_more' );
-
-  echo $text;
+  echo $content;
 }
 
 /**
