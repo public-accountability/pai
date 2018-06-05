@@ -30,7 +30,7 @@
 		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 		'</a></h3>' ); ?>
 
-		<?php pai_custom_excerpt( 20 ) ?>
+		<?php pai_featured_the_excerpt( 20 ); ?>
 
 	</header><!-- .entry-header -->
 
