@@ -9002,6 +9002,9 @@ h1 {
     .search-results .hentry + .hentry {
       margin-top: 4.6875rem; } }
 
+.single .content-area .entry-content li + li {
+  margin-top: 1.5rem; }
+
 .single .content-area .entry-meta ul {
   margin: 0;
   padding: 0;

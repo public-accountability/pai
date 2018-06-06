@@ -105,6 +105,12 @@
 
   .content-area {
 
+    .entry-content {
+      li + li {
+        margin-top: 1.5rem;
+      }
+    }
+
     .entry-meta {
       ul {
         @include no-bullets;
