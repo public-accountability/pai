@@ -15,6 +15,12 @@
   }
 }
 
+.entry-excerpt {
+  font-family: $font-family-sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
 .home-section {
   .grid-item {
     @extend .col-lg-4;
@@ -62,7 +68,7 @@
   /* margin-bottom: ($spacer * 4); */
 
   .entry-header {
-    @extend %secondary-grid-item;
+    @extend %primary-grid-item;
     padding: 1.6rem 1.6rem 2rem 1.6rem;
   }
 
@@ -150,7 +156,7 @@
     padding-top: 200px;
 
     .entry-content {
-      @extend %secondary-grid-item;
+      @extend %primary-grid-item;
     }
 
   }
@@ -199,7 +205,7 @@
   }
 
   .post {
-    @extend %secondary-grid-item;
+    @extend %primary-grid-item;
   }
 
   .entry-meta {

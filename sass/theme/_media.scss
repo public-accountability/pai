@@ -32,14 +32,10 @@ figure {
   background-image: url('../images/right-arrow.svg');
 }
 
-img.wp-post-image {
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
-}
+img.wp-post-image {}
 
 home-section-item {
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
+  @extend %grayscale;
 }
 
 .wp-caption-text {

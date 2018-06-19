@@ -53,9 +53,9 @@ $spacer: .8rem;
   &:focus,
   &:active,
   &.active {
-    background-color: $body-color;
+    background-color: $secondary;
     color: $body-color-inverted;
-    border-color: $body-color;
+    border-color: $secondary;
   }
 }
 
@@ -187,7 +187,6 @@ h4 {
   }
 }
 
-
 %primary-grid-item {
   padding: .8rem;
   background-color: $secondary;
@@ -195,17 +194,16 @@ h4 {
 
   a {
     color: $body-color-inverted;
-
-    &:hover,
-    &:focus {
-      color: $body-color-inverted;
-      text-decoration: none;
-    }
   }
 
   &:hover,
   &:focus {
     background-color: $body-color;
+
+    a {
+      color: $body-color-inverted;
+      text-decoration: none;
+    }
   }
 }
 
@@ -271,6 +269,11 @@ h4 {
   .entry-footer {
     padding-bottom: 1rem;
   }
+}
+
+%grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .section-header {

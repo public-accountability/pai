@@ -116,7 +116,7 @@ function pai_published_date() {
 function pai_featured_the_excerpt( $length = 55, $more = '' ) {
   $content = wp_trim_words( strip_shortcodes( get_the_content() ), $length, $more );
 
-  echo $content;
+  echo apply_filters( 'the_content', $content );
 }
 
 /**
