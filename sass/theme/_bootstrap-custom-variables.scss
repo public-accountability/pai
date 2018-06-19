@@ -12,7 +12,7 @@ $gray-600: #797979;
 $gray-800: #343434;
 $red: #ff001d;
 $primary: #214a6c;
-$secondary: #45acd7;
+$secondary: #4aadd5;
 
 /* Grayscale */
 $gray-1: lighten( $black, 90% ); //10% Black
@@ -31,6 +31,9 @@ $body-bg-inverted: $black;
 $bg-faded: #ccc;
 $body-color: $black;
 $body-color-inverted: $white;
+
+$font-weight-medium: 500;
+
 
 $link-color: $secondary;
 
