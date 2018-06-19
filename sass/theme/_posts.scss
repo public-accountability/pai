@@ -178,6 +178,10 @@
 .single-report {
   font-size: 1.25rem;
 
+  .post-date {
+    font-size: 1.5rem;
+  }
+
   #primary {
     @extend .col-lg-9;
   }
@@ -322,7 +326,7 @@
   }
 
   .subpage {
-    @extend %secondary-grid-item;
+    @extend %primary-grid-item;
     padding: 2.5rem;
   }
 

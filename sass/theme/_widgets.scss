@@ -1,14 +1,14 @@
 .page-section {
 
   .grid-item {
-    
+
     &.widget-item {
       display: flex;
     }
   }
 
   article {
-    @extend %secondary-grid-item;
+    @extend %primary-grid-item;
 
     .textwidget {
       font-size: 2rem;
@@ -35,6 +35,11 @@
 
     ul {
       @include no-bullets;
+
+      li {
+        font-size: 1.5rem;
+        line-height: 1.2;
+      }
 
       li + li {
         margin-top: .75rem;
