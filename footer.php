@@ -50,8 +50,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 						<?php dynamic_sidebar( 'site-info' ); ?>
 
-						<?php if ( function_exists( 'jetpack_social_menu' ) ) jetpack_social_menu(); ?>
-
 					</footer><!-- #colophon -->
 
 				</div><!--col end -->
