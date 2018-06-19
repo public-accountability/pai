@@ -1,11 +1,36 @@
+
 @font-face {
-	font-family: 'Berthold Akzidenz Grotesk BE';
-	src: url('../fonts/AkzidenzGroteskBE-Regular.eot');
-	src: url('../fonts/AkzidenzGroteskBE-Regular.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/AkzidenzGroteskBE-Regular.woff2') format('woff2'),
-		url('../fonts/AkzidenzGroteskBE-Regular.woff') format('woff'),
-		url('../fonts/AkzidenzGroteskBE-Regular.ttf') format('truetype'),
-		url('../fonts/AkzidenzGroteskBE-Regular.svg#AkzidenzGroteskBE-Regular') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('../fonts/berthold_akzidenz_grotesk_be_medium.woff2') format('woff2'),
+         url('../fonts/berthold_akzidenz_grotesk_be_medium.woff') format('woff'),
+         url('../fonts/berthold_akzidenz_grotesk_be_medium.svg#Berthold Akzidenz Grotesk BE') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('../fonts/berthold_akzidenz_grotesk_be_bold.woff2') format('woff2'),
+         url('../fonts/berthold_akzidenz_grotesk_be_bold.woff') format('woff'),
+         url('../fonts/berthold_akzidenz_grotesk_be_bold.svg#Berthold Akzidenz Grotesk BE') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('../fonts/berthold_akzidenz_grotesk_be_regular.woff2') format('woff2'),
+         url('../fonts/berthold_akzidenz_grotesk_be_regular.woff') format('woff'),
+         url('../fonts/berthold_akzidenz_grotesk_be_regular.svg#Berthold Akzidenz Grotesk BE') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Berthold Akzidenz Grotesk BE';
+    src: url('../fonts/berthold_akzidenz_grotesk_be_italic.woff2') format('woff2'),
+         url('../fonts/berthold_akzidenz_grotesk_be_italic.woff') format('woff'),
+         url('../fonts/berthold_akzidenz_grotesk_be_italic.svg#Berthold Akzidenz Grotesk BE') format('svg');
+    font-weight: normal;
+    font-style: italic;
 }
