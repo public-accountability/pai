@@ -1,4 +1,7 @@
-body {}
+body {
+  font-weight: normal;
+  font-style: normal;
+}
 
 h1,
 h2,
@@ -17,8 +20,11 @@ h1 {
 
 .lead {
   font-size: 1.2rem;
+  /* font-size: 2.375rem; */
   font-family: $font-family-sans-serif;
+  /* font-weight: bold; */
   font-weight: normal;
+  font-style: normal;
 }
 
 .navbar-nav,
@@ -26,4 +32,6 @@ h1 {
 .entry-meta,
 .section-heading span {
   font-family: $font-family-sans-serif;
+  font-weight: bold;
+  font-style: normal;
 }
