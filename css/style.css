@@ -9030,8 +9030,9 @@ h1 {
   .single .content-area .entry-meta .categories a {
     color: #4aadd5; }
 
-.single .content-area .post-date {
-  margin-bottom: 2.875rem; }
+.single .content-area .entry-date {
+  margin-bottom: 2.875rem;
+  font-family: "PT Serif", serif; }
 
 .single .content-area .authors {
   font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
@@ -9043,7 +9044,7 @@ h1 {
     display: block;
     margin-bottom: 4rem;
     border-top: 1px solid #000;
-    width: 112px; }
+    width: 7.75rem; }
 
 .single-post .content-area .entry-meta {
   margin-bottom: 2rem; }

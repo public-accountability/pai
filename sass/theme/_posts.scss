@@ -128,8 +128,9 @@
       }
     }
 
-    .post-date {
+    .entry-date {
       margin-bottom: 2.875rem;
+      font-family: $headings-font-family;
     }
 
     .authors {
@@ -145,11 +146,10 @@
         display: block;
         margin-bottom: 4rem;
         border-top: 1px solid $black;
-        width: 112px;
+        width: 7.75rem;
       }
 
     }
-
 
   }
 
