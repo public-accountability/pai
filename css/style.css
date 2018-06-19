@@ -9042,6 +9042,7 @@ h1 {
     text-decoration: underline; }
   .single .content-area .authors .hr {
     display: block;
+    margin-top: 4rem;
     margin-bottom: 4rem;
     border-top: 1px solid #000;
     width: 7.75rem; }
