@@ -1,3 +1,10 @@
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  text-transform: uppercase;
+}
+
 .search-filters {
   display: flex;
   flex-wrap: wrap;
@@ -100,30 +107,29 @@
   }
 }
 
-.actionnetwork-signup {
-  display: flex;
+#newsletter {
+  /* display: flex;
   justify-content: center;
   align-items: flex-end;
+  flex-wrap: wrap; */
 
-  label {
-    font-family: $font-family-sans-serif;
-    text-transform: uppercase;
+  .pai-signup-form-input-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
   }
 
-  input[type="submit"] {
-    background-color: $gray-6;
-    border-color: $gray-6;
-    color: $body-color-inverted;
-    text-transform: uppercase;
+  .widget-title {
+    margin-bottom: 1rem;
+    font-family: $headings-font-family;
+    text-transform: none;
+    font-size: 1.5rem;
+  }
 
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: $body-color-inverted;
-      border-color: $gray-6;
-      color: $gray-6;
-    }
+  label,
+  .hidden {
+    @include visually-hidden;
   }
 
   input {
@@ -133,6 +139,26 @@
     border: 1px solid $gray-6;
     line-height: 24px;
     font-family: $font-family-sans-serif;
+
+    flex-basis: 75%;
+  }
+
+  input[type="submit"],
+  button {
+    background-color: $gray-6;
+    border: 1px solid $gray-6;
+    color: $body-color-inverted;
+    text-transform: uppercase;
+    flex-basis: 25%;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $body-color-inverted;
+      border-color: $gray-6;
+      color: $gray-6;
+    }
   }
 
 }

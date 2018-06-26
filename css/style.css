@@ -8725,11 +8725,9 @@ h1 {
 
 .lead, .archive .taxonomy-description, .page-header .intro,
 .page-content .intro {
-  font-size: 1.2rem;
-  /* font-size: 2.375rem; */
+  font-size: 1.875rem;
   font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-  /* font-weight: bold; */
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal; }
 
 .navbar-nav,
@@ -9354,6 +9352,12 @@ h1 {
   #wrapper-footer a {
     color: #fff; }
 
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder {
+  text-transform: uppercase; }
+
 .search-filters {
   display: flex;
   flex-wrap: wrap;
@@ -9418,29 +9422,51 @@ h1 {
   #newsletter .entry-shortcode {
     padding: 0 1rem; } }
 
-.actionnetwork-signup {
-  display: flex;
+#newsletter {
+  /* display: flex;
   justify-content: center;
-  align-items: flex-end; }
-  .actionnetwork-signup label {
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    text-transform: uppercase; }
-  .actionnetwork-signup input[type="submit"] {
-    background-color: #797979;
-    border-color: #797979;
-    color: #fff;
-    text-transform: uppercase; }
-    .actionnetwork-signup input[type="submit"]:hover, .actionnetwork-signup input[type="submit"]:focus, .actionnetwork-signup input[type="submit"]:active, .actionnetwork-signup input[type="submit"].active {
-      background-color: #fff;
-      border-color: #797979;
-      color: #797979; }
-  .actionnetwork-signup input {
+  align-items: flex-end;
+  flex-wrap: wrap; */ }
+  #newsletter .pai-signup-form-input-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap; }
+  #newsletter .widget-title {
+    margin-bottom: 1rem;
+    font-family: "PT Serif", serif;
+    text-transform: none;
+    font-size: 1.5rem; }
+  #newsletter label,
+  #newsletter .hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute !important; }
+  #newsletter input {
     width: 100%;
     padding: .5rem .75rem;
     border-radius: 0;
     border: 1px solid #797979;
     line-height: 24px;
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    flex-basis: 75%; }
+  #newsletter input[type="submit"],
+  #newsletter button {
+    background-color: #797979;
+    border: 1px solid #797979;
+    color: #fff;
+    text-transform: uppercase;
+    flex-basis: 25%; }
+    #newsletter input[type="submit"]:hover, #newsletter input[type="submit"]:focus, #newsletter input[type="submit"]:active, #newsletter input[type="submit"].active,
+    #newsletter button:hover,
+    #newsletter button:focus,
+    #newsletter button:active,
+    #newsletter button.active {
+      background-color: #fff;
+      border-color: #797979;
+      color: #797979; }
 
 iframe {
   border: 0; }
