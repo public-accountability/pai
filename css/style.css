@@ -8594,11 +8594,11 @@ h4 a {
       padding-top: 1.875rem;
       padding-bottom: 1.875rem; } }
 
-.background-line, .single-report .content-area h2 {
+.background-line {
   margin-top: 2rem;
   position: relative;
   z-index: 1; }
-  .background-line:before, .single-report .content-area h2:before {
+  .background-line:before {
     border-top: 1px solid #000;
     content: " ";
     margin: 0 auto;
@@ -8609,7 +8609,7 @@ h4 a {
     bottom: 0;
     width: 95%;
     z-index: -1; }
-  .background-line span, .single-report .content-area h2 span {
+  .background-line span {
     background: #fff;
     padding: 0 1rem 0 0; }
 
@@ -8633,13 +8633,14 @@ h4 a {
     background: #fff;
     padding: 0 1rem; }
 
-.entry-meta .categories {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.entry-meta .entry-date {
-  font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
+.entry-meta {
+  font-size: 1rem; }
+  .entry-meta .categories {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .entry-meta .entry-date {
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
 
 .nav-links .nav-previous,
 .nav-links .nav-next, .list-view article, .list-view .subpage, .page-section article, #wrapper-footer-top .widget, #featured-research .entry-header, #our-work .home-section-item .entry-content, #recent-news .post {
@@ -8679,7 +8680,7 @@ home-section-item {
   position: relative;
   z-index: 1;
   text-align: center;
-  font-size: .9375rem;
+  font-size: 1rem;
   font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
   text-transform: uppercase;
   margin-top: 1rem;
@@ -8738,6 +8739,20 @@ h1 {
   font-weight: bold;
   font-style: normal; }
 
+.site-main {
+  font-size: 1.25rem; }
+  .site-main .entry-meta {
+    font-size: 1rem; }
+    .site-main .entry-meta .updated {
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      position: absolute !important; }
+
+.page-template-page-research .site-main {
+  font-size: 1rem; }
+
 .menu {
   margin: 0;
   padding: 0;
@@ -8775,7 +8790,7 @@ h1 {
   justify-content: space-between;
   align-items: flex-start; }
   #main-menu li {
-    font-size: .825rem; }
+    font-size: 0.875rem; }
     @media (min-width: 768px) {
       #main-menu li {
         padding-right: 1em; } }
@@ -8788,22 +8803,18 @@ h1 {
   #main-menu .dropdown-menu {
     margin-top: 0;
     border-radius: 0; }
-
-#section-menu {
-  text-transform: uppercase;
-  font-size: .825rem; }
-  #section-menu .search-menu {
-    display: none; }
-  #section-menu ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap; }
-  #section-menu li {
-    padding: .5em 1em .5em 0; }
-    #section-menu li a {
-      color: #000; }
+  @media (max-width: 991.98px) {
+    #main-menu .dropdown-menu {
+      display: block;
+      padding-top: 0;
+      padding-bottom: 0;
+      border-color: transparent; }
+    #main-menu .caret:after {
+      display: none; }
+    #main-menu .highlight a {
+      padding: .25rem .5rem; }
+    #main-menu .search-menu {
+      margin-top: .5rem; } }
 
 .jetpack-social-navigation {
   flex: 0 0 100%;
@@ -8862,10 +8873,11 @@ h1 {
     .nav-links .grid-item.next {
       padding-left: 0; } }
 
-.toc .active,
-.ez-toc .active {
-  /* font-weight: 900;
-    color: $body-color; */ }
+.navbar-toggler {
+  padding: 0;
+  border: none; }
+  .navbar-toggler .navbar-toggler-icon {
+    color: #000; }
 
 #search {
   position: fixed;
@@ -8952,57 +8964,39 @@ h1 {
 #search-link .search-icon {
   font-size: 1.125rem; }
 
-.archive {
-  /* @include media-breakpoint-up(md) {
-    .category-projects + .category-projects,
-    .category-project + .category-project {
-      margin-top: 5rem;
-    }
-  }
+.archive .taxonomy-title {
+  text-transform: uppercase;
+  color: #4aadd5;
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem; }
 
-  @include media-breakpoint-up(lg) {
-    .category-projects + .category-projects,
-    .category-project + .category-project {
-      margin-top: 10rem;
-    }
-  } */ }
-  .archive .taxonomy-title {
-    text-transform: uppercase;
-    color: #4aadd5;
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem; }
-  @media (min-width: 768px) {
-    .archive .taxonomy-description {
-      padding-right: 15%; } }
+@media (min-width: 768px) {
+  .archive .taxonomy-description {
+    padding-right: 15%; } }
+
+.archive .category-project .wp-post-image,
+.archive .category-projects .wp-post-image {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  text-align: center; }
+
+@media (min-width: 576px) {
   .archive .category-project .wp-post-image,
   .archive .category-projects .wp-post-image {
-    max-width: 280px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    text-align: center; }
-  @media (min-width: 576px) {
-    .archive .category-project .wp-post-image,
-    .archive .category-projects .wp-post-image {
-      width: 300px;
-      text-align: left; } }
+    width: 300px;
+    text-align: left; } }
+
+.archive .hentry + .hentry {
+  margin-top: 2rem; }
+  @media (min-width: 768px) {
+    .archive .hentry + .hentry {
+      margin-top: 3.75rem; } }
   @media (min-width: 992px) {
-    .archive .category-project,
-    .archive .category-projects {
-      width: 75%; } }
-  .archive .hentry + .hentry {
-    margin-top: 2rem; }
-    @media (min-width: 768px) {
-      .archive .hentry + .hentry {
-        margin-top: 3.75rem; } }
-    @media (min-width: 992px) {
-      .archive .hentry + .hentry {
-        margin-top: 4.6875rem; } }
-  @media (min-width: 992px) {
-    .archive .category-job,
-    .archive .category-jobs {
-      width: 75%; } }
+    .archive .hentry + .hentry {
+      margin-top: 4.6875rem; } }
 
 .search-results .hentry + .hentry {
   margin-top: 2rem; }
@@ -9040,8 +9034,8 @@ h1 {
     text-decoration: underline; }
   .single .content-area .authors .hr {
     display: block;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
     border-top: 1px solid #000;
     width: 7.75rem; }
 
@@ -9058,14 +9052,16 @@ h1 {
 
 .single-report {
   font-size: 1.25rem; }
-  .single-report .post-date {
-    font-size: 1.5rem; }
+  .single-report .post-date,
+  .single-report .label,
+  .single-report .author {
+    font-size: 1rem; }
   @media (min-width: 992px) {
     .single-report #right-sidebar .sticky {
       position: -webkit-sticky;
       position: sticky;
       top: 10%;
-      margin-top: 5em; } }
+      margin-top: 3.125em; } }
   @media (max-width: 1199.98px) {
     .single-report #right-sidebar .sd-sharing ul {
       justify-content: space-evenly; }
@@ -9078,16 +9074,16 @@ h1 {
     font-weight: bold; }
   .single-report .content-area h2,
   .single-report .content-area h3 {
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    text-transform: uppercase; }
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
   .single-report .content-area h2 {
     margin-top: 7.5rem;
     margin-bottom: 2.875rem;
-    font-size: 2rem; }
+    font-size: 2rem;
+    /* text-transform: uppercase; */ }
   .single-report .content-area h3 {
     margin-top: 2.625rem;
     margin-bottom: 2.25rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold; }
   .single-report .content-area p + p {
     margin-top: 2.25rem; }
@@ -9106,7 +9102,8 @@ h1 {
   .single-report .content-area .entry-subtitle {
     margin-bottom: 1.625rem;
     font-size: 1.5rem;
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
+    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+    font-weight: bold; }
 
 /* Post List */
 .list-view .grid-item {
@@ -9162,6 +9159,34 @@ h1 {
 .page-template-page-research .page .entry-footer,
 .page-template-page-series .page .entry-footer {
   margin-top: 2rem; }
+
+/* Main content has padding */
+@media (min-width: 768px) {
+  .page .site-main .entry-content,
+  .single-post .site-main .entry-content,
+  .category-job .site-main .entry-content,
+  .category-project .site-main .entry-content,
+  .search-results .site-main .entry-content {
+    padding-right: 15%; }
+  .page .site-main .section-heading,
+  .single-post .site-main .section-heading,
+  .category-job .site-main .section-heading,
+  .category-project .site-main .section-heading,
+  .search-results .site-main .section-heading {
+    margin-right: -15%; } }
+
+/* Pages that list content dont have padding */
+@media (min-width: 768px) {
+  .home .site-main .entry-content,
+  .page-template-page-research .site-main .entry-content,
+  .page-template-page-team .site-main .entry-content,
+  .page-template-page-series .site-main .entry-content {
+    padding-right: 0; }
+  .home .site-main .section-heading,
+  .page-template-page-research .site-main .section-heading,
+  .page-template-page-team .site-main .section-heading,
+  .page-template-page-series .site-main .section-heading {
+    margin-right: 0; } }
 
 @media (min-width: 768px) {
   .page-header .intro,
@@ -9250,7 +9275,7 @@ h1 {
     padding: 0;
     list-style: none; }
     .single .widget-area ul li {
-      font-size: 1.5rem;
+      font-size: 1rem;
       line-height: 1.2; }
     .single .widget-area ul li + li {
       margin-top: .75rem; }
@@ -9271,16 +9296,6 @@ h1 {
     width: 100%; }
   .single .widget-area .sd-content {
     margin-top: 4.125rem; }
-  .single .widget-area .toc,
-  .single .widget-area .ez-toc {
-    padding: 1rem;
-    border: 1px solid #000;
-    background-color: #fff; }
-    .single .widget-area .toc .widgettitle,
-    .single .widget-area .toc .widget-title,
-    .single .widget-area .ez-toc .widgettitle,
-    .single .widget-area .ez-toc .widget-title {
-      color: #4aadd5; }
   .single .widget-area .related-reports .widget-title,
   .single .widget-area .related-reports .widgettitle,
   .single .widget-area .press-mentions .widget-title,
@@ -9438,7 +9453,7 @@ h1 {
     margin-bottom: 1rem;
     font-family: "PT Serif", serif;
     text-transform: none;
-    font-size: 1.5rem; }
+    font-size: 1.25rem; }
   #newsletter label,
   #newsletter .hidden {
     clip: rect(1px, 1px, 1px, 1px);
@@ -9522,6 +9537,9 @@ iframe {
   #wrapper-footer-top .grid-item + .grid-item {
     margin-top: 2rem; } }
 
+#wrapper-footer-top .widget {
+  padding: 1.6rem 1.6rem 2rem 1.6rem; }
+
 .sharing-screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -9563,6 +9581,23 @@ iframe {
 .sd-sharing .share-end {
   display: none; }
 
+.widget-area .ez-toc .widgettitle,
+.widget-area .ez-toc .widget-title {
+  color: #4aadd5; }
+
+.widget-area .ez-toc .ez-toc-list li {
+  font-size: 1rem; }
+
+.widget-area .ez-toc .ez-toc-list a.active {
+  color: #797979; }
+
+.widget-area .ez-toc-widget-container {
+  max-height: 600px;
+  overflow-y: auto; }
+
+.widget-area .widget + .widget {
+  margin-top: 3rem; }
+
 .jumbotron {
   padding: 0;
   text-align: center; }
@@ -9602,37 +9637,40 @@ iframe {
     #wrapper-statichero {
       margin-bottom: 6rem; } }
 
-#featured-research {
-  /* margin-bottom: ($spacer * 4); */ }
+#featured-research .entry-header {
+  padding: 1.6rem 1.6rem 2rem 1.6rem; }
+
+#featured-research .entry-meta {
+  text-transform: uppercase; }
+
+#featured-research .updated {
+  display: none; }
+  #featured-research .updated.published {
+    display: inline; }
+
+@media (max-width: 991.98px) {
+  #featured-research .entry-header:after {
+    content: "";
+    display: table;
+    clear: both; } }
+
+@media (min-width: 992px) {
+  #featured-research .carousel-inner {
+    margin-top: -80px; }
+    #featured-research .carousel-inner > article {
+      margin-top: 80px; }
+      #featured-research .carousel-inner > article img {
+        object-fit: cover;
+        max-height: 600px; }
   #featured-research .entry-header {
-    padding: 1.6rem 1.6rem 2rem 1.6rem; }
-  #featured-research .entry-meta {
-    text-transform: uppercase; }
-  #featured-research .updated {
-    display: none; }
-    #featured-research .updated.published {
-      display: inline; }
-  @media (max-width: 991.98px) {
-    #featured-research .entry-header:after {
-      content: "";
-      display: table;
-      clear: both; } }
-  @media (min-width: 992px) {
-    #featured-research .carousel-inner {
-      margin-top: -80px; }
-      #featured-research .carousel-inner > article {
-        margin-top: 80px; }
-        #featured-research .carousel-inner > article img {
-          object-fit: cover;
-          max-height: 600px; }
-    #featured-research .entry-header {
-      margin-top: -80px;
-      width: 35%;
-      position: absolute;
-      top: 0;
-      left: 2.5rem; } }
-  #featured-research .featured-category:after {
-    content: ' | '; }
+    margin-top: -80px;
+    width: 35%;
+    position: absolute;
+    top: 0;
+    left: 2.5rem; } }
+
+#featured-research .featured-category:after {
+  content: ' | '; }
 
 #newsletter .grid-item {
   display: flex; }
@@ -9654,6 +9692,8 @@ iframe {
 
 #our-work .home-section-item {
   padding-top: 200px; }
+  #our-work .home-section-item .entry-content {
+    padding: 1.6rem 1.6rem 2rem 1.6rem; }
 
 #our-work .section-header span {
   font-family: "PT Serif", serif; }
@@ -9681,6 +9721,9 @@ iframe {
 
 #recent-news .grid-item {
   display: flex; }
+
+#recent-news .post {
+  padding: 1.6rem 1.6rem 2rem 1.6rem; }
 
 #recent-news .entry-meta {
   text-transform: uppercase; }

@@ -19,7 +19,7 @@ h1 {
 }
 
 .lead {
-  font-size: 1.875rem;
+  font-size: $font-size-xxl;
   font-family: $font-family-sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -32,4 +32,22 @@ h1 {
   font-family: $font-family-sans-serif;
   font-weight: bold;
   font-style: normal;
+}
+
+.site-main {
+  font-size: $font-size-lg;
+
+  .entry-meta {
+    font-size: $font-size-base;
+
+    .updated {
+      @include visually-hidden;
+    }
+  }
+}
+
+.page-template-page-research {
+  .site-main {
+    font-size: $font-size-base;
+  }
 }

@@ -39,7 +39,7 @@ $spacer: .8rem;
 .btn {
   padding: ($spacer * 1.375) ($spacer * 2.125);
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: $font-size-base;
   border-width: 2px;
 }
 
@@ -178,6 +178,8 @@ h4 {
 }
 
 .entry-meta {
+  font-size: $font-size-base;
+
   .categories {
     @include no-bullets;
   }
@@ -285,7 +287,7 @@ h4 {
   z-index: 1;
 
   text-align: center;
-  font-size: .9375rem;
+  font-size: $font-size-base;
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
 

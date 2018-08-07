@@ -40,5 +40,6 @@
 
   .widget {
     @extend %primary-grid-item;
+    padding: 1.6rem 1.6rem 2rem 1.6rem;
   }
 }
