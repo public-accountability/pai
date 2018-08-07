@@ -40,7 +40,7 @@
     border-color: transparent;
     opacity: 1;
     padding: ($spacer * 0.625) $spacer;
-    font-size: 2.5rem;
+    font-size: $font-size-xxxl;
   }
 
   .search-group {
@@ -112,6 +112,6 @@
 
 #search-link {
   .search-icon {
-    font-size: 1.125rem;
+    font-size: $font-size-md;
   }
 }
