@@ -4,7 +4,7 @@
     color: $secondary;
     font-family: $font-family-sans-serif;
     font-weight:  700;
-    font-size: 1.25rem;
+    font-size: $font-size-lg;
   }
 
   .taxonomy-description {
@@ -39,10 +39,6 @@
     @include media-breakpoint-up(md) {
       .wp-post-image {}
     }
-
-    @include media-breakpoint-up(lg) {
-      width: 75%;
-    }
   }
 
   .hentry + .hentry {
@@ -57,27 +53,6 @@
     }
 
   }
-
-  .category-job,
-  .category-jobs {
-    @include media-breakpoint-up(lg) {
-      width: 75%;
-    }
-  }
-
-  /* @include media-breakpoint-up(md) {
-    .category-projects + .category-projects,
-    .category-project + .category-project {
-      margin-top: 5rem;
-    }
-  }
-
-  @include media-breakpoint-up(lg) {
-    .category-projects + .category-projects,
-    .category-project + .category-project {
-      margin-top: 10rem;
-    }
-  } */
 
 }
 
@@ -144,8 +119,8 @@
 
       .hr {
         display: block;
-        margin-top: 4rem;
-        margin-bottom: 4rem;
+        margin-top: 3.125rem;
+        margin-bottom: 3.125rem;
         border-top: 1px solid $black;
         width: 7.75rem;
       }
@@ -177,10 +152,12 @@
 }
 
 .single-report {
-  font-size: 1.25rem;
+  font-size: $font-size-lg;
 
-  .post-date {
-    font-size: 1.5rem;
+  .post-date,
+  .label,
+  .author {
+    font-size: $font-size-base;
   }
 
   #primary {
@@ -195,7 +172,7 @@
         position: -webkit-sticky;
         position: sticky;
         top: 10%;
-        margin-top: 5em;
+        margin-top: 3.125em;
       }
 
     }
@@ -225,20 +202,19 @@
     h2,
     h3 {
       font-family: $font-family-sans-serif;
-      text-transform: uppercase;
     }
 
     h2 {
-      @extend .background-line;
       margin-top: 7.5rem;
       margin-bottom: 2.875rem;
       font-size: 2rem;
+      /* text-transform: uppercase; */
     }
 
     h3 {
       margin-top: 2.625rem;
       margin-bottom: 2.25rem;
-      font-size: 1rem;
+      font-size: $font-size-xl;
       font-weight: bold;
     }
 
@@ -272,8 +248,9 @@
 
     .entry-subtitle {
       margin-bottom: 1.625rem;
-      font-size: 1.5rem;
+      font-size: $font-size-xl;
       font-family: $font-family-sans-serif;
+      font-weight: bold;
     }
   }
 
@@ -306,10 +283,10 @@
 
     .entry-content,
     .entry-excerpt {
-      font-size: 1.125rem;
+      font-size: $font-size-md;
 
       p {
-        font-size: 1.125rem;
+        font-size: $font-size-md;
       }
     }
 

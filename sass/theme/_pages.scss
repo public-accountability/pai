@@ -17,8 +17,47 @@
   }
 }
 
+/* Main content has padding */
+.page,
+.single-post,
+.category-job,
+.category-project,
+.search-results {
+  .site-main {
+    @include media-breakpoint-up(md) {
+      .entry-content {
+        padding-right: 15%;
+      }
+      .section-heading {
+        margin-right: -15%;
+      }
+    }
+  }
+}
+
+/* Pages that list content dont have padding */
+.home,
+.page-template-page-research,
+.page-template-page-team,
+.page-template-page-series {
+  .site-main {
+    @include media-breakpoint-up(md) {
+      .entry-content {
+        padding-right: 0;
+      }
+
+      .section-heading {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+
 .page-header,
 .page-content {
+
   .intro {
     @extend .lead;
 
