@@ -36,20 +36,38 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						?>
 					</header><!-- .page-header -->
 
+					<?php if( 'report' === get_post_type() ) : ?>
+						<section id="report-posts" class="list-view row js-results">
+					<?php endif; ?>
+
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php
+						<?php if( 'report' === get_post_type() ) : ?>
 
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', get_post_type() );
-						?>
+							<div class="grid-item">
+								<?php get_template_part( 'loop-templates/entry', get_post_type() ); ?>
+							</div>
+
+						<?php else : ?>
+
+							<?php
+
+							/*
+							 * Include the Post-Format-specific template for the content.
+							 * If you want to override this in a child theme, then include a file
+							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							 */
+							get_template_part( 'loop-templates/content', get_post_type() );
+							?>
+
+						<?php endif; ?>
 
 					<?php endwhile; ?>
+
+					<?php if( 'report' === get_post_type() ) : ?>
+					</section>
+					<?php endif; ?>
 
 				<?php else : ?>
 
