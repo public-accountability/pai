@@ -58,3 +58,36 @@
     display: none;
   }
 }
+
+
+.widget-area {
+
+  .ez-toc {
+    .widgettitle,
+    .widget-title {
+      color: $secondary;
+    }
+
+    .ez-toc-list {
+
+      li {
+        font-size: $font-size-base;
+      }
+
+      a.active {
+        color: $gray-600;
+      }
+    }
+
+  }
+
+  .ez-toc-widget-container {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .widget + .widget {
+    margin-top: 3rem;
+  }
+
+}
