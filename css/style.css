@@ -9593,7 +9593,8 @@ iframe {
 
 .widget-area .ez-toc-widget-container {
   max-height: 600px;
-  overflow-y: auto; }
+  overflow-y: auto;
+  padding-right: 1rem; }
 
 .widget-area .widget + .widget {
   margin-top: 3rem; }
