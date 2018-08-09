@@ -64,7 +64,8 @@ function pai_actionnetwork_donation( $atts ) {
 	);
 
 	$output = sprintf( '<script src="%1$s%2$s?format=js&source=widget"></script>
-	  <div id="can-fundraising-area-%2$s" style="width: 100%"></div>',
+	  <div id="can-fundraising-area-%2$s" style="width: 100%">
+	</div><!--#can-fundraising-area-%2$s-->',
     esc_url( 'https://actionnetwork.org/widgets/v2/fundraising/' ),
     esc_attr( $atts['form'] )
   );
