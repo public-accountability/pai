@@ -23,7 +23,7 @@
 		<?php if( has_category( 'jobs' ) || has_category( 'job' ) ) : ?>
 			<div class="entry-meta">
 
-				<?php pai_posted_on(); ?>
+				<?php pai_published_date(); ?>
 
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

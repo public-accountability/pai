@@ -36,15 +36,11 @@ function pai_jetpack_share() {
  */
 function pai_featured_post_meta() {
   $featured_tag = pai_get_featured_tag();
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+	$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
+
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		esc_html( get_the_date() )
 	);
 	$posted_on = sprintf(
 		esc_html_x( 'Posted on %s', 'post date', 'pai' ),
@@ -69,7 +65,7 @@ function pai_featured_post_meta() {
  * @return void
  */
 function pai_published_date() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
@@ -79,30 +75,27 @@ function pai_published_date() {
 }
 
 /**
- * Displays Publish Date
- *
- * @since 0.1.7
+ * Modify Parent Posted on Template Tag
  *
  * @return void
  */
- function pai_posted_on() {
- 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
- 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
- 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
- 	}
+function understrap_posted_on() {
+ 	$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
+
  	$time_string = sprintf( $time_string,
  		esc_attr( get_the_date( 'c' ) ),
- 		esc_html( get_the_date() ),
- 		esc_attr( get_the_modified_date( 'c' ) ),
- 		esc_html( get_the_modified_date() )
+ 		esc_html( get_the_date() )
  	);
  	$posted_on = sprintf(
- 		esc_html_x( 'Posted on %s', 'post date', 'pai' ),
- 		$time_string
+ 		esc_html_x( 'Posted on %s', 'post date', 'understrap' ),
+ 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
  	);
-
- 	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
- }
+ 	$byline = sprintf(
+ 		esc_html_x( 'by %s', 'post author', 'understrap' ),
+ 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+ 	);
+ 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+}
 
 /**
  * Display Custom Excerpt
@@ -114,9 +107,12 @@ function pai_published_date() {
  * @return void
  */
 function pai_featured_the_excerpt( $length = 55, $more = '' ) {
-  $content = wp_trim_words( strip_shortcodes( get_the_content() ), $length, $more );
 
-  echo apply_filters( 'the_content', $content );
+  if ( !has_excerpt() ) {
+    echo wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), $length, $more ) );
+  } else {
+    echo wp_kses_post( get_post_field( 'post_excerpt' ) );
+  }
 }
 
 /**
