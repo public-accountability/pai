@@ -124,6 +124,20 @@
     display: flex;
   }
 
+  @include media-breakpoint-up(sm) {
+
+    h3,
+    .entry-shortcode {
+      padding: 0 1rem;
+      flex-basis: 50%;
+    }
+
+    h3 {
+      text-align: right;
+    }
+
+  }
+
   .home-section-item {
     padding-top: 5rem;
     border-top: 1px solid $body-color;
@@ -140,14 +154,6 @@
     .entry-shortcode {}
   }
 
-  @include media-breakpoint-up(sm) {
-
-    h3,
-    .entry-shortcode {
-      padding: 0 1rem;
-    }
-
-  }
 }
 
 #our-work {

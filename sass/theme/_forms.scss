@@ -107,24 +107,12 @@
   }
 }
 
-#newsletter {
-  /* display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex-wrap: wrap; */
-
+#pai-signup-form {
   .pai-signup-form-input-group {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
-  }
-
-  .widget-title {
-    margin-bottom: 1rem;
-    font-family: $headings-font-family;
-    text-transform: none;
-    font-size: $font-size-lg;
   }
 
   label,
@@ -139,8 +127,15 @@
     border: 1px solid $gray-6;
     line-height: 24px;
     font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+  }
 
+  input[type="email"] {
     flex-basis: 75%;
+  }
+
+  input[type="submit"] {
+    flex-basis: 25%;
   }
 
   input[type="submit"],
@@ -149,7 +144,7 @@
     border: 1px solid $gray-6;
     color: $body-color-inverted;
     text-transform: uppercase;
-    flex-basis: 25%;
+
 
     &:hover,
     &:focus,
@@ -160,5 +155,19 @@
       color: $gray-6;
     }
   }
+}
+
+#newsletter {
+
+
+
+  .widget-title {
+    margin-bottom: 1rem;
+    font-family: $headings-font-family;
+    text-transform: none;
+    font-size: $font-size-lg;
+  }
+
+
 
 }
