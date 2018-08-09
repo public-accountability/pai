@@ -21,15 +21,17 @@
 .page,
 .single-post,
 .category-job,
+.category-jobs,
 .category-project,
+.category-projects,
 .search-results {
   .site-main {
     @include media-breakpoint-up(md) {
       .entry-content {
-        padding-right: 15%;
+        padding-right: 20%;
       }
       .section-heading {
-        margin-right: -15%;
+        margin-right: -20%;
       }
     }
   }
@@ -62,7 +64,7 @@
     @extend .lead;
 
     @include media-breakpoint-up(md) {
-      padding-right: 15%;
+      padding-right: 20%;
     }
   }
 

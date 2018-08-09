@@ -36,7 +36,11 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 					<?php endif; ?>
 
-					<?php understrap_post_nav(); ?>
+					<?php if( !has_term( 'job', 'category' ) && !has_term( 'jobs', 'category' ) ) : ?>
+
+						<?php understrap_post_nav(); ?>
+
+					<?php endif; ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.

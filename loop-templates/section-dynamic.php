@@ -45,7 +45,15 @@ if( $section_query->have_posts() ) : ?>
 
 	<div class="grid-item">
 
-		<?php get_template_part( 'loop-templates/entry', get_post_type() ); ?>
+		<?php if( has_term( 'press-mention', 'category' ) || has_term( 'press-mentions', 'category' ) ) : ?>
+
+			<?php get_template_part( 'loop-templates/entry', 'press' ); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'loop-templates/entry', get_post_type() ); ?>
+
+		<?php endif; ?>
 
 	</div><!-- .grid-item -->
 
