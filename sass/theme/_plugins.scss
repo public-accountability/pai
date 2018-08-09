@@ -74,6 +74,10 @@
         font-size: $font-size-base;
       }
 
+      ul {
+        margin-top: 0.75rem;
+      }
+
       a.active {
         color: $gray-600;
       }

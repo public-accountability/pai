@@ -496,7 +496,7 @@ pre {
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, #newsletter .grid-item, #support-us .grid-item, .col,
 .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, #wrapper-footer-top .grid-item, .col-md-5, .col-md-6, .list-view .grid-item, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .section-header, .list-view .grid-item:first-of-type, .col-md,
-.col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .home-section .grid-item, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .single-report #primary, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
+.col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .home-section .grid-item, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .single-report .content-area, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
 .col-xl-auto {
   position: relative;
@@ -871,10 +871,10 @@ pre {
   .col-lg-7 {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
-  .col-lg-8 {
+  .col-lg-8, .single-report .content-area {
     flex: 0 0 66.66667%;
     max-width: 66.66667%; }
-  .col-lg-9, .single-report #primary {
+  .col-lg-9 {
     flex: 0 0 75%;
     max-width: 75%; }
   .col-lg-10 {
@@ -9057,19 +9057,23 @@ h1 {
   .single-report .author {
     font-size: 1rem; }
   @media (min-width: 992px) {
-    .single-report #right-sidebar .sticky {
+    .single-report .widget-area .sticky {
       position: -webkit-sticky;
       position: sticky;
       top: 10%;
       margin-top: 3.125em; } }
   @media (max-width: 1199.98px) {
-    .single-report #right-sidebar .sd-sharing ul {
+    .single-report .widget-area .sd-sharing ul {
       justify-content: space-evenly; }
-    .single-report #right-sidebar .ez-toc {
+    .single-report .widget-area .ez-toc {
       display: none; } }
-  .single-report #right-sidebar:before, .single-report #right-sidebar:after {
+  .single-report .widget-area:before, .single-report .widget-area:after {
     content: '';
     display: table; }
+  @media (min-width: 992px) {
+    .single-report .widget-area {
+      flex: 0 0 30%;
+      max-width: 30%; } }
   .single-report .content-area h1 {
     font-weight: bold; }
   .single-report .content-area h2,
@@ -9078,8 +9082,7 @@ h1 {
   .single-report .content-area h2 {
     margin-top: 7.5rem;
     margin-bottom: 2.875rem;
-    font-size: 2rem;
-    /* text-transform: uppercase; */ }
+    font-size: 2rem; }
   .single-report .content-area h3 {
     margin-top: 2.625rem;
     margin-bottom: 2.25rem;
@@ -9104,6 +9107,10 @@ h1 {
     font-size: 1.5rem;
     font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
     font-weight: bold; }
+  @media (min-width: 992px) {
+    .single-report .content-area {
+      flex: 0 0 70%;
+      max-width: 70%; } }
 
 /* Post List */
 .list-view .grid-item {
@@ -9165,15 +9172,19 @@ h1 {
   .page .site-main .entry-content,
   .single-post .site-main .entry-content,
   .category-job .site-main .entry-content,
+  .category-jobs .site-main .entry-content,
   .category-project .site-main .entry-content,
+  .category-projects .site-main .entry-content,
   .search-results .site-main .entry-content {
-    padding-right: 15%; }
+    padding-right: 20%; }
   .page .site-main .section-heading,
   .single-post .site-main .section-heading,
   .category-job .site-main .section-heading,
+  .category-jobs .site-main .section-heading,
   .category-project .site-main .section-heading,
+  .category-projects .site-main .section-heading,
   .search-results .site-main .section-heading {
-    margin-right: -15%; } }
+    margin-right: -20%; } }
 
 /* Pages that list content dont have padding */
 @media (min-width: 768px) {
@@ -9191,7 +9202,7 @@ h1 {
 @media (min-width: 768px) {
   .page-header .intro,
   .page-content .intro {
-    padding-right: 15%; } }
+    padding-right: 20%; } }
 
 .page-header:not(.has-secondary-content),
 .page-content:not(.has-secondary-content) {
@@ -9369,6 +9380,9 @@ h1 {
   #wrapper-footer a {
     color: #fff; }
 
+#newsletter .widget-title {
+  text-align: center; }
+
 ::-webkit-input-placeholder,
 ::-moz-placeholder,
 :-ms-input-placeholder,
@@ -9439,51 +9453,55 @@ h1 {
   #newsletter .entry-shortcode {
     padding: 0 1rem; } }
 
-#newsletter {
-  /* display: flex;
+#pai-signup-form .pai-signup-form-input-group {
+  display: flex;
   justify-content: center;
   align-items: flex-end;
-  flex-wrap: wrap; */ }
-  #newsletter .pai-signup-form-input-group {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap; }
-  #newsletter .widget-title {
-    margin-bottom: 1rem;
-    font-family: "PT Serif", serif;
-    text-transform: none;
-    font-size: 1.25rem; }
-  #newsletter label,
-  #newsletter .hidden {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    position: absolute !important; }
-  #newsletter input {
-    width: 100%;
-    padding: .5rem .75rem;
-    border-radius: 0;
-    border: 1px solid #797979;
-    line-height: 24px;
-    font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
-    flex-basis: 75%; }
-  #newsletter input[type="submit"],
-  #newsletter button {
-    background-color: #797979;
-    border: 1px solid #797979;
-    color: #fff;
-    text-transform: uppercase;
-    flex-basis: 25%; }
-    #newsletter input[type="submit"]:hover, #newsletter input[type="submit"]:focus, #newsletter input[type="submit"]:active, #newsletter input[type="submit"].active,
-    #newsletter button:hover,
-    #newsletter button:focus,
-    #newsletter button:active,
-    #newsletter button.active {
-      background-color: #fff;
-      border-color: #797979;
-      color: #797979; }
+  flex-wrap: wrap; }
+
+#pai-signup-form label,
+#pai-signup-form .hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute !important; }
+
+#pai-signup-form input {
+  width: 100%;
+  padding: .5rem .75rem;
+  border-radius: 0;
+  border: 1px solid #797979;
+  line-height: 24px;
+  font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
+  font-size: 1rem; }
+
+#pai-signup-form input[type="email"] {
+  flex-basis: 75%; }
+
+#pai-signup-form input[type="submit"] {
+  flex-basis: 25%; }
+
+#pai-signup-form input[type="submit"],
+#pai-signup-form button {
+  background-color: #797979;
+  border: 1px solid #797979;
+  color: #fff;
+  text-transform: uppercase; }
+  #pai-signup-form input[type="submit"]:hover, #pai-signup-form input[type="submit"]:focus, #pai-signup-form input[type="submit"]:active, #pai-signup-form input[type="submit"].active,
+  #pai-signup-form button:hover,
+  #pai-signup-form button:focus,
+  #pai-signup-form button:active,
+  #pai-signup-form button.active {
+    background-color: #fff;
+    border-color: #797979;
+    color: #797979; }
+
+#newsletter .widget-title {
+  margin-bottom: 1rem;
+  font-family: "PT Serif", serif;
+  text-transform: none;
+  font-size: 1.25rem; }
 
 iframe {
   border: 0; }
@@ -9588,6 +9606,9 @@ iframe {
 .widget-area .ez-toc .ez-toc-list li {
   font-size: 1rem; }
 
+.widget-area .ez-toc .ez-toc-list ul {
+  margin-top: 0.75rem; }
+
 .widget-area .ez-toc .ez-toc-list a.active {
   color: #797979; }
 
@@ -9676,6 +9697,14 @@ iframe {
 #newsletter .grid-item {
   display: flex; }
 
+@media (min-width: 576px) {
+  #newsletter h3,
+  #newsletter .entry-shortcode {
+    padding: 0 1rem;
+    flex-basis: 50%; }
+  #newsletter h3 {
+    text-align: right; } }
+
 #newsletter .home-section-item {
   padding-top: 5rem;
   border-top: 1px solid #000;
@@ -9685,11 +9714,6 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center; }
-
-@media (min-width: 576px) {
-  #newsletter h3,
-  #newsletter .entry-shortcode {
-    padding: 0 1rem; } }
 
 #our-work .home-section-item {
   padding-top: 200px; }
