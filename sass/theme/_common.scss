@@ -36,6 +36,13 @@ $spacer: .8rem;
   }
 }
 
+hr {
+  display: block;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-top: 2px solid  $gray-3;
+}
+
 .btn {
   padding: ($spacer * 1.375) ($spacer * 2.125);
   text-transform: uppercase;
