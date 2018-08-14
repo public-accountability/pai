@@ -43,6 +43,13 @@ hr {
   border-top: 2px solid  $gray-3;
 }
 
+.intro {
+  a {
+    color: $body-color;
+    border-bottom: 1px solid $body-color;
+  }
+}
+
 .btn {
   padding: ($spacer * 1.375) ($spacer * 2.125);
   text-transform: uppercase;
