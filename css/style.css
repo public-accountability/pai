@@ -9210,6 +9210,9 @@ h1 {
   .page-donate .intro {
     padding-right: 20%; } }
 
+.page-press .secondary-content {
+  margin-top: 2.5rem; }
+
 .page-header:not(.has-secondary-content),
 .page-content:not(.has-secondary-content) {
   padding-bottom: 2rem;
