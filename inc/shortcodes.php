@@ -12,7 +12,9 @@
 /**
  * Shortcode to Display Sign-up Form
  *
- * @usage `[signup-form tag="press"]`
+ * @usage `[signup-form type="press" placeholder="Your Email" button="Join"]`
+ * @default `placeholder` "Email"
+ * @default `button` "Sign Up"
  *
  * @param  array $atts
  * @return string $output
@@ -21,7 +23,9 @@ function pai_actionnetwork_form( $atts ) {
 
  	$atts = shortcode_atts(
  		array(
- 			'tag' => '',
+ 			'type' 		=> '',
+ 			'placeholder'	=> __( 'Email', 'pai' ),
+ 			'button'	=> __( 'Sign Up', 'pai' )
  		),
  		$atts,
  		'signup-form'
@@ -35,9 +39,9 @@ function pai_actionnetwork_form( $atts ) {
         <input id="pai-signup-submit-button" type="submit" value="%3$s">
       </div>
     </form>',
-    esc_url( 'https://littlesis.org/home/pai_signup' ),
-    esc_attr__( 'Email', 'pai' ),
-    esc_attr__( 'Sign Up', 'pai' )
+    ( 'press' === $atts['type'] ) ? esc_url( 'https://littlesis.org/home/pai_signup/press' ) : esc_url( 'https://littlesis.org/home/pai_signup' ),
+    esc_attr( $atts['placeholder'] ),
+    esc_attr( $atts['button'] )
   );
 
  	return $output;
@@ -64,7 +68,7 @@ function pai_actionnetwork_donation( $atts ) {
 	);
 
 	$output = sprintf( '<script src="%1$s%2$s?format=js&source=widget"></script>
-	  <div id="can-fundraising-area-%2$s" style="width: 100%">
+	  <div id="can-fundraising-area-%2$s" class="donate-form">
 	</div><!--#can-fundraising-area-%2$s-->',
     esc_url( 'https://actionnetwork.org/widgets/v2/fundraising/' ),
     esc_attr( $atts['form'] )

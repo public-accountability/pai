@@ -28,11 +28,24 @@
   .site-main {
     @include media-breakpoint-up(md) {
       .entry-content {
-        padding-right: 20%;
+        padding-right: $narrow-column-padding;
       }
       .section-heading {
-        margin-right: -20%;
+        margin-right: -$narrow-column-padding;
       }
+    }
+  }
+}
+
+.home,
+.page-template-page-research,
+.page-template-page-team,
+.page-template-page-series,
+.archive {
+  @include media-breakpoint-up(md) {
+
+    .intro {
+      padding-right: $narrow-column-padding;
     }
   }
 }
@@ -41,9 +54,11 @@
 .home,
 .page-template-page-research,
 .page-template-page-team,
-.page-template-page-series {
+.page-template-page-series,
+.page-donate {
   .site-main {
     @include media-breakpoint-up(md) {
+
       .entry-content {
         padding-right: 0;
       }
@@ -55,17 +70,21 @@
   }
 }
 
+.archive,
+.page-donate {
+  @include media-breakpoint-up(md) {
 
+    .intro {
+      padding-right: $narrow-column-padding;
+    }
+  }
+}
 
 .page-header,
 .page-content {
 
   .intro {
     @extend .lead;
-
-    @include media-breakpoint-up(md) {
-      padding-right: 20%;
-    }
   }
 
   &:not(.has-secondary-content) {

@@ -216,6 +216,10 @@ h4 {
 
   a {
     color: $body-color;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 
     &:hover,
     &:focus {
@@ -243,6 +247,10 @@ h4 {
 
   a {
     color: $body-color;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 
     &:hover,
     &:focus {

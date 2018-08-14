@@ -9,31 +9,37 @@
 ?>
 <article <?php post_class( 'carousel-item' ); ?> id="post-<?php the_ID(); ?>">
 
-	<?php if( has_post_thumbnail( $post ) ) : ?>
+	<?php echo sprintf( '<a href="%s" rel="bookmark" title="%s">',
+		esc_url( get_permalink() ),
+		esc_attr( $post->post_title )
+	); ?>
 
-		<?php the_post_thumbnail( 'slide', array( 'class' => 'slider-image' ) ); ?>
+		<?php if( has_post_thumbnail( $post ) ) : ?>
 
-	<?php else : ?>
+			<?php the_post_thumbnail( 'slide', array( 'class' => 'slider-image' ) ); ?>
 
-		<?php pai_default_featured_image( 'slide', array( 'class' => 'slider-image wp-post-image' ) ); ?>
+		<?php else : ?>
 
-	<?php endif; ?>
+			<?php pai_default_featured_image( 'slide', array( 'class' => 'slider-image wp-post-image' ) ); ?>
 
-	<header class="entry-header">
+		<?php endif; ?>
 
-		<div class="entry-meta">
+		<header class="entry-header">
 
-			<?php pai_featured_post_meta(); ?>
+			<div class="entry-meta">
 
-		</div><!-- .entry-meta -->
+				<?php pai_featured_post_meta(); ?>
 
-		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-		'</a></h3>' ); ?>
+			</div><!-- .entry-meta -->
 
-		<div class="entry-excerpt">
-			<?php pai_featured_the_excerpt( 20 ); ?>
-		</div>
+			<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 
-	</header><!-- .entry-header -->
+			<div class="entry-excerpt">
+				<?php pai_featured_the_excerpt( 20 ); ?>
+			</div>
+
+		</header><!-- .entry-header -->
+		
+	</a>
 
 </article><!-- #post-## -->

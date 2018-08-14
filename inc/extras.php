@@ -204,3 +204,28 @@ function pai_pre_get_posts( $query ) {
   }
 }
 add_action( 'pre_get_posts', 'pai_pre_get_posts' );
+
+/**
+ * Add Slug to Body Class
+ *
+ * @uses body_class filter hook
+ * @link https://developer.wordpress.org/reference/functions/body_class/
+ *
+ * @param  array $classes
+ * @return  array $classes
+ */
+function pai_body_classes( $classes ) {
+  global $post;
+
+  if ( is_front_page() ) {
+      $classes[] = 'front-page';  // add custom class to blog static page frontpage
+  }
+
+  if ( isset( $post ) ) {
+    $classes[] = sanitize_title_with_dashes( $post->post_type . '-' . $post->post_name );
+  }
+
+  return $classes;
+}
+
+add_filter( 'body_class', 'pai_body_classes' );

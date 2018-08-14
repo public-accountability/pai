@@ -8971,10 +8971,6 @@ h1 {
   font-weight: 700;
   font-size: 1.25rem; }
 
-@media (min-width: 768px) {
-  .archive .taxonomy-description {
-    padding-right: 15%; } }
-
 .archive .category-project .wp-post-image,
 .archive .category-projects .wp-post-image {
   max-width: 280px;
@@ -9034,8 +9030,8 @@ h1 {
     text-decoration: underline; }
   .single .content-area .authors .hr {
     display: block;
-    margin-top: 3.125rem;
-    margin-bottom: 3.125rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     border-top: 1px solid #000;
     width: 7.75rem; }
 
@@ -9080,8 +9076,8 @@ h1 {
   .single-report .content-area h3 {
     font-family: "Berthold Akzidenz Grotesk BE", sans-serif; }
   .single-report .content-area h2 {
-    margin-top: 7.5rem;
-    margin-bottom: 2.875rem;
+    margin-top: 4.5rem;
+    margin-bottom: 2.75rem;
     font-size: 2rem; }
   .single-report .content-area h3 {
     margin-top: 2.625rem;
@@ -9101,7 +9097,7 @@ h1 {
       .single-report .content-area blockquote footer:before {
         content: ' - '; }
   .single-report .content-area .entry-content {
-    margin-top: 4rem; }
+    margin-top: 4.5rem; }
   .single-report .content-area .entry-subtitle {
     margin-bottom: 1.625rem;
     font-size: 1.5rem;
@@ -9186,22 +9182,32 @@ h1 {
   .search-results .site-main .section-heading {
     margin-right: -20%; } }
 
+@media (min-width: 768px) {
+  .home .intro,
+  .page-template-page-research .intro,
+  .page-template-page-team .intro,
+  .page-template-page-series .intro,
+  .archive .intro {
+    padding-right: 20%; } }
+
 /* Pages that list content dont have padding */
 @media (min-width: 768px) {
   .home .site-main .entry-content,
   .page-template-page-research .site-main .entry-content,
   .page-template-page-team .site-main .entry-content,
-  .page-template-page-series .site-main .entry-content {
+  .page-template-page-series .site-main .entry-content,
+  .page-donate .site-main .entry-content {
     padding-right: 0; }
   .home .site-main .section-heading,
   .page-template-page-research .site-main .section-heading,
   .page-template-page-team .site-main .section-heading,
-  .page-template-page-series .site-main .section-heading {
+  .page-template-page-series .site-main .section-heading,
+  .page-donate .site-main .section-heading {
     margin-right: 0; } }
 
 @media (min-width: 768px) {
-  .page-header .intro,
-  .page-content .intro {
+  .archive .intro,
+  .page-donate .intro {
     padding-right: 20%; } }
 
 .page-header:not(.has-secondary-content),
