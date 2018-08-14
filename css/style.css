@@ -8529,6 +8529,12 @@ a.skip-link {
 .grid-item .entry-terms {
   text-transform: uppercase; }
 
+hr {
+  display: block;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-top: 2px solid #b3b3b3; }
+
 .btn {
   padding: 1.1rem 1.7rem;
   text-transform: uppercase;
@@ -9207,11 +9213,23 @@ h1 {
 
 @media (min-width: 768px) {
   .archive .intro,
-  .page-donate .intro {
+  .page-donate .intro,
+  .page-press .intro {
     padding-right: 20%; } }
 
 .page-press .secondary-content {
   margin-top: 2.5rem; }
+
+@media (min-width: 768px) {
+  .page-press .page-content.has-secondary-content,
+  .page-press .secondary-content {
+    padding-right: 0; }
+  .page-press h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 2.75rem; }
+  .page-press hr {
+    margin-top: 5rem;
+    margin-bottom: 5rem; } }
 
 .page-header:not(.has-secondary-content),
 .page-content:not(.has-secondary-content) {
