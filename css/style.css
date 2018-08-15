@@ -8526,6 +8526,11 @@ a.skip-link {
 .entry-terms:after {
   content: ' | '; }
 
+.block-link {
+  display: block;
+  height: 100%;
+  width: 100%; }
+
 .grid-item .entry-terms {
   text-transform: uppercase; }
 
@@ -9163,6 +9168,12 @@ h1 {
 .category-press-mention .source-publication:after {
   content: ' | '; }
 
+.page-template-default .categories li,
+.page-template-page-research .categories li,
+.page-template-page-series .categories li {
+  display: inline-block;
+  margin-right: .75rem; }
+
 .page-template-default .form-title,
 .page-template-page-research .form-title,
 .page-template-page-series .form-title {
@@ -9547,6 +9558,7 @@ iframe {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
+  margin-top: 5rem;
   height: 48px;
   width: 26px; }
 

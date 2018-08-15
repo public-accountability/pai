@@ -2,6 +2,13 @@
 .page-template-page-research,
 .page-template-page-series {
 
+  .categories {
+    li {
+      display: inline-block;
+      margin-right: .75rem;
+    }
+  }
+
   .form-title {
     margin-top: 2rem;
   }
