@@ -28,13 +28,21 @@ $section_id = get_sub_field( 'section_id' );
 
 		<div class="entry-heading"></div><!-- .entry-heading -->
 
+		<?php if( $link ) : ?>
+			<?php echo sprintf( '<a href="%s" title="%s" rel="bookmark"%s>',
+				esc_url( $link['url'] ),
+				esc_attr( $text ),
+				( $link['target'] ) ? ' target="' . esc_attr( $link['target'] ) . '"' : ''
+			); ?>
+		<?php endif; ?>
+
 		<div class="entry-content">
 
 			<?php if( $heading ) : ?>
 
 				<div class="entry-meta">
 					<div class="entry-terms">
-						<?php echo wp_strip_all_tags( $heading, true ); ?>
+						<?php echo wp_kses( $heading ); ?>
 					</div>
 				</div>
 
@@ -42,20 +50,7 @@ $section_id = get_sub_field( 'section_id' );
 
 			<?php if( $text ) : ?>
 
-				<?php if ( $link && empty( $link['title'] ) ): ?>
-
-					<?php printf( '<h3 class="entry-title"><a href="%s" title="%s" rel="bookmark"%s>%s</a></h3>',
-						esc_url( $link['url'] ),
-						esc_attr( $text ),
-						( $link['target'] ) ? ' target="' . esc_attr( $link['target'] ) . '"' : '' ,
-						esc_attr( $text )
-				 	); ?>
-
-				<?php else : ?>
-
-					<h3><?php echo $text; ?></h3>
-
-				<?php endif; ?>
+				<h3 class="entry-title"><?php echo wp_kses( $text ); ?></h3>
 
 			<?php endif; ?>
 
@@ -69,18 +64,17 @@ $section_id = get_sub_field( 'section_id' );
 
 		<div class="entry-footer">
 
-			<?php if( isset( $link['title'] ) && !empty( $link['title'] ) ) : ?>
+			<?php if( isset( $link['title'] ) ) : ?>
 
-				<?php echo sprintf( '<a href="%s" title="%s" class="btn btn-primary" rel="bookmark"%s>%s</a>',
-					esc_url( $link['url'] ),
-					esc_attr( $link['title'] ),
-					( $link['target'] ) ? ' target="' . esc_attr( $link['target'] ) . '"' : '' ,
-					esc_attr( $link['title'] )
-				); ?>
+				<?php echo apply_filters( 'the_title', esc_attr( $link['title'] ) ); ?>
 
 			<?php endif; ?>
 
 		</div><!-- .entry-footer -->
+
+		<?php if( $link ) : ?>
+		</a>
+		<?php endif; ?>
 
 	</article><!-- #post-## -->
 
