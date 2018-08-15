@@ -9,7 +9,7 @@
 ?>
 <article <?php post_class( 'carousel-item' ); ?> id="post-<?php the_ID(); ?>">
 
-	<?php echo sprintf( '<a href="%s" rel="bookmark" title="%s">',
+	<?php echo sprintf( '<a class="block-link" href="%s" rel="bookmark" title="%s">',
 		esc_url( get_permalink() ),
 		esc_attr( $post->post_title )
 	); ?>
@@ -39,7 +39,7 @@
 			</div>
 
 		</header><!-- .entry-header -->
-		
+
 	</a>
 
 </article><!-- #post-## -->
