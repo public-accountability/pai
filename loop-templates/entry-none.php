@@ -11,7 +11,7 @@
 
 	<header class="entry-header">
 
-		<?php echo __( 'None Were Found', 'pai' ); ?>
+		<?php echo __( 'None Found', 'pai' ); ?>
 
 	</header><!-- .entry-header -->
 

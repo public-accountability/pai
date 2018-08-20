@@ -27,7 +27,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<main class="site-main" id="main">
 
-				<?php if ( have_posts() ) : ?>
+
 
 					<header class="page-header">
 						<?php
@@ -35,6 +35,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 						the_archive_description( '<div class="taxonomy-description intro">', '</div>' );
 						?>
 					</header><!-- .page-header -->
+
+					<?php if ( have_posts() ) : ?>
 
 					<?php if( 'report' === get_post_type() ) : ?>
 						<section id="report-posts" class="list-view row js-results">
@@ -71,7 +73,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php else : ?>
 
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+					<?php get_template_part( 'loop-templates/entry', 'none' ); ?>
 
 				<?php endif; ?>
 
