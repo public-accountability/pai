@@ -3,12 +3,12 @@
   /**
    * Variables
    */
-  var contentEl = $( '.js-results' );
+  var $contentEl = $( '.js-results' );
 
-  var filterEl = $( '.js-filter-form select' ),
-      searchForm = $( '.js-filter-form' ),
-      searchField = $( '.js-search-field' ),
-      searchSubmit = $( '.js-search-submit' );
+  var $filterEl = $( '.js-filter-form select' ),
+      $searchForm = $( '.js-filter-form' ),
+      $searchField = $( '.js-search-field' ),
+      $searchSubmit = $( '.js-search-submit' );
 
   var $paginationEl = $( '.js-page-pagination .pagination' ),
       $pagerEl = $( '.js-page-pagination a' ),
@@ -54,10 +54,10 @@
   /**
    * Search
    */
-  searchSubmit.click(function(event) {
+  $searchSubmit.click(function(event) {
     event.preventDefault();
 
-    args['s'] = searchField.val();
+    args['s'] = $searchField.val();
     args['paged'] = 1;
 
     /* UI State Changes */
@@ -81,10 +81,10 @@
   /**
    * Filter Event
    */
-  filterEl.change(function(event) {
+  $filterEl.change(function(event) {
     event.preventDefault();
 
-    args['s'] = searchField.val();
+    args['s'] = $searchField.val();
     args['paged'] = 1;
 
     /* UI State Changes */
@@ -108,10 +108,10 @@
   /**
    * Pagination Event
    */
-   $pagerEl.click(function(event) {
+  $pagerEl.click(function(event) {
      event.preventDefault();
 
-     args['s'] = searchField.val();
+     args['s'] = $searchField.val();
      args['paged'] = findPageNumber( $(this).clone() );
 
      /* UI State Changes */
@@ -151,7 +151,7 @@
     })
     .success(function(response, textStatus, XMLHttpRequest) {
 
-      contentEl.html( response.content );
+      $contentEl.html( response.content );
 
       if( 1 === response.query.max_num_pages ) {
         $paginationEl.addClass( 'hidden' );
