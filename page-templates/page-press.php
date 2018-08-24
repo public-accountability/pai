@@ -69,7 +69,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination( $query ); ?>
+			<?php pai_pagination_page_pagination( $query ); ?>
+
 
 		</div><!-- #primary -->
 
