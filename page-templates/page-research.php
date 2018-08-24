@@ -41,8 +41,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				<?php endwhile; // end of the loop. ?>
 
 				<?php
+				$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 				$args = array(
-					'post_type'					=> array( 'report' )
+					'post_type'					=> array( 'report' ),
+					'paged'							=> $paged
 				);
 
 				$query = new WP_Query( $args );
@@ -70,7 +72,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination( $query ); ?>
+			<?php pai_ajax_pagination( $query ); ?>
 
 		</div><!-- #primary -->
 
