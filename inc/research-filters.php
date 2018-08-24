@@ -59,6 +59,10 @@
       'post_type'    => 'report'
     );
 
+    if( $_POST['args']['paged'] ) {
+      $args['paged'] = absint( $_POST['args']['paged'] );
+    }
+
     if( $_POST['args']['s'] ) {
       $args['s'] = sanitize_text_field( $_POST['args']['s'] );
     }
@@ -108,6 +112,8 @@
     $response = array(
       'content'         => ob_get_clean(),
       'posts_found'     => intval( $posts_query->found_posts ),
+      'query'           => $posts_query,
+      'args'            => $args
     );
 
     wp_send_json( $response );

@@ -208,3 +208,33 @@
 .ez-toc {
   .active {}
 }
+
+.page-pagination {
+  & > ul {
+    @extend .pagination;
+
+    & > li {
+      @extend .page-item;
+
+      .page-numbers,
+      .current {
+        @extend .page-link;
+      }
+
+      &.disabled {
+        display: none;
+      }
+
+      .current,
+      .current:hover,
+      .current:focus {}
+    }
+
+  }
+
+  .pagination {
+    &.hidden {
+      display: none;
+    }
+  }
+}

@@ -3973,5 +3973,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
        }
    });
 
+   $( '.page-template-page-press .page-numbers.current' ).closest( 'li' ).addClass( 'active' );
+
 
  })( jQuery );
