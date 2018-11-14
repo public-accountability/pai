@@ -5,7 +5,15 @@
   .categories {
     li {
       display: inline-block;
-      margin-right: .75rem;
+    }
+
+    .separator {
+      &:before {
+        content: '\007C';
+      }
+
+      margin-right: .25rem;
+      margin-left: .25rem;
     }
   }
 

@@ -9219,8 +9219,17 @@ h1 {
 .page-template-default .categories li,
 .page-template-page-research .categories li,
 .page-template-page-series .categories li {
-  display: inline-block;
-  margin-right: .75rem; }
+  display: inline-block; }
+
+.page-template-default .categories .separator,
+.page-template-page-research .categories .separator,
+.page-template-page-series .categories .separator {
+  margin-right: .25rem;
+  margin-left: .25rem; }
+  .page-template-default .categories .separator:before,
+  .page-template-page-research .categories .separator:before,
+  .page-template-page-series .categories .separator:before {
+    content: '\007C'; }
 
 .page-template-default .form-title,
 .page-template-page-research .form-title,
