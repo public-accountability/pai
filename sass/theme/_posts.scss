@@ -334,6 +334,22 @@
         margin-bottom: 1.25rem;
       }
     }
+
+    .categories {
+      li {
+        display: inline-block;
+        margin-right: 0;
+      }
+
+      .separator {
+        margin-right: .25rem;
+        margin-left: .25rem;
+
+        &:before {
+          content: '\007C';
+        }
+      }
+    }
   }
 
   .entry-meta {
