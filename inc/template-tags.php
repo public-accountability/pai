@@ -48,7 +48,7 @@ function pai_featured_post_meta() {
 	);
 
   if( 'report' === get_post_type() ) {
-    $featured_label = esc_attr( 'Report' );
+    $featured_label =__( 'Report', 'pai' );
   } else {
     $category = get_the_category();
     $featured_label = ( 'uncategorized' !== $category[0]->slug ) ? $category[0]->slug : '';
