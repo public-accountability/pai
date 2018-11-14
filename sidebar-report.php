@@ -15,7 +15,7 @@
 
 		<?php if( function_exists( 'get_field' ) && $file = get_field( 'pdf_link' ) ) : ?>
 			<aside class="button">
-				<a href="<?php echo esc_url( $file['url'] ); ?>" class="btn btn-info" download="<?php esc_html_e( $file['filename'] ); ?>"><?php esc_html_e( 'Download PDf', 'pai' ); ?></a>
+				<a href="<?php echo esc_url( $file['url'] ); ?>" class="btn btn-info" target="_blank"><?php esc_html_e( 'View PDF', 'pai' ); ?></a>
 			</aside>
 		<?php endif; ?>
 
