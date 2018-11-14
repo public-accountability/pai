@@ -156,6 +156,22 @@
     font-size: $font-size-base;
   }
 
+  .categories {
+    li {
+      display: inline-block;
+    }
+
+    .separator {
+      &:before {
+        content: '\007C';
+        color: $text-muted;
+      }
+
+      margin-right: .25rem;
+      margin-left: .25rem;
+    }
+  }
+
   .widget-area {
 
     .sticky {

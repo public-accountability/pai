@@ -9097,6 +9097,14 @@ h1 {
   .single-report .label,
   .single-report .author {
     font-size: 1rem; }
+  .single-report .categories li {
+    display: inline-block; }
+  .single-report .categories .separator {
+    margin-right: .25rem;
+    margin-left: .25rem; }
+    .single-report .categories .separator:before {
+      content: '\007C';
+      color: #797979; }
   @media (min-width: 992px) {
     .single-report .widget-area .sticky {
       position: -webkit-sticky;
