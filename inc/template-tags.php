@@ -51,10 +51,10 @@ function pai_featured_post_meta() {
     $featured_label =__( 'Report', 'pai' );
   } else {
     $category = get_the_category();
-    $featured_label = ( 'uncategorized' !== $category[0]->slug ) ? $category[0]->slug : '';
+    $featured_label = ( 'uncategorized' !== $category[0]->slug ) ? $category[0]->slug : __( 'Featured', 'pai' );
   }
 
-	echo '<span class="featured-category">' . $featured_tag . ' ' . $featured_label. '</span><span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.
+	echo '<span class="featured-category">' . $featured_label. '</span><span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.
 }
 
 /**
