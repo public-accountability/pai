@@ -85,7 +85,7 @@ $sidebar_pos = 'none';
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php// understrap_pagination(); ?>
+			<?php understrap_pagination(); ?>
 
 		</div><!-- #primary -->
 
