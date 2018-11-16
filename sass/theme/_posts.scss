@@ -156,7 +156,7 @@
 
     .sticky {
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(md) {
         position: -webkit-sticky;
         position: sticky;
         top: 10%;
@@ -165,7 +165,7 @@
 
     }
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
       .sd-sharing ul {
         justify-content: space-evenly;
       }
@@ -181,7 +181,7 @@
       display: table;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       flex: 0 0 30%;
       max-width: 30%;
     }
@@ -248,7 +248,7 @@
       font-weight: bold;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       flex: 0 0 70%;
       max-width: 70%;
     }
