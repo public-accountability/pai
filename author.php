@@ -47,10 +47,21 @@ $sidebar_pos = 'none';
 						<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 					<?php endif; ?>
 
+					<?php if( $author_email = $author->user_email ) : ?>
+						<div class="taxonomy-meta"><a href="mailto:<?php echo esc_attr( $author_email ); ?>" class="btn btn-secondary understrap-read-more-link"><?php _e( 'Contact', 'pai' ); ?></a></div>
+					<?php endif; ?>
+
 				</header><!-- .page-header -->
 
 					<!-- The Loop -->
 					<?php if ( have_posts() ) : ?>
+
+						<?php if( $display_name = $author->display_name ) : ?>
+							<h3><?php printf( '%s %s:',
+								_e( 'Reports authored by', 'pai' ),
+								$display_name
+							); ?></h3>
+						<?php endif; ?>
 
 						<section class="list-view row js-results">
 
@@ -85,7 +96,7 @@ $sidebar_pos = 'none';
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php// understrap_pagination(); ?>
+			<?php understrap_pagination(); ?>
 
 		</div><!-- #primary -->
 
