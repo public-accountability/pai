@@ -9,10 +9,11 @@
 ?>
 
 <?php
-$cat_args = array(
+$topic_args = array(
   'show_option_all'    => __( 'All Topics', 'pai' ),
   'hide_if_empty'      => true,
   'taxonomy'           => 'topic',
+  'name'               => 'topic',
 );
 $series_args = array(
   'show_option_all'    => __( 'All Series', 'pai' ),
@@ -36,9 +37,9 @@ $archive_args = array(
       <input type="search" value="<?php get_search_query(); ?>" name="s" id="s" placeholder="<?php _e( 'Search', 'pai' ); ?>" class="js-search-field" /><button type="submit" class="js-search-submit"><span class="fa fa-long-arrow-right"></span><span class="screen-reader-text"><?php _e( 'Search', 'pai' ); ?></span></button>
     </div>
   </label>
-  <label for="category" class="select-field js-category-fields">
+  <label for="topic" class="select-field js-topic-fields">
     <span class="screen-reader-text"><?php esc_html_e( 'Select a Topic', 'pai' ); ?></span>
-    <?php wp_dropdown_categories( $cat_args ); ?>
+    <?php wp_dropdown_categories( $topic_args ); ?>
   </label>
   <label for="series" class="select-field js-series-fields">
     <span class="screen-reader-text"><?php esc_html_e( 'Select a Series', 'pai' ); ?></span>

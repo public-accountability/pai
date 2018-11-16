@@ -68,7 +68,11 @@
     }
 
     if( $_POST['args']['topic'] ) {
-      $args['cat'] = absint( $_POST['args']['topic'] );
+      $args['tax_query'][] = array(
+        'taxonomy'      => 'topic',
+        'field'         => 'id',
+        'terms'         => array( absint( $_POST['args']['topic'] ) )
+      );
     }
 
     if( $_POST['args']['series'] ) {
