@@ -187,7 +187,9 @@ function pai_terms_clauses( $clauses, $taxonomy, $args ) {
 add_filter( 'terms_clauses', 'pai_terms_clauses', 99999, 3 );
 
 /**
+ * Filter Query
  * Include Reports on Author Pages
+ *  Exclude Press Mentions from Search
  *
  * @since 0.1.0
  *
@@ -199,10 +201,26 @@ function pai_pre_get_posts( $query ) {
     return;
   }
 
+  /* Author Posts */
   if( $query->is_author() ) {
     $query->set( 'post_type', array( 'report' ) );
     $query->set( 'post_status', array( 'publish' ) );
   }
+
+  /* Search Results @since 0.2.0  */
+  $tax_query = array(
+    array(
+      'taxonomy'         => 'category',
+      'terms'            => 'press-mention',
+      'field'            => 'slug',
+      'operator'         => 'NOT IN',
+    ),
+  );
+
+  if( $query->is_search ) {
+    $query->set( 'tax_query', $tax_query );
+  }
+
 }
 add_action( 'pre_get_posts', 'pai_pre_get_posts' );
 
