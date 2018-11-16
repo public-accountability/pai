@@ -115,3 +115,28 @@
     font-size: $font-size-md;
   }
 }
+
+.search-results {
+
+  .site-main {
+    @include media-breakpoint-up(md) {
+      .entry-content,
+      .entry-header {
+        padding-right: $narrow-column-padding;
+      }
+    }
+  }
+
+  .hentry + .hentry {
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 3.75rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 4.6875rem;
+    }
+  }
+
+}

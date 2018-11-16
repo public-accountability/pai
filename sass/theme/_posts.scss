@@ -52,26 +52,6 @@
 
 }
 
-.search-results {
-
-  .page-title {
-    span {}
-  }
-
-  .hentry + .hentry {
-    margin-top: 2rem;
-
-    @include media-breakpoint-up(md) {
-      margin-top: 3.75rem;
-    }
-
-    @include media-breakpoint-up(lg) {
-      margin-top: 4.6875rem;
-    }
-
-  }
-}
-
 .single {
 
   .content-area {
