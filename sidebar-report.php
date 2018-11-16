@@ -21,16 +21,32 @@
 
 		<?php dynamic_sidebar( 'right-sidebar' ); ?>
 
-		<?php if( function_exists( 'get_field' ) && $content = get_field( 'related_content' ) ) : ?>
+		<?php if( $content = get_post_meta( $post->ID, 'related_content', true ) ) : ?>
 			<aside class="related-reports">
 
-					<ul class="post-list">
+				<h2 class="widget-title"><?php esc_html_e( 'Related Content', 'pai' ); ?></h2>
 
-						<?php foreach( $content as $post ) : ?>
-							<?php get_template_part( 'loop-templates/list', 'post' ) ?>
-						<?php endforeach; ?>
+				<?php
+					$args = array(
+						'post_type'		=> array( 'post', 'report' ),
+						'post__in'		=> $content
+					);
+					$query = new WP_Query( $args );
 
-					</ul>
+					if( $query->have_posts() ) :
+							while( $query->have_posts() ) : $query->the_post(); ?>
+
+						<ul class="post-list">
+
+							<?php get_template_part( 'loop-templates/content', 'sidebar-post' ) ?>
+
+						</ul>
+
+					<?php endwhile; ?>
+
+					<?php wp_reset_postdata(); ?>
+
+				<?php endif; ?>
 
 			</aside>
 		<?php else : ?>
@@ -41,18 +57,32 @@
 
 		<?php endif; ?>
 
-		<?php if( function_exists( 'get_field' ) && $press = get_field( 'related_press' ) ) : ?>
+		<?php if( $press = get_post_meta( $post->ID, 'related_press', true ) ) : ?>
 			<aside class="press-mentions">
 
 				<h2 class="widget-title"><?php esc_html_e( 'In the Press', 'pai' ); ?></h2>
 
-				<ul class="post-list">
+				<?php
+					$args = array(
+						'post_type'		=> array( 'post', 'report' ),
+						'post__in'		=> $press
+					);
+					$query = new WP_Query( $args );
 
-					<?php foreach( $press as $post ) : ?>
-						<?php get_template_part( 'loop-templates/content', 'sidebar-post' ) ?>
-					<?php endforeach; ?>
+					if( $query->have_posts() ) :
+							while( $query->have_posts() ) : $query->the_post(); ?>
 
-				</ul>
+						<ul class="post-list">
+
+							<?php get_template_part( 'loop-templates/content', 'sidebar-post' ) ?>
+
+						</ul>
+
+					<?php endwhile; ?>
+
+					<?php wp_reset_postdata(); ?>
+
+				<?php endif; ?>
 
 			</aside>
 		<?php endif; ?>
