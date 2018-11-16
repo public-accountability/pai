@@ -201,6 +201,7 @@ function pai_pre_get_posts( $query ) {
 
   if( $query->is_author() ) {
     $query->set( 'post_type', array( 'report' ) );
+    $query->set( 'post_status', array( 'publish' ) );
   }
 }
 add_action( 'pre_get_posts', 'pai_pre_get_posts' );

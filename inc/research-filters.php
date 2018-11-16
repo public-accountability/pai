@@ -56,7 +56,8 @@
     }
 
     $args = array(
-      'post_type'    => 'report'
+      'post_type'    => 'report',
+      'post_status'  => 'publish'
     );
 
     if( $_POST['args']['paged'] ) {
