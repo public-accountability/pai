@@ -41,8 +41,11 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 				<?php endwhile; // end of the loop. ?>
 
 				<?php
+				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
 				$args = array(
 					'posts_per_page'		=> get_option( 'posts_per_page' ),
+					'paged' 						=> $paged,
 					'tax_query' 				=> array(
 						array(
 							'taxonomy'         => 'category',
