@@ -9110,13 +9110,13 @@ h1 {
     .single-report .categories .separator:before {
       content: '\007C';
       color: #797979; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .single-report .widget-area .sticky {
       position: -webkit-sticky;
       position: sticky;
       top: 10%;
       margin-top: 3.125em; } }
-  @media (max-width: 1199.98px) {
+  @media (max-width: 991.98px) {
     .single-report .widget-area .sd-sharing ul {
       justify-content: space-evenly; }
     .single-report .widget-area .ez-toc {
@@ -9124,7 +9124,7 @@ h1 {
   .single-report .widget-area:before, .single-report .widget-area:after {
     content: '';
     display: table; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .single-report .widget-area {
       flex: 0 0 30%;
       max-width: 30%; } }
@@ -9161,7 +9161,7 @@ h1 {
     font-size: 1.5rem;
     font-family: "Berthold Akzidenz Grotesk BE", sans-serif;
     font-weight: bold; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .single-report .content-area {
       flex: 0 0 70%;
       max-width: 70%; } }
