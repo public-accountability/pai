@@ -151,6 +151,8 @@
     })
     .success(function(response, textStatus, XMLHttpRequest) {
 
+      // console.log(args, response);
+
       $contentEl.html( response.content );
 
       if( 1 === response.query.max_num_pages ) {
