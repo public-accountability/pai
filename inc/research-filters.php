@@ -60,15 +60,15 @@
       'post_status'  => 'publish'
     );
 
-    if( $_POST['args']['paged'] ) {
+    if( !empty( $_POST['args']['paged'] ) ) {
       $args['paged'] = absint( $_POST['args']['paged'] );
     }
 
-    if( $_POST['args']['s'] ) {
+    if( !empty( $_POST['args']['s'] ) ) {
       $args['s'] = sanitize_text_field( $_POST['args']['s'] );
     }
 
-    if( $_POST['args']['topic'] ) {
+    if( !empty( $_POST['args']['topic'] ) ) {
       $args['tax_query'][] = array(
         'taxonomy'      => 'topic',
         'field'         => 'id',
@@ -76,7 +76,7 @@
       );
     }
 
-    if( $_POST['args']['series'] ) {
+    if( !empty( $_POST['args']['series'] ) ) {
       $args['tax_query'][] = array(
         'taxonomy'      => 'series',
         'field'         => 'id',
@@ -84,7 +84,7 @@
       );
     }
 
-    if( $_POST['args']['year'] ) {
+    if( !empty( $_POST['args']['year'] ) ) {
       if( $url = parse_url( sanitize_text_field( $_POST['args']['year'] ) ) ) {
         $args['year'] = absint( basename( $url['path'] ) );
       }
