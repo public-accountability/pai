@@ -43,8 +43,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 					<?php endif; ?>
 
 					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
+					// If comments are open, load up the comment template.
+					if ( comments_open() ) :
 						comments_template();
 					endif;
 					?>
