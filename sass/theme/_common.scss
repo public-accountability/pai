@@ -53,6 +53,11 @@ hr {
   a {
     color: $body-color;
     border-bottom: 1px solid $body-color;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
   }
 }
 

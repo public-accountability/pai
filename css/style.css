@@ -8567,6 +8567,8 @@ hr {
 .intro a {
   color: #000;
   border-bottom: 1px solid #000; }
+  .intro a:hover, .intro a:focus {
+    text-decoration: none; }
 
 .btn {
   padding: 1.1rem 1.7rem;
