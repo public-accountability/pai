@@ -16,12 +16,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php get_template_part( 'global-templates/hero', 'static' ); ?>
 <?php endif; ?>
 
-<?php if ( pai_has_featured_posts() ) : ?>
-
-	<?php// get_template_part( 'global-templates/hero', 'slider' ); ?>
-
-<?php endif; ?>
-
 <div class="wrapper" id="full-width-page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
