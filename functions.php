@@ -9,13 +9,13 @@
  * @since 0.1.0
  */
 
-include_once get_stylesheet_directory() . '/inc/enqueue.php';
-include_once get_stylesheet_directory() . '/inc/setup.php';
-include_once get_stylesheet_directory() . '/inc/customizer.php';
-include_once get_stylesheet_directory() . '/inc/extras.php';
-include_once get_stylesheet_directory() . '/inc/shortcodes.php';
-include_once get_stylesheet_directory() . '/inc/template-tags.php';
-include_once get_stylesheet_directory() . '/inc/jetpack.php';
-include_once get_stylesheet_directory() . '/inc/research-filters.php';
-include_once get_stylesheet_directory() . '/inc/pagination.php';
-include_once get_stylesheet_directory() . '/inc/bootstrap-wp-navwalker.php';
+include_once get_stylesheet_directory() . '/includes/enqueue.php';
+include_once get_stylesheet_directory() . '/includes/setup.php';
+include_once get_stylesheet_directory() . '/includes/customizer.php';
+include_once get_stylesheet_directory() . '/includes/extras.php';
+include_once get_stylesheet_directory() . '/includes/shortcodes.php';
+include_once get_stylesheet_directory() . '/includes/template-tags.php';
+include_once get_stylesheet_directory() . '/includes/jetpack.php';
+include_once get_stylesheet_directory() . '/includes/research-filters.php';
+include_once get_stylesheet_directory() . '/includes/pagination.php';
+include_once get_stylesheet_directory() . '/includes/bootstrap-wp-navwalker.php';

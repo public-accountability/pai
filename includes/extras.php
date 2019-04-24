@@ -246,5 +246,27 @@ function pai_body_classes( $classes ) {
 
   return $classes;
 }
-
 add_filter( 'body_class', 'pai_body_classes' );
+
+/**
+ * Filter Link for Press Mentions
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/post_link/
+ *
+ * @param string $url
+ * @param obj $post
+ * @param boolean $leavename
+ * @return string $url
+ */
+function pai_post_link_press( $url, $post ) {
+  if( is_admin() || !has_term( array( 'press-mention', 'press-mentions' ), 'category', $post ) ) {
+    return $url;
+  }
+
+  if( $source_url = get_post_meta( get_the_id(), 'source_url', true ) ) {
+    $url = esc_url( $source_url );
+  }
+
+  return $url;
+}
+add_filter( 'post_link', 'pai_post_link_press', 10, 2 );

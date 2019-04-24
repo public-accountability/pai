@@ -40,8 +40,6 @@ $background_image = ( $image ) ? 'style="background-image: url(' . esc_url( $ima
 				wp_strip_all_tags( $text )
 			); ?>
 
-			<?php// echo $title; ?>
-
 		<?php endif; ?>
 
 	</div><!-- .entry-content -->
